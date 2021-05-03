@@ -1,0 +1,45 @@
+/* Remove default style for elements  */
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+input, button, submit { border:none; background: none; } 
+a {
+    background-color: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.logo-container{
+display: flex;
+    flex-direction: row;
+    padding-left: 25px;
+
+
+}
+.circle{
+    border-radius: 50%;
+    width: 50px;
+    background-color: black;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.logo-inner-container{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+    background-color: tomato;
+    margin-left: 5px;
+
+
+
+}
