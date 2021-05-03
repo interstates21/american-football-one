@@ -39,6 +39,8 @@ justify-content: center;
 align-items: center;
     margin-left: 5px;
 
+
+
 }
 
 
@@ -67,4 +69,28 @@ header {
 main {
     padding: 0 30px;
 
+}
+
+.search-container-radio {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+.radio-submit {
+    background-color: #f2f2f2;
+    width: 80px;
+    margin-top: 6px;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
 }
