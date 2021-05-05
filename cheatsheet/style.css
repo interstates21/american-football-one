@@ -1,0 +1,392 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap');
+
+/*
+Import two fonts, font-weight: 400
+font-family: 'Noto Sans', sans-serif;
+/* Remove default style for elements  */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+input, button, submit { border:none; background: none; } 
+a {
+    background-color: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    /* Using CSS variable to avoid copypasting values from one item to another */
+    --regular-margin: 20px;
+    --our-favorite-color: #00FA9A;
+    --our-second-favorite-color: #9a00fa;
+}
+
+
+/* Styling */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+
+main {
+    margin: 30px 20%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* Rewrite body rule for 'Open Sans' */
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    /* 16px(default browser font-size) * 3 */
+    font-size: 3rem; 
+    margin-bottom: var(--regular-margin);
+}
+
+section {
+    margin: 20px 0;
+
+    /* Default section font size */
+    font-size: 20px;
+}
+
+h2 {
+    /* 20px(inherits val from the section) * 1.5 */
+    font-size: 1.5em; 
+    margin-bottom: var(--regular-margin);
+}
+
+
+.margin10 {
+    margin: 10px;
+}
+
+
+
+/* Flexbox */
+
+
+.wrapper {
+    border: 1px solid var(--our-favorite-color);
+    margin-bottom: var(--regular-margin);
+    padding: 20px;
+}
+
+
+.flex-item {
+    height: 30px;
+    width: 30px;
+    background-color: var(--our-favorite-color);
+    margin: 10px;
+}
+
+.flex-row {
+    display: flex;
+    /* Default flex direction is row */
+    /* flex-direction: row; */
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.move-me-to-end {
+    align-self: flex-end;
+}
+
+.flex-col-end {
+    display: flex;
+    flex-direction: column;
+
+    /* Moves all the children to the end */
+    align-items: flex-end;
+}
+
+.big-center-container {
+    margin-bottom: var(--regular-margin);
+    
+    border: 2px var(--our-favorite-color) solid;
+    height: 400px;
+    width: 400px;
+
+    /* Center it's children: small-center-container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-center-container {
+    border: 2px var(--our-second-favorite-color) solid;
+    height: 150px;
+    width: 150px;
+
+
+    /* Center it's children: the circle*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-item {
+    background-color: green;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.flex-row-end {
+    display: flex;
+
+    /* Moves all the children to the end */
+    justify-content: flex-end;
+}
+
+.flex-sidebar {
+    background-color: var(--our-favorite-color);
+    height: 100px;
+
+
+    /* occupy the container */
+    flex: 1;
+    margin: 10px;
+}
+
+.flex-main {
+    background-color: var(--our-second-favorite-color);
+    height: 100px;
+
+    /* occupy the container, but 2 times more that it's sibling */
+    flex: 2;
+    margin: 10px;
+}
+
+
+
+/* Boxes */
+
+.strange-circle {
+    width: 50px;
+    height: 50px;
+    background-color: var(--our-favorite-color);
+    /* Make a circle */
+    border-radius: 50%;
+}
+
+.strange-circle-dashed {
+    width: 50px;
+    height: 50px;
+    
+    border: 2px dashed var(--our-second-favorite-color);
+    /* Make a circle */
+    border-radius: 50%;
+}
+
+
+
+.strange-circle-shadow {
+    width: 50px;
+    height: 50px;
+    
+    box-shadow: 2px 2px 5px rgba(0,0,0, 0.1);
+    /* 2px -- offset to the right
+    2px -- offset to the bottom
+    5px -- how spreaded is it
+    rgba(0,0,0, 0.1) - black color 90% transparent */
+    /* Make a circle */
+    border-radius: 50%;
+}
+
+
+.strange-circle-shadow-2 {
+    width: 50px;
+    height: 50px;
+    
+    box-shadow: 0px 0px 10px var(--our-favorite-color);
+    /*
+    equal for all sides
+    5px -- how spreaded is it
+    rgba(0,0,0, 0.1) - black color 90% transparent */
+    /* Make a circle */
+    border-radius: 50%;
+}
+
+.strange-circle-inner-shadow {
+    width: 50px;
+    height: 50px;
+    
+    box-shadow: inset 0px 0px 10px var(--our-favorite-color);
+    /*
+    border to inside
+    equal for all sides
+    5px -- how spreaded is it
+    rgba(0,0,0, 0.1) - black color 90% transparent */
+    /* Make a circle */
+    border-radius: 50%;
+}
+
+.half-border {
+    width: 50px;
+    height: 50px;
+    
+
+    border-right: 2px dotted var(--our-favorite-color);
+    border-bottom: 2px double var(--our-second-favorite-color);
+    background-color: #f2f2f2;
+}
+
+.half-border-circle {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    
+    border-right: 2px dotted var(--our-favorite-color);
+    border-bottom: 2px double var(--our-second-favorite-color);
+    background-color: #f2f2f2;
+}
+
+.half-border-rounded {
+    width: 80px;
+    height: 50px;
+
+    border-radius: 20px;
+    
+    border-right: 2px dotted var(--our-favorite-color);
+    border-bottom: 2px double var(--our-second-favorite-color);
+    background-color: #f2f2f2;
+}
+
+.simple-box  {
+    width: 50px;
+    height: 50px;
+}
+
+.red-word {
+    background-color: red;
+}
+
+.red-hash {
+    /* Same as red */
+    background-color: #ff0000;
+}
+
+.red-rgb {
+    /* rgb: 
+    red: 0 - 255
+    green: 0 - 255
+    blue: 0 - 255 */
+    /* Same as red */
+    background-color: rgb(255, 0, 0);
+}
+.red-semi-transparent {
+    /* rgb: 
+    red: 0 - 255
+    green: 0 - 255
+    blue: 0 - 255
+
+    alpha: 0 - 1 how transparent is it
+    
+    */
+    /* Same as red */
+    background-color: rgb(255, 0, 0, 0.3);
+}
+
+.black {
+    background-color: black;
+    padding: 20px;
+}
+
+.white-word {
+    background-color: white;
+}
+
+.white-hash {
+    /* Similar to rgb  */
+    /* Every value pair refers to either red or green or blue */
+    /* value is from 0 to 16 */
+    /* 0 1 2 3 4 5 6 7 8 9 A B C D E F */
+
+    background-color: #FFFFFF;
+}
+
+.white-rgb {
+    background-color: rgb(255, 255,255);
+}
+
+.white-semi-transparent {
+    background-color: rgba(255, 255,255, 0.5);
+}
+
+.gradient1 {
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);;
+}
+
+.gradient2 {
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);;
+}
+
+/* Form input */
+
+.search-container {
+    width: 30%;
+    height: 40px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    display: flex;
+    padding: 0 10px;
+    margin-left: 30px;
+    /* background-color: yellow; */
+}
+
+.search-container input {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Hovers */
+
+.hover-scale {
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--our-favorite-color);
+    transition: transform 0.3s ease-out;
+    /* ease-out: slow down transition in the end */
+}
+
+.hover-scale:hover {
+    /* make it 5 times bigger */
+    transform: scale(5);
+}
+
+.hover-rotate {
+    width: 50px;
+    height: 50px;
+
+    background-color: var(--our-favorite-color);
+    transition: transform 0.3s ease-out;
+    /* ease-out: slow down transition in the end to make it look more beautiful */
+
+
+    cursor: pointer;
+}
+
+.hover-rotate:hover {
+    /* make it 5 times bigger */
+    transform: rotate(90deg);
+}
