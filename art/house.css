@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    padding-top: 200px;
+}
+
+.building {
+    height: 300px;
+    width: 600px;
+    background-color: orange;
+    position: relative;
+}
+
+.roof {
+    height: 430px;
+    width: 430px;
+    background-color: yellow;
+    position: relative;
+    top: -220px;
+    left: 80px;
+    z-index: -1;
+    transform: rotate(45deg);
+}
+
+.grass {
+    height: 100px;
+    width: 800px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: greenyellow;
+    position: relative;
+    top: -70px;
+    z-index: -1;
+}
+
+.door {
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    width: 100px;
+    height: 270px;
+    background-color: thistle;
+}
+
+.window {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80px;
+    height: 80px;
+    background-color: thistle;
+}
