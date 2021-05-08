@@ -498,8 +498,8 @@ h2 {
     flex: 1;
     height: 50px;
     margin-right: 20px;
-    background-color: #9a00fa;
-    border-top-right-radius: 50%;
+
+    border: 2px dotted var(--our-favorite-color);
     border-top-left-radius: 50%;
 
     border-bottom-right-radius: 50%;
@@ -512,12 +512,12 @@ h2 {
     /* Use position fixed to move an item to any direction from it's current position */
     position: relative;
     bottom: 20px;
-    left: 60px;
+    left: 70px;
 }
 
 .move-3 {
     position: relative;
-    left: -60px;
+    left: -70px;
 
     top: 20px;
 }
