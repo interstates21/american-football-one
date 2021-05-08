@@ -35,9 +35,10 @@ body {
 
 
 main {
-    margin: 30px 20%;
+    margin: 30px 0;
     min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,7 +54,7 @@ h1 {
 }
 
 section {
-    margin: 20px 0;
+    margin: 20px  20%;
 
     /* Default section font size */
     font-size: 20px;
@@ -389,4 +390,134 @@ h2 {
 .hover-rotate:hover {
     /* make it 5 times bigger */
     transform: rotate(90deg);
+}
+
+/* Responsive */
+
+#responsive {
+    margin-left: 0;
+    margin-right: 0;
+}
+.responsive-container {
+    display: flex;
+    width: 100%;
+}
+
+.responsive-card {
+    /* A way to set fixed size inside of flex container */
+    flex: 0 0 300px;
+    height: 400px;
+
+    border: dotted 2px var(--our-favorite-color);
+    margin: var(--regular-margin);
+
+}
+
+
+
+/* Some rules for screens smaller than 1024px */
+@media only screen and (max-width: 1024px) {
+    .responsive-container {
+     flex-direction: column;
+    }
+
+    .responsive-card {
+        background-color: plum;
+    }
+  }
+
+
+
+/* Some rules for screens smaller than 600px */
+@media only screen and (max-width: 600px) {
+    .responsive-card {
+        background-color: red;
+    }
+  }
+
+
+
+.pos-fixed {
+    font-size: 50px;
+    padding: 20px;
+
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) ;
+    border-radius: 50%;
+    position: fixed;
+
+    top: 80vh;
+    right: 100px;
+}
+
+.pos-absolute {
+    font-size: 50px;
+    padding: 20px;
+    background-color: white;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1) ;
+
+    border-radius: 50%;
+    position: absolute;
+
+    top: 80vh;
+    right: 100px;
+}
+
+.relative-parent {
+    width: 100%;
+    height: 500px;
+
+    position: relative;
+    background: url("https://images.unsplash.com/photo-1620403695214-9baef6ec80c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80") center / cover;
+
+    border: 2px solid var(--our-second-favorite-color);
+}
+
+.absolute-item-inside-relative-parent {
+
+    position: absolute;
+
+    /* In order to calculate an offset from the container's edges (not the page) set pos: relative to the parent */
+    left: 49%;
+    top: 8px;
+
+
+}
+
+.pos-flex-container {
+
+    display: flex;
+    margin-top: 40px;
+
+    width: 50%;
+
+}
+
+.pos-flex-item {
+    flex: 1;
+    height: 50px;
+    margin-right: 20px;
+    background-color: #9a00fa;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+
+    border-bottom-right-radius: 50%;
+}
+
+
+
+.move-1 {
+
+    /* Use position fixed to move an item to any direction from it's current position */
+    position: relative;
+    bottom: 20px;
+    left: 60px;
+}
+
+.move-3 {
+    position: relative;
+    left: -60px;
+
+    top: 20px;
 }
