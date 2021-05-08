@@ -1,0 +1,11 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+input, button, submit { border:none; background: none; } 
+a {
+    background-color: none;
+    text-decoration: none;
+    color: inherit;
+}
