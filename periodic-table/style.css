@@ -1,0 +1,150 @@
+/* general styling */
+* {
+    margin: 0px;
+    padding: 0px;
+    cursor: default;
+}
+
+/* Styling */
+/* table */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: white;
+}
+
+main {
+   margin: 30px;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    /* 16px(default browser font-size) * 3 */
+    font-size: 3rem;
+    text-align: center;
+    margin: 20px;
+}
+.hello {
+    color: plum;
+    border: 1px solid plum;
+    text-align: center;
+    position: absolute;
+    left: 300px;
+    top: 20px;
+}
+
+.metals {
+    display: none;
+    
+}
+p {
+  margin: 10px;
+  padding: 5px;
+}
+
+h1:hover + .metals {
+    display: block;
+    position: absolute;
+    left: 375px;
+    top: 165px;
+    height: 200px;
+    width: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+   align-items: center;
+   font-size: 15px;
+}
+
+/* Row */
+
+.row-one {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-split {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left, .right {
+    display: flex;
+}
+
+.row-between {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.last-two{
+   margin: 40px 0;
+}
+
+.flex-item {
+    height: 70px;
+    width: 70px;
+    margin: 4px;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+
+.flex-item:hover {
+    /*opacity: 0.5;*/
+    transform: scale(1.4);
+    border-radius: 50%;
+    color:rgb(255, 255, 255);
+    background-color: rgb(0,0,0);
+}
+
+/* colors */
+
+.yellow {
+    background-color: rgb(255, 255, 0);
+}
+
+.red {
+    background-color: rgb(255, 100, 44);
+}
+
+.orange {
+    background-color: rgb(255, 165, 0)
+}
+
+.mandarin {
+    background-color: rgb(255, 220, 0);
+}
+.green {
+    background-color: rgb(172, 255, 46);
+}
+
+.blue {
+    background-color: rgb(65, 182, 255);
+}
+
+.turquoise-b {
+    background-color: rgb(97, 252, 255);
+}
+
+.turquoise {
+    background-color: rgb(73, 248, 196);
+}
+
+.grey {
+    background-color: rgb(191, 190, 190);
+}
+
+.pink {
+    background-color: rgb(255, 192, 203);
+}
+.purple {
+    background-color: rgb(255, 160, 255);
+}
