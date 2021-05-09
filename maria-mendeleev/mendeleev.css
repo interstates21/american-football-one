@@ -1,0 +1,144 @@
+*
+{
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial;
+    color: white;
+}
+
+A:link { 
+    text-decoration: none; 
+}
+A:visited { text-decoration: none; } 
+A:active { text-decoration: none; }
+
+ 
+body div
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 10px;
+}
+
+.pt-element {
+    width: 5vw;
+    height: 62px;
+    background-color: rgb(39, 39, 39);
+    padding: .25rem;
+    margin: 2px;
+   
+    
+}
+.pt-element:hover
+{
+    transform: scale(1.1);
+    transition: 0.5s; 
+}
+.pt-element a
+{
+    display: flex;
+    flex-direction: column;
+    line-height: 150%;
+    padding-bottom: 0 !important;
+
+
+}
+
+.pt-element-number,  
+.pt-element-name,
+.pt-element-symbol, .pt-element-weight
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 10px;
+    flex: 1;
+    height: 200px;
+
+}
+
+/* .pt-element-number,  
+.pt-element-name
+{
+    background-color: black;
+   
+}
+.pt-element-symbol, .pt-element-weight
+{
+    background-color: coral;
+    flex: 1;
+} */
+
+.pt-element-number
+{
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+.pt-element-weight
+{
+    /* align-self: flex-end; */
+    justify-self: flex-end;
+}
+.element-desc
+{
+    display: flex;
+    flex-direction: column;
+}
+.row-1, .row-2, .row-3, .row-4
+{
+    display: flex;
+    flex-direction: row;
+}
+.row-1, .row-2, .row-3
+{
+    justify-content: space-between;
+}
+.row-4
+{
+    justify-content: flex-end;
+}
+.left, .right
+{
+    display: flex;
+    flex-direction: row;
+}
+.pt-nonmetal
+{
+    background-color: rgb(77, 34, 77);
+}
+.pt-noble
+{
+    background-color: rgb(38, 46, 121);
+}
+.pt-alkali
+{
+    background-color: rgb(39, 194, 233);
+}
+.pt-alkaline
+{
+    background-color: rgb(38, 0, 128);
+}
+.pt-semimetal
+{
+    background-color: rgb(184, 45, 45);
+}
+.pt-halogen
+{
+    background-color: rgb(160, 118, 238);
+}
+.pt-basic
+{
+    background-color: rgb(255, 109, 64);
+}
+.pt-lanthanide
+{
+    background-color: rgb(56, 109, 255);
+}
+.pt-actinide
+{
+    background-color: rgb(39, 133, 39);
+}
+.pt-element-symbol
+{
+    font-size: 20px;;
+}
