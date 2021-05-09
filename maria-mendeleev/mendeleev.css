@@ -22,8 +22,8 @@ body div
 
 .pt-element {
     width: 5vw;
-    height: 62px;
-    background-color: rgb(39, 39, 39);
+    max-width: 80px;
+        background-color: rgb(39, 39, 39);
     padding: .25rem;
     margin: 2px;
    
@@ -55,6 +55,12 @@ body div
     flex: 1;
     height: 200px;
 
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
 }
 
 /* .pt-element-number,  
