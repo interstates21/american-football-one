@@ -1,18 +1,24 @@
-* {
-    margin: 30px;
-}
-
-
 .box {
     width: 100px;
     height: 100px;
     background-color: blue;
+    margin: 50px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .simple-animation-box {
     animation-name: animationColor;
     animation-duration: 4s;
     /* Plays the animation only once */
+
+
+    /* The default behavior of animation is when it reaches 100%, it eventually moves back to 0% state; */
+    /* animation-fill-mode forwards forces animation to stay on the last frame */
+    animation-fill-mode: forwards;
 }
 
 @keyframes animationColor {
