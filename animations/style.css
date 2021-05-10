@@ -1,0 +1,90 @@
+* {
+    margin: 30px;
+}
+
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+.simple-animation-box {
+    animation-name: animationColor;
+    animation-duration: 4s;
+    /* Plays the animation only once */
+}
+
+@keyframes animationColor {
+    from {background-color: blue;}
+    to {background-color: yellow;}
+}
+
+.simple-animation-box-2 {
+    animation-name: animationColorByPercent;
+    animation-duration: 8s;
+
+
+    /* Delay animation after loading the page */
+    /* animation-delay: -2s; */
+
+
+    /* Plays the animation 2 times */
+    animation-iteration-count: 2;
+
+}
+
+@keyframes animationColorByPercent {
+    0% {background-color: blue;  width: 100px;}
+    50% {background-color: black; width: 150px;}
+    100% {background-color: yellow; width: 50px;}
+}
+
+
+.rotate-box {
+    animation-name: rotateAnimation;
+    animation-duration: 3s;
+}
+
+@keyframes rotateAnimation {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(45deg);}
+}
+
+.rotate-box-2 {
+    animation-name: rotateAnimation2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotateAnimation2 {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(45deg);}
+}
+
+.rotate-box-3 {
+    animation-name: rotateAnimation3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotateAnimation3 {
+    0% {transform: rotate(0deg); }
+    50% {transform: rotate(45deg);}
+    100% {transform: rotate(90deg);}
+}
+
+.rotate-box-4 {
+    animation-name: rotateAnimation4;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    /* Makes rotation equally distributed */
+    animation-timing-function: linear;
+}
+
+@keyframes rotateAnimation4 {
+    0% {transform: rotate(0deg); }
+    50% {transform: rotate(45deg);}
+    100% {transform: rotate(90deg);}
+}
