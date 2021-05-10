@@ -1,3 +1,9 @@
+:root {
+    --panda-secondary-color: #222;
+    /* Sixteen base number */
+    /* 0, 1, 2, 3, 4 , 5, 6, 7, 8, 9, a, b, c, d, e, f */
+}
+
 .box {
     width: 100px;
     height: 100px;
@@ -93,4 +99,110 @@
     0% {transform: rotate(0deg); }
     50% {transform: rotate(45deg);}
     100% {transform: rotate(90deg);}
+}
+
+
+/* PANDA STYLES */
+
+.panda {
+    margin: 100px;
+    /* Enables normal offset for children's absolute position */
+    position: relative;
+
+    background-color: white;
+    border: 1px solid #eee;
+
+    height: 150px;
+    width: 180px;
+
+    border-radius: 50%;
+}
+
+.ear {
+    height: 40px;
+    width: 40px;
+
+    border-radius: 50%;
+
+
+    background-color: var( --panda-secondary-color);
+    position: absolute;
+
+    z-index: -1;
+}
+
+.ear-left {
+    top: -20px;
+    left: 20px;
+}
+
+.ear-right {
+    top: -20px;
+    right: 20px;
+}
+
+.eye {
+
+    height: 80px;
+    width: 60px;
+
+    border-radius: 50%;
+
+    background-color: var( --panda-secondary-color);
+    position: absolute;
+    
+}
+
+.eye-left {
+    top: 20%;
+    left: 10%;
+}
+
+.eye-right {
+    top: 20%;
+    right: 10%;
+}
+
+.hand {
+    position: absolute;
+    right: -50px;
+    top: 30px;
+    height: 80px;
+    width: 35px;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 40%;
+
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+
+    background-color: var(--panda-secondary-color);
+    
+    animation-name: handAnimation;
+    animation-duration: 2s;
+
+    transform: rotate(0deg);
+    transform-origin: bottom;
+
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes handAnimation{
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(35deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-35deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
