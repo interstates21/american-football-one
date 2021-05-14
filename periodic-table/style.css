@@ -94,7 +94,7 @@ h1:hover + .metals {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    transition: opacity 0.5s ease-out;
+        transition: all 0.2s ease-out;
 }
 
 .flex-item:hover {
