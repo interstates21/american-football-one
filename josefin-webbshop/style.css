@@ -1,29 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Montserrat:wght@200;500&display=swap');
-
 *{
     margin: 0;
-    padding: 0;
-
-
-}
+    padding: 0; }
 
 a{
     text-decoration: none;
     color:white;
     font-family: 'Montserrat', sans-serif;
     padding-left: 25px;
-        
-    } 
-}
+         } 
 body{
     background-color: antiquewhite;
-    display: flex;
-   height: 100vh;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
- ;
+    align-content: center;
 }
+
 header {
     background-image: url(./img/bg.jpg);
     height: 190px;
@@ -31,11 +21,11 @@ header {
     box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
 
 }
+
  
 #navmenu {
     width: 100%;
 	background: transparent;
-	display: inline-block;
 	color: #fff;
 	position: fixed;
 	top: 5px;
@@ -80,7 +70,6 @@ nav a {
 }
 
 .cart-myaccount{
-    display: inline-block;
     margin-top: -90px;
     float: right;
     margin-right: -360px;
@@ -95,6 +84,7 @@ nav a {
     border:0px;
     padding: 15px 25px 15px 25px;
     box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.2);
+    letter-spacing: 5px;
     transition: all 0.5s ease-out;
     margin-left: 15px;
 }
@@ -117,7 +107,6 @@ text-decoration: underline 1px #746149;
 opacity: 75%;}
 
 #search-form {
-	display: inline-block;
     font-family:  'Montserrat', sans-serif;
     font-size: 12px;
     padding: 0;
@@ -185,8 +174,7 @@ ul {
     transform: scaleX(0);
     transform-origin: right;
   }
-  ul li a:hover {
-  }
+  
   ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
@@ -240,6 +228,69 @@ ul {
   .dropdown:hover .dropbtn {background-color: transparent;
 }
 
+
+#banner-1 {
+    width: 100vw;
+    height: 200px;
+    margin-top: 5px;
+    background-image: url("https://wallpaperaccess.com/full/875264.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    text-align: center;
+    font-family: 'Dancing Script';
+    color: white;
+    padding-top: 80px;
+    font-size: 50px;
+}
+
+.banner-button{
+    background-color: transparent;
+    padding: 10px 35px 10px 35px;
+    border-radius: 8px;
+    border: 2px burlywood solid;
+    color: white;
+    font-family:  'Montserrat', sans-serif;
+    color: white;
+    font-family:  'Montserrat', sans-serif;
+    font-size: 20px;
+    letter-spacing: 5px;
+    transition: ease 1s;
+   
+}
+
+
+.banner-button:hover{
+    color: white;
+    font-family:  'Montserrat', sans-serif;
+    font-size: 20px;
+    opacity: 100%;
+    border: 2px rgb(178, 192, 141) solid;
+    background: transparent;
+    letter-spacing: 15px;
+
+}
+
+
+#page-container {
+    margin: 15%;
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius:10px ;
+    text-align-last: left;
+
+}
+.box{
+    background-color:#f4f4f4;
+    padding: 1px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    margin-top: 2px;
+    width: 98%;
+    border-radius: 5px;
+    }
+
 @media only screen and (max-width:720px) {
 	nav ul {
 		width: 100%!important
@@ -285,6 +336,4 @@ ul {
     #search-form input {
 	height: 50px;
     padding: 10px;
-	margin: 5px 0;
- }
-
+	margin: 5px 0; }

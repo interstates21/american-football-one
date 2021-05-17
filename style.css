@@ -1,0 +1,111 @@
+body {
+    background-color: #f1f1f1;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 150%;
+    align-content: center;
+
+
+}
+
+
+a:hover{
+    opacity: 40%;
+}
+
+ul {
+    list-style-type: none !important;
+    padding-inline-start: 0mm;
+    
+}
+
+.Language {
+    margin-bottom: 0px;
+padding-bottom: 10px;
+padding-left: 15px;
+line-height: 10px;
+}
+
+h4{
+    line-height: 10px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+}
+#image-cover {
+    width: 100vw;
+    height: 200px;
+    margin-top: -25px;
+    background-image: url("https://wallpaperaccess.com/full/875264.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+    font-size: 50px;
+}
+#about-me-container{
+padding-top: 15px;
+margin-inline: 40vw;
+
+}
+#about-me-text{
+padding:0px;
+margin-left: 0%;    
+font-size: 20px;
+}
+
+#page-container {
+    margin: 15%;
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius:10px ;
+    text-align-last: left;
+
+}
+
+.box{
+    background-color:#f4f4f4;
+    padding: 1px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    margin-top: 2px;
+    width: 98%;
+    border-radius: 5px;
+    }
+
+
+#footer {
+    background-color: black;
+    text-align: center;
+    color: rgb(168, 219, 219);
+    width: 100%;
+    padding: 50px;
+    margin-top: -180px ;
+}
+.meta-text{
+    font-style: italic;
+    color:grey;
+    padding-left: 15px;
+}
+.item.class{
+    Padding:10px;
+}
+.item-title{
+    padding-left: 15px;
+
+}
+.smaller-text{
+    padding-left: 15px;
+}
+
+.skills-item{
+    padding-left: 15px;
+    line-height: 30px;
+    font-size: 18px;
+}
+.contact-icons{
+letter-spacing: 15px;
+}
