@@ -28,6 +28,8 @@ header {
     background-image: url(./img/bg.jpg);
     height: 190px;
     width: 100vw;
+    box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
+
 }
  
 #navmenu {
@@ -77,6 +79,43 @@ nav a {
     margin-top: -50px;
 }
 
+.cart-myaccount{
+    display: inline-block;
+    margin-top: -90px;
+    float: right;
+    margin-right: -360px;
+
+}
+.cart-button{
+    background-color: #746149;
+    color: white;
+    font-family:'Montserrat', sans-serif; 
+    text-transform: uppercase;
+    border-radius: 2px;
+    border:0px;
+    padding: 15px 25px 15px 25px;
+    box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.2);
+    transition: all 0.5s ease-out;
+    margin-left: 15px;
+}
+
+.cart-button:hover{
+    background-color: white;
+    color:#746149;
+}
+.my-acc{
+ font-family:'Montserrat', sans-serif; 
+ padding: 15px 25px 15px 25px;
+background-color: transparent;
+border: 0;
+color: white;
+transform: all 0,3s ease-out;
+
+}
+.my-acc:hover{
+text-decoration: underline 1px #746149;
+opacity: 75%;}
+
 #search-form {
 	display: inline-block;
     font-family:  'Montserrat', sans-serif;
@@ -107,6 +146,10 @@ nav a {
 	font-size: 13px;
 	text-shadow: 0 1px 0 rgba(0, 5, 5, 0.3);
 	color: #fff;
+}
+#button-submit:hover{
+    color:#746149;
+    background: bisque;
 }
 
 
