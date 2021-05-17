@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap');
+
+/*
+Import two fonts, font-weight: 400
+font-family: 'Noto Sans', sans-serif;
+/* Remove default style for elements  */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+input, button, submit { border:none; background: none; } 
+a {
+    background-color: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    /* Using CSS variable to avoid copypasting values from one item to another */
+    --our-favorite-color: #00FA9A;
+    --our-second-favorite-color: #9a00fa;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* background-color: white; */
+}

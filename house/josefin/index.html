@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+      <title>My house</title>
+  </head>
+
+  <body>
+
+    <a-scene>
+     
+      
+        <a-box src="#boxTexture" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+      
+        <a-sky src="#skyTexture"></a-sky>
+      
+        <a-light type="ambient" color="#445451"></a-light>
+        <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      </a-scene>
+    <a-scene>
+        <a-entity environment="preset: dream; fog: 0.9; "></a-entity>
+        <a-box src="./archive/white-bricks.jpg"  position="0 2 -5" rotation="0 25" scale="3 2 3"></a-box>
+
+        <a-entity light="type:directional; castShadow:true;" position="1 0 0"></a-entity>
+<a-gltf-model src="tree.gltf" shadow="receive: true" position="5 -50 5"></a-gltf-model>
+       
+
+</a-scene>
+  </body>
+</html> -->
