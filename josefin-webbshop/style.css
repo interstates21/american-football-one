@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Montserrat:wght@200;500&display=swap');
 *{
     margin: 0;
-    padding: 0; }
+    padding: 0;
+
+}
 
 a{
     text-decoration: none;
@@ -9,6 +11,17 @@ a{
     font-family: 'Montserrat', sans-serif;
     padding-left: 25px;
          } 
+
+h1{ 
+    font-family: 'Dancing Script';
+}
+
+.h1-content{
+    font-size: 45px;
+    background-image: linear-gradient(to right, rgb(214, 184, 159), white);
+margin-bottom: 5px;
+padding-left: 5px;
+}
 body{
     background-color: antiquewhite;
     align-content: center;
@@ -19,12 +32,13 @@ header {
     height: 190px;
     width: 100vw;
     box-shadow: 0px 10px 16px 0px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+   
 
 }
 
  
 #navmenu {
-    width: 100%;
 	background: transparent;
 	color: #fff;
 	position: fixed;
@@ -61,12 +75,17 @@ nav li {
  
 nav a {
 	display: block;
-    padding: 0px 0px 0px 0px ;
+    padding: 0px ;
 	text-decoration: none;
+}
+
+nav a :active{
+    text-decoration: underline white;
 }
 
 .search{
     margin-top: -50px;
+    margin-right: 20px;
 }
 
 .cart-myaccount{
@@ -230,17 +249,17 @@ ul {
 
 
 #banner-1 {
-    width: 100vw;
-    height: 200px;
+    width: 100v;
+    height: 400px;
     margin-top: 5px;
-    background-image: url("https://wallpaperaccess.com/full/875264.jpg");
+    background-image: url("./img/Flowers3.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
     text-align: center;
     font-family: 'Dancing Script';
     color: white;
-    padding-top: 80px;
+    padding-top: 200px;
     font-size: 50px;
 }
 
@@ -281,8 +300,11 @@ ul {
     text-align-last: left;
 
 }
-.box{
-    background-color:#f4f4f4;
+.midsummer-box{
+    flex-direction: row;
+    /* align-items: center;
+    position: relative;
+    flex-wrap: wrap; */
     padding: 1px;
     margin-bottom: 10px;
     padding-left: 20px;
@@ -290,6 +312,21 @@ ul {
     width: 98%;
     border-radius: 5px;
     }
+
+    .midsummer-video{
+        display: flex;
+width: 300px;  
+padding-right: 20px; 
+flex: 1;
+ }
+
+    .midsummer-picture{
+        display: flex;
+        background-image: url(./img/07077ed4a22bb3ac632e5027732b3de1.jpg);
+    width: 300px;
+flex: 1;
+}
+
 
 @media only screen and (max-width:720px) {
 	nav ul {
