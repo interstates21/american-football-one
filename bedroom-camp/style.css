@@ -59,7 +59,100 @@ body {
 .small-window:hover .big-window {
     opacity: 100%;
     transition: all 0.8s;
-   
+}
 
 
+/* Albums */
+
+.albums {
+    margin-top: 30px;
+    width: 50%;
+    height: 600px;
+    display: flex;
+    border: 2px solid var(--our-second-favorite-color);
+}
+
+.album-card {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--our-favorite-color);
+    cursor: pointer;
+
+
+    /* Set position relative to the parent in order to calculate album-preview-card's position from album-card's edges */
+    position: relative;
+}
+
+.link-wrapper {
+    background-color: rgba(0,0,255,0.3);
+    width: 100px;
+    height: 100px;
+}
+
+.album-card:hover {
+    /* opacity: 0.7; */
+}
+
+.album-card:hover .album-preview-card {
+    display: block;
+}
+
+.album-preview-card {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    top: -420px;
+    left: -100px;
+    z-index: 999;
+}
+
+#preferences-button {
+
+    width: 100px;
+    height: 30px;
+    border-radius: 4px;
+    border: 2px solid var(--our-second-favorite-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--our-second-favorite-color);
+
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+}
+
+#preferences-button:hover {
+    background-color: var(--our-second-favorite-color);
+    color: #ddd;
+}
+
+#preferences-modal {
+    position: relative;
+    background-color: white;
+    position: fixed;
+    left: 25vw;
+    top: 25vh;
+    z-index: 9999;
+    
+    
+    border: 3px solid var(--our-second-favorite-color);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;;
+    width: 50vw;
+    height: 50vh;
+
+    display: none;
+}
+
+#close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
