@@ -6,30 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>flowershop</title>
-</head>
+</head><body>
 <header><div class="content-wrapper">
+    
+    <!-- <img id="rose-logo" src="./assets/rose-icon.svg" /> -->
+
 <h1 class="name">Flowery's</h1> <p class="small-text">-flowers for every occasion</p>
 
-    <div class="navmenu">
        <nav id="navbar">
           <ul class="navbar">
-             <li><a href="#">News</a></li>
-             <li class="bestseller"><a href="#">Bestsellers</a></li>
-             <li><a href="#">Campains</a></li>
-             <div class="dropdown">
-                <button class="dropbtn">Special occasions</button>
-                <div class="dropdown-content">
-                  <a href="#">Birthday</a>
-                  <a href="#">Wedding</a>
-                  <a href="#">Funeral</a>
-                  <a href="#">Baptism</a>
-                  <a href="#">Konfiramation</a>
-                  <a href="#">Get well</a></div>
-              </div>
-              <li><a href="#7">Cards</a></li>
-              <li><a href="#">Gifts</a></li>
-             <li><a href="#">Inspiration</a></li>
-          </ul>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Bestsellers</a></li>
+                <li><a href="#">Campains</a></li>
+                <li><a href="#">Special occasions</a>
+                   <ul>
+                      <li><a href="#">Birthday</a></li>
+                      <li><a href="#">Wedding</a></li>
+                      <li><a href="#">Funeral</a></li>
+                      <li><a href="#">Baptism</a></li>
+                      <li><a href="#">Konfiramation</a></li>
+                      <li><a href="#">Get well</a></li>
+                   </ul>
+                   </li>
+                 <li><a href="#">Cards</a></li>
+                 <li><a href="#">Gifts</a></li>
+                <li><a href="#">Inspiration</a></li>
+             </ul>
           </nav>
        <div class="search">
         <form action="/search" autocomplete="off" id="search-form" method="get">
@@ -43,17 +45,24 @@
 
        </div>
     </div>
-     </div>
 </header>
 
-<body>
 
     <div id="banner-1">
      <h1 class="banner-text1">Design your own bouquet</h1>
      <button class="banner-button">Start here</button>
     </div>
 
-    <div id="page-container">
+    <div class="banner-wrapper">
+        <img id="banner2" src="./img/cards.jpg" /><button class="btn1">Giftcards</button>
+
+        <img id="banner3" src="./img/wedding.jpg" /><button class="btn2">Wedding</button>
+
+       <img id="banner4" src="./img/giftbasket.jpg" /><button class="btn3">Giftbaskets</button>
+
+    </div>
+
+    <div class="page-container">
     <div class="-midsummer-box">
 <h1 class="h1-content">Make youre own midsummer flower crown</h1>
        <div class="midsummer-video"> 
