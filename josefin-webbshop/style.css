@@ -23,7 +23,7 @@ margin-bottom: 5px;
 padding-left: 5px;
 }
 body{
-    background-color: antiquewhite;
+    background-color:#FDF6F0;
     align-content: center;
 }
 
@@ -136,10 +136,6 @@ opacity: 75%;}
     background: bisque;
 }
 
-#navbar{
-   position: ; 
-}
-
 #navbar ul {
     display: flex;    
     width: 100%;
@@ -226,7 +222,7 @@ padding-left: 30px !important;
     background-color: #dfd1c0;
     opacity: 0.9;
     filter: alpha(opacity=90);
-    color: white;
+    color:#000;
     font-size: 26px;
     width: 300px;
     padding: 15px 50px;
@@ -246,7 +242,7 @@ padding-left: 30px !important;
     background-color: #dfd1c0;
     opacity: 0.9;
     filter: alpha(opacity=90);
-    color: white;
+    color: #000;
     font-size: 26px;
     width: 300px;
     padding: 15px 50px;
@@ -265,7 +261,7 @@ padding-left: 30px !important;
     background-color: #dfd1c0;
     opacity: 0.9;
     filter: alpha(opacity=90);
-    color: white;
+    color: #000;
     font-size: 26px;
     width: 300px;
     padding: 15px 50px;
@@ -276,13 +272,17 @@ padding-left: 30px !important;
   }
   
   .banner-wrapper .btn1:hover {
-    background-color: rgb(112, 94, 82)
+    background-color: rgb(112, 94, 82);
+    color: ivory;
+  
   }
   .banner-wrapper .btn2:hover {
     background-color: rgb(112, 94, 82);
+    color: ivory;
   }
   .banner-wrapper .btn3:hover {
     background-color: rgb(112, 94, 82);
+    color: ivory;
   }
 
 #banner-1 {
@@ -329,8 +329,8 @@ padding-left: 30px !important;
 
 
 .page-container {
-    margin: 15%;
-    margin-top: 10px;
+    margin: 3%;
+    margin-top: 45px;
     background-color: #ffffff;
     padding: 30px;
     border-radius:10px ;
@@ -364,6 +364,27 @@ flex: 1;
 flex: 1;
 }
 
+.flex-container {
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 90px;
+    line-height: 30px;
+  }
+  
+
+footer{
+    background-image: url(./img/bg.jpg);
+    height: 300px;
+    width: 100vw;
+  
+}
+.flex-container ul{
+    
+}
 
 @media only screen and (max-width:720px) {
 	nav ul {
@@ -411,3 +432,14 @@ flex: 1;
 	height: 50px;
     padding: 10px;
 	margin: 5px 0; }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+      }
+      
+      @media (max-width: 800px) {
+        .flex-container {
+          flex-direction: column;
+        }
+      }
