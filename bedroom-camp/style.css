@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap');
 
 /*
 Import two fonts, font-weight: 400
@@ -25,7 +24,6 @@ a {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
     /* background-color: white; */
 }
 .users {
@@ -39,7 +37,7 @@ body {
     
 }
 .big-window {
-    opacity: 0;
+    display: none;
     width: 100px;
     height: 100px;
     background-color: chartreuse;
@@ -57,8 +55,7 @@ body {
     
 }
 .small-window:hover .big-window {
-    opacity: 100%;
-    transition: all 0.8s;
+    display: block; 
 }
 
 
@@ -67,7 +64,6 @@ body {
 .albums {
     margin-top: 30px;
     width: 50%;
-    height: 600px;
     display: flex;
     border: 2px solid var(--our-second-favorite-color);
 }
