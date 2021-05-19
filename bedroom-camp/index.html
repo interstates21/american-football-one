@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="./style.css" rel="stylesheet" />
     <script>
         // Add a listener for page fully loaded
@@ -29,23 +31,33 @@
                 const prefModal = document.getElementById('preferences-modal');
                 prefModal.style.display = 'none';
             })
+            // Usermodal stuff
+            const userButton = document.getElementById('user-button');
 
+            userButton.addEventListener('click', () => {
+
+                const userModal = document.getElementById('user-modal');
+                userModal.style.display = 'block';
+            })
         })
     </script>
 </head>
+
 <body>
-    <header style="width: 100%; height: 80px; background: #A3B8D7; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; box-sizing: border-box;">
+    <header
+        style="width: 100%; height: 80px; background: #A3B8D7; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; box-sizing: border-box;">
         <div style="display: flex; align-items: center;">
-        <img src="./assets/logo.svg" alt="logo" style="margin-right: 20px;"/>
-        <h1 style="color: white; ">
-            Bedroom Camp
-            
-        </h1>
+            <img src="./assets/logo.svg" alt="logo" style="margin-right: 20px;" />
+            <h1 style="color: white; ">
+                Bedroom Camp
+
+            </h1>
         </div>
 
         <div id="preferences-button">
             Preferences
         </div>
+        <button type="button" id="user-button" class="btn btn-secondary btn-sm">User button</button>
     </header>
     <main style=" margin: 0 10%; padding: 40px 20px; background: #f2f2f2">
 
@@ -57,73 +69,90 @@
 
             <form>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+            </form>
 
         </div>
 
+        <div id="user-modal">
+            <div class="card" style="width: 18rem;">
+                <img src="./assets/jp.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Follow User</a>
+                </div>
+            </div>
 
+
+
+        </div>
         <div>
             <h2 style="margin-bottom: 2px;">
                 American Football (LP3)
             </h2>
             <h6>
-                by <a href="https://americanfootball.bandcamp.com/album/american-football-lp3" target="_blank">American Footbal</a>
+                by <a href="https://americanfootball.bandcamp.com/album/american-football-lp3" target="_blank">American
+                    Footbal</a>
             </h6>
         </div>
         <div class="player" style="display: flex; align-items: center;">
             <div style="border-radius: 2px;
             width: 60px; height: 60px; display: flex; padding: 10px;
             align-items: center; justify-content: center;">
-                <img src="./assets/play.svg" width="100%"/>
+                <img src="./assets/play.svg" width="100%" />
             </div>
-            <div style="border: 1px solid rgba(0,0,0, 0.2); width: 250px; height: 20px; border-radius: 2px; padding: 1px; box-sizing: border-box;">
+            <div
+                style="border: 1px solid rgba(0,0,0, 0.2); width: 250px; height: 20px; border-radius: 2px; padding: 1px; box-sizing: border-box;">
                 <div style="width: 50%; height: 100%; background-color: plum; border-radius: 3px;">
 
                 </div>
             </div>
         </div>
         <div class="users">
-            
-                <div class="small-window">
-                    <div class="big-window">
-                        <div class="avatar"></div>
-                        <div class="name"></div>
-                    </div>
 
+            <div class="small-window">
+                <div class="big-window">
+                    <div class="avatar"></div>
+                    <div class="name"></div>
                 </div>
 
+            </div>
 
-                <div class="small-window">
-                    <div class="big-window">
-                        <div class="avatar"></div>
-                        <div class="name"></div>
-                    </div>
 
+            <div class="small-window">
+                <div class="big-window">
+                    <div class="avatar"></div>
+                    <div class="name"></div>
                 </div>
+
+            </div>
         </div>
 
         <div class="albums">
             <!-- Card 1 -->
-            
-            <div class="album-card" style='background: url("https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center / contain no-repeat;'>
+
+            <div class="album-card"
+                style='background: url("https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center / contain no-repeat;'>
                 <a href="htpps://google.com" target="_blank">
                     <div class="link-wrapper"></div>
                 </a>
                 <div class="album-preview-card">
-                    <img src="https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="American Football Image" width="100%"/>
+                    <img src="https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="American Football Image" width="100%" />
                     <h2>
                         (LP5) - LIMITED EDITION
                     </h2>
@@ -133,9 +162,11 @@
                 </div>
             </div>
             <!-- Card 2 -->
-            <div class="album-card" style='background: url("https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center / contain no-repeat;'>
+            <div class="album-card"
+                style='background: url("https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80") center / contain no-repeat;'>
                 <div class="album-preview-card">
-                    <img src="https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="American Football Image" width="100%"/>
+                    <img src="https://images.unsplash.com/photo-1485313260896-6e6edf486858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="American Football Image" width="100%" />
                     <h2>
                         (LP5) - LIMITED EDITION
                     </h2>
@@ -144,9 +175,10 @@
                     </p>
                 </div>
             </div>
-           
+
         </div>
 
     </main>
 </body>
+
 </html>
