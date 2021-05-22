@@ -4,8 +4,8 @@ window.addEventListener("load", () => {
 
     const blackState = {
         // id: "black",
-        backgroundColor: baloonRef.style.backgroundColor,
-        width: parseInt(baloonRef.style.width),
+        backgroundColor: 'black',
+        width: 80,
    
     }
     const bluekState = {
