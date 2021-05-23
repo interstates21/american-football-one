@@ -36,15 +36,17 @@ h1 {
 }
 #grey {
     background-color: rgb(189, 182, 182);
-    border: rgb(107, 107, 107) solid 5px;
+    border: rgb(107, 107, 107) solid 0px;
 }
 #brown {
     background-color: rgb(163, 107, 93);
     opacity: 80%;
+    border: rgb(94, 63, 55) solid 0px;
 }
 #yellow {
     background-color: rgb(255, 233, 106);
     opacity: 80%;
+    border: rgb(255, 185, 55) solid 0px;
 }
 
 #second-question {
@@ -71,6 +73,10 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+#less-then-30, #more-then-30 {
+    border :  rgb(142, 255, 49) solid 0px;
+}
+
 #answer-1, #answer-2, #answer-3, #answer-4,#answer-5, #answer-6,#answer-7, #answer-8 {
     width: 400px;
     height: 350px;
