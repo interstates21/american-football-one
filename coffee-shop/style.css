@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    margin: 0px ;
+    padding: 0px ;
+}
+body {
+    background-color: blanchedalmond;
+}
+nav {
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   color: rgb(254, 90, 61);
+}
+nav > h1 {
+    text-transform: uppercase;
+    font-size: 50px;
+}
+.background-1 {
+    background-color: rgb(254, 90, 61);
+    padding: 20px 200px;
+}
+.header-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.coffee-img {
+    height: 500px;
+    margin: 10px 0;
+}
+.background-2 {
+    background-color: rgb(255, 198, 168);
+    padding: 20px 200px;
+}
+.menu {
+display: flex;
+justify-content: center;
+flex-wrap:wrap;
+}
+.menu > p {
+    font-size: 90px;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    position: absolute;
+    left: 10px;
+    top: 9em;
+}
+.box{
+    width: 250px;
+    height: 250px;
+    border: 3px solid rgb(252, 237, 189);
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.no1 {
+    background-image: url(https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNvZmZlZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60);
+    background-position: center;
+    background-size: 320px;
+}
+.no2 {
+    background-image: url(https://images.unsplash.com/photo-1525351484163-7529414344d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhZmUlMjBmb29kc3xlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
+    background-position: center;
+    background-size: 320px;
+}
+.no3 {
+    background-image: url(https://images.unsplash.com/photo-1618799805265-4f27cb61ede9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE4OHx4alBSNGhsa0JHQXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60);
+    background-position: center;
+    background-size: 320px;
+}
+.no4 {
+    background-image: url(https://images.unsplash.com/photo-1618654608146-b78695ac6248?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIwM3x4alBSNGhsa0JHQXx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
+    background-position: center;
+    background-size: 320px;
+}
+.img-text {
+    font-size: 30px;
+    padding-top: 3.5em;
+    color: #fff;
+}
+.box:hover {
+   opacity: 0.5;
+}
+.background-3 {
+background-color: rgb(73, 146, 255);
+padding: 25px 0;
+}
+.loyalty-cards {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.left {
+    flex:1;
+}
+#cards-img {
+    width: 600px;
+}
+.right {
+    flex: 1;
+}
+ .right > h3 {
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+#cards {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    font-family: 'Open Sans', sans-serif;
+}
+#btnCards {
+    text-align: center;
+    width: 150px;
+    padding: 20px 0;
+    background-color: rgb(255, 198, 168);
+    position: relative;
+    top: 30px;
+    left: 250px;
+    cursor: pointer;
+      border:3px solid transparent;
+}
+#btnCards:hover {
+    border:3px dotted blanchedalmond;
+}
+.background-4 {
+    background-color: rgb(254, 90, 61);
+    padding: 25px 0;
+}
+.location {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.loc-left {
+    flex: 1;
+}
+ .loc-left > h3 {
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.cities {
+    list-style-type: none;
+    position: absolute;
+    left:280px;
+    cursor: pointer;
+}
+.cities > li {
+    font-size: 20px;
+    line-height: 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+.loc-right {
+    flex:1;
+    display: flex;
+    justify-content: flex-start;
+}
+#house-img {
+    width: 400px;
+}
+footer {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 10em;
+    line-height: 25px;
+}
+/*
+https://images.unsplash.com/photo-1592663527144-3afb8d150556?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGNhZmUlMjBmb29kc3xlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60*/
