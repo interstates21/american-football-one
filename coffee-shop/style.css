@@ -127,6 +127,7 @@ padding: 25px 0;
     top: 30px;
     left: 250px;
     cursor: pointer;
+      border:3px solid transparent;
 }
 #btnCards:hover {
     border:3px dotted blanchedalmond;
