@@ -105,7 +105,7 @@
         const totemMessageElement = document.querySelector('#answer-message');
     
         totemMessageElement.innerHTML = `Congratulations!
-        <br /> <span style="background: yellow;">This</span> is your totem animal!`
+        <br /> This is your totem animal!`
         // On submit button clicked it updated the final messsage from 'Nothing to' to Congrat...
 
         const createdAnimal = document.createElement('img');
