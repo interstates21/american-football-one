@@ -97,7 +97,7 @@
         // !selectedColor is similar to selectedColor === null
         if (!selectedColor || !selectedAge) {
             alert('Select age and color 👿');
-            // Stops this function if some values has not selected
+            // Stops this function if some values hasn't been selected yet
             return ;
         }
 
