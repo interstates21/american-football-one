@@ -23,7 +23,6 @@
         }
     }
 
-
     // Create a function to reuse this code for every color button
     const setAllButtonsBorderToNone = () => {
         const allColorButtons = document.querySelectorAll('.color');
@@ -88,7 +87,7 @@
    })
 
              
-    const submitButton = document.querySelector('button[type="submit"]');
+    const submitButton = document.querySelector('#submit');
 
 
     submitButton.addEventListener('click', (event) => {
