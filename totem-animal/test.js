@@ -33,7 +33,7 @@
         // allColorButtons[3].style.border = 'none'
         let index = 0;
         while (index < allColorButtons.length) {
-            //Repeat a code for all the elements in the array
+            // Repeat the code for all elements in an array
             allColorButtons[index].style.border = 'none';
             index = index + 1;
         }
@@ -94,11 +94,10 @@
         event.preventDefault(); // Prevent any strange browser default behaviour (needed for submit buttons)
         console.log('clicked submit button')
 
-
         // !selectedColor is similar to selectedColor === null
         if (!selectedColor || !selectedAge) {
             alert('Select age and color 👿');
-            // Stops this function if something has not selected
+            // Stops this function if some values has not selected
             return ;
         }
 
@@ -109,18 +108,18 @@
         // On submit button clicked it updated the final messsage from 'Nothing to' to Congrat...
 
         const createdAnimal = document.createElement('img');
+        // It creates an empty html element, but hasn't yet insert it into the HTML tree
 
         // STATES.under30.grey
         createdAnimal.src = STATES[selectedAge][selectedColor];
-        // It creates and empty html element, but doesn't put it to HTML
 
         const pictureHolderElement = document.querySelector('#totem');
 
-        // Remove all of the children (pictures) from our #totem element
+        // Remove all the children (pictures) from our #totem element
         pictureHolderElement.innerHTML = '';
     
+        // It adds the img element into the #totem
         pictureHolderElement.appendChild(createdAnimal);
-        // It injects an img element into the #totem
     })
 
 
