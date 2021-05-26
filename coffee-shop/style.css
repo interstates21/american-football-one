@@ -59,22 +59,22 @@ flex-wrap:wrap;
     padding: 10px;
     cursor: pointer;
 }
-.no1 {
+.cardBg1 {
     background-image: url(https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNvZmZlZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60);
     background-position: center;
     background-size: 320px;
 }
-.no2 {
+.cardBg2 {
     background-image: url(https://images.unsplash.com/photo-1525351484163-7529414344d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhZmUlMjBmb29kc3xlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
     background-position: center;
     background-size: 320px;
 }
-.no3 {
+.cardBg3 {
     background-image: url(https://images.unsplash.com/photo-1618799805265-4f27cb61ede9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE4OHx4alBSNGhsa0JHQXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60);
     background-position: center;
     background-size: 320px;
 }
-.no4 {
+.cardBg4 {
     background-image: url(https://images.unsplash.com/photo-1618654608146-b78695ac6248?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDIwM3x4alBSNGhsa0JHQXx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60);
     background-position: center;
     background-size: 320px;
@@ -126,9 +126,9 @@ padding: 25px 0;
     position: relative;
     top: 30px;
     left: 250px;
-    cursor: pointer;
 }
 #btnCards:hover {
+    cursor: pointer;
     border:3px dotted blanchedalmond;
 }
 .background-4 {
