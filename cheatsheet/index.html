@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheatsheet</title>
+    <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+        <h1>Welcome to Cheatsheet</h1>
+
+        <section id="flexbox">
+            <h2>
+                Flexbox
+            </h2>
+
+            <div class="wrapper flex-row">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+
+            <div class="wrapper flex-col">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item move-me-to-end"></div>
+            </div>
+
+            <div class="wrapper flex-col-end">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+
+
+            <div class="big-center-container">
+                <div class="small-center-container">
+                    <div class="centered-item"></div>
+                </div>
+            </div>
+
+
+            <div class="wrapper flex-row-end">
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+                <div class="flex-item"></div>
+            </div>
+
+
+            <div class="wrapper flex-row">
+                <div class="flex-sidebar"></div>
+                <div class="flex-main"></div>
+            </div>
+
+
+            <div class="wrapper flex-row">
+                <!-- Share the container equaly among sibling -->
+                <div class="flex-sidebar"></div>
+                <div class="flex-sidebar"></div>
+            </div>
+
+            <div class="wrapper flex-row">
+                <!-- Occupy the whole container cause there are no siblings-->
+                <div class="flex-sidebar"></div>
+            </div>
+
+
+        </section>
+
+
+        <section id="strange-elements">
+            <!-- <h2>
+                Flexbox
+            </h2> -->
+            <div class="flex-row">
+                <div class="margin10 strange-circle">
+
+                </div>
+                <div class="margin10 strange-circle-dashed">
+
+                </div>
+                <div class="margin10 strange-circle-shadow">
+
+                </div>
+                <div class="margin10 strange-circle-shadow-2">
+
+                </div>
+                <div class="margin10 strange-circle-inner-shadow">
+
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="margin10 half-border">
+                </div>
+                <div class="margin10 half-border-circle">
+                </div>
+                <div class="margin10 half-border-rounded">
+                </div>
+                <div>
+
+                    <div class="flex-row">
+                        <div class="simple-box margin10 red-word"></div>
+                        <div class="simple-box margin10 red-hash"></div>
+                        <div class="simple-box margin10 red-rgb"></div>
+                        <div class="simple-box margin10 red-semi-transparent"></div>
+                    </div>
+
+                    <div class="flex-row black">
+                        <div class="simple-box margin10 white-word"></div>
+                        <div class="simple-box margin10 white-hash"></div>
+                        <div class="simple-box margin10 white-rgb"></div>
+                        <div class="simple-box margin10 white-semi-transparent"></div>
+                    </div>
+        </section>
+
+        <section>
+            <h2> Form </h2>
+
+            <form class="search-container" action="https://www.google.com/search" target="_blank">
+                <input type="text" name="q" placeholder="Search" />
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+            </form>
+        </section>
+
+        <section id="Hover">
+            <h2> Hover </h2>
+
+            <div class="flex-row">
+                <div class="margin10 hover-scale"></div>
+                <div class="margin10 hover-rotate"></div>
+            </div>
+
+         </section>
+
+         <section id="gradients">
+
+            <div class="margin10 gradient1"></div>
+            <div class="margin10 gradient2"></div>
+        </section>
+
+
+        <section id="responsive">
+            <h2>Responsive</h2>
+
+            <div class="responsive-container">
+                <div class="responsive-card"></div>
+                <div class="responsive-card"></div>
+                <div class="responsive-card"></div>
+                <div class="responsive-card"></div>
+                <div class="responsive-card"></div>
+                <div class="responsive-card"></div>
+            </div>
+
+        </section>
+
+        <section id="positioning">
+            <h2>Positioning</h2>
+
+            <div class="pos-fixed">☠️</div>
+            <div class="pos-absolute">👾</div>
+
+            <div class="relative-parent">
+                <div class="absolute-item-inside-relative-parent">👾</div>
+            </div>
+
+            <div class="pos-flex-container">
+                <div class="pos-flex-item move-1"></div>
+                <div class="pos-flex-item move-2"></div>
+                <div class="pos-flex-item move-3"></div>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

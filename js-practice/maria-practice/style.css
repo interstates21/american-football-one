@@ -1,0 +1,9 @@
+#baloon {
+    position: absolute;
+    left: calc(50vw - 40px);
+    top: calc(50vh - 150px);
+    width: 80px;
+    height: 300px;
+    background-color: black;
+    border-radius: 40%;
+}

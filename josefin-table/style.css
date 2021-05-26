@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: white;
+}
+
+#head{
+    font-size: 50px;
+    margin: 50px 20px 20px 30px;
+    padding-left: 20px;
+    background-color: pink;
+    box-shadow: #c2b7b7 0px 2px 4px 2px;
+}
+
+
+
+#container, #bottom-container{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+#bottom-container{
+    margin-left: 308px;
+}
+
+
+.panel1, .panel2, .panel3, .panel4{
+ box-sizing: border-box;
+ transition: 0.1s;
+ transition: ease-in-out;
+}
+ .panel1 :hover, .panel2 :hover, .panel3 :hover, .panel4 :hover{
+opacity: 80%; 
+
+}
+
+
+
+
+/*boxes*/
+
+.empty-box, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10{
+   width: 85px;
+   height: 85px;
+    padding: 5px 5px 10px 10px;
+    color: white;
+    border: white 1px solid;
+    font-size: 40px;
+    
+   
+    
+}
+
+/*text */
+
+.atomic-number{
+    font-size: 12px;
+    float: right;
+}
+
+.atomic-name{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.atomic-name-2{
+    margin-top: 40px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+.atomic-weight{
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 100;
+}
+.empty-box{
+   height: 85px;
+   width: 85px;
+}
+.box1{
+    background-color: rgb(104, 72, 104);
+}
+.box2{
+    background-color: teal;
+}
+.box3 {
+    background-color: rgb(59, 59, 102);
+}
+.box4 {
+background-color: rgb(124, 124, 124);
+}
+.box5 {
+    background-color: rgb(72, 112, 145);
+}
+.box6 {
+    background-color: rgb(77, 179, 91);
+}
+.box7 {
+    background-color: rgb(192, 89, 89);  
+}
+.box8 {
+    background-color: rgb(202, 110, 76);
+}
+.box9 {
+    background-color: plum;
+}
+.box10 {
+    background-color: rebeccapurple;
+}
+
+
