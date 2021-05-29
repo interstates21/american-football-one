@@ -1,4 +1,4 @@
-#materials {
+#all-materials {
     display: flex;
 }
 
@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
+    position: relative;
 }
 
 .material svg {
@@ -18,13 +19,11 @@
     height: 40px;
 }
 
-.material-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 .material-label {
     margin-top: 6px;
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }

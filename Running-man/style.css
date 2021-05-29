@@ -1,0 +1,127 @@
+.man{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    left: 0px;
+}
+.head{
+    width: 100px;
+    height: 100px;
+    background-color:cornflowerblue;
+    border-radius: 50%;
+}
+.upper-body{
+    width: 120px;
+    height: 180px;
+    background-color:aquamarine; 
+    display: flex;
+    flex-direction: row;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.arm{
+    width: 40px;
+    height: 160px;
+    background-color:orange; 
+    border-radius: 20px;
+    /*transform: rotate(-20deg);*/
+}
+.upper-arm {
+    width: 40px;
+    height:100px;
+    background-color:orange; 
+    border-radius: 20px;
+    position: absolute;
+    top: 160px;
+    transform: rotate(-100deg);
+    transform-origin: top;
+}
+.left{
+    position: relative;
+    left: 40px;
+}
+.right{
+    position: relative;
+    left: 20px;
+    z-index: -1;
+}
+.lower-body{
+    width: 120px;
+    height: 100px;
+    background-color:gainsboro; 
+    display: flex;
+    flex-direction: row;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.leg {
+    width: 50px;
+    height: 170px;
+    background-color:plum; 
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.lower-leg {
+    width: 50px;
+    height: 170px;
+    background-color:plum; 
+    border-radius: 20px;
+    position: absolute;
+    top: 160px;
+    transform: rotate(30deg);
+    transform-origin: top;
+}
+
+.left {
+    animation-name: runLeft;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: rotate(0deg);
+    transform-origin: top;
+}
+
+@keyframes runLeft {
+    0% {
+        transform:rotate(30deg)
+    }
+    50% {
+        transform:rotate(-50deg)
+    }
+    100% {
+        transform:rotate(30deg)
+    }
+}
+.right {
+    animation-name: runRight;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: rotate(0deg);
+    transform-origin: top;
+}
+@keyframes runRight {
+    0% {
+        transform:rotate(-50deg)
+    }
+    50% {
+        transform:rotate(30deg)
+    }
+    100% {
+        transform:rotate(-50deg)
+    }
+}
+.man {
+    animation-name:moveMan;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes moveMan {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: 1000px;
+    }
+}
