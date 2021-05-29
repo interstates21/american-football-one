@@ -27,3 +27,43 @@
     width: 100%;
     text-align: center;
 }
+
+#craft-container {
+    display: flex;
+    margin-top:  50px;
+}
+
+
+#button {
+    margin-top:  50px;
+    margin-left: 20px;
+}
+
+.craft-element {
+    background-color: #eee;
+    width: 70px;
+    height: 70px;
+    margin: 15px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.craft-selected {
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+.craft-available {
+    background-color: #eef;
+}
+
+
+.craft-label {
+    margin-top: 6px;
+    position: absolute;
+    bottom: -50px;
+    width: 75%;
+    left: 0;
+    text-align: left;
+    font-size: 10px;
+}
