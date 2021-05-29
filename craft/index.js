@@ -46,10 +46,14 @@ while (index < MATERIALS_DATA.length){
     // `
 
     // Manually add elements to a created element 
-    const nameOfMaterial = document.createElement('p');
-    nameOfMaterial.innerHTML = MATERIALS_DATA[index].name+ ":" + MATERIALS_DATA[index].amount;
-    nameOfMaterial.className = 'material-label';    
-    createdMaterialDiv.appendChild(nameOfMaterial);
+    const labelElement = document.createElement('p');
+    const nameFromData = MATERIALS_DATA[index].name;
+    const amountFromData = MATERIALS_DATA[index].amount;
+
+    labelElement.innerHTML = nameFromData + ":" + amountFromData; // Add three string
+    labelElement.innerHTML = `${nameFromData}:${amountFromData}` // Inject variable into a string
+    labelElement.className = 'material-label';    
+    createdMaterialDiv.appendChild(labelElement);
 
     index++
 }
