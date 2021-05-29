@@ -34,10 +34,12 @@ const RECIPES = [
         name: 'Cosmic Egg',
         iconPath: './pics/cosmic-egg.svg',
         material: 'Wood',
-        amount: 20
+        amount: 200
 
     },
 ]
+
+
 
 const allMaterials = document.querySelector('#all-materials');
 
@@ -90,15 +92,24 @@ craftElement.className='craft-element'
 craftElement.innerHTML= `<img src="${RECIPES[i].iconPath}" />
 <p class="craft-label"> ${RECIPES[i].material} ${RECIPES[i].amount}</p>`
 
+const materialWichWeNeed = RECIPES[i].material; 
 
-
-if (MATERIALS_DATA.material === RECIPES.material){
+if ( MATERIALS_DATA[materialWichWeNeed].amount >= RECIPES[i].amount  )
+{
+    craftElement.className='craft-element craft-available'   
+}
+else {
     craftElement.className='craft-element'
 }
-else 
-{
-    craftElement.className='craft-element craft-available' 
-}
+
+
+//  (RECIPES.material === "wood" < ){
+//     craftElement.className='craft-element'
+// }
+// else 
+// {
+//     craftElement.className='craft-element craft-available' 
+// }
 
 craftContainer.appendChild(craftElement)
 i++
