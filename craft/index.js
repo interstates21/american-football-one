@@ -1,12 +1,12 @@
 const MATERIALS_DATA = [
     {
         name: 'Wood',
-        amount: 2,
+        amount: 20,
         iconPath: './pics/wood.svg'
     },
     {
         name: 'Iron',
-        amount: 1,
+        amount: 10,
         iconPath: './pics/iron.svg'
     },
 ]
@@ -15,12 +15,15 @@ const RECIPES = [
     {
         name: 'Sabre',
         iconPath: './pics/sparkling-sabre.svg',
-        iron: 1,
+        material: 'Iron',
+        amount: 1
     },
     {
         name: 'Cosmic Egg',
         iconPath: './pics/cosmic-egg.svg',
-        iron: 90,
+        material: 'Wood',
+        amount: 20
+
     },
 ]
 
@@ -50,7 +53,7 @@ while (index < MATERIALS_DATA.length){
     const nameFromData = MATERIALS_DATA[index].name;
     const amountFromData = MATERIALS_DATA[index].amount;
 
-    labelElement.innerHTML = nameFromData + ":" + amountFromData; // Add three string
+    // labelElement.innerHTML = nameFromData + ":" + amountFromData; // Add three string
     labelElement.innerHTML = `${nameFromData}:${amountFromData}` // Inject variable into a string
     labelElement.className = 'material-label';    
     createdMaterialDiv.appendChild(labelElement);
@@ -60,10 +63,28 @@ while (index < MATERIALS_DATA.length){
 
 
 
+let i=0;
 
-{/* <div id="craft-container">
-<div class="craft-element craft-available">
-    <img src="./pics/sparkling-sabre.svg" />
-    <p class="craft-label">Wood: 4, Iron: 2</p>
-</div>
-</div> */}
+while (i < RECIPES.length){
+    const craftContainer = document.getElementById('craft-container')
+const craftElement = document.createElement('div')
+craftElement.className='craft-element'
+craftElement.innerHTML= `<img src="${RECIPES[i].iconPath}" />
+<p class="craft-label"> ${RECIPES[i].material} ${RECIPES[i].amount}</p>`
+
+
+
+if (MATERIALS_DATA.material === RECIPES.material){
+    craftElement.className='craft-element'
+}
+else 
+{
+    craftElement.className='craft-element craft-available' 
+}
+q++
+
+craftContainer.appendChild(craftElement)
+i++
+}
+ 
+
