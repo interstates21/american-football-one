@@ -47,12 +47,15 @@ while (index < MATERIALS_DATA.length){
 
     // Manually add elements to a created element 
     const nameOfMaterial = document.createElement('p');
-    nameOfMaterial.innerHTML =MATERIALS_DATA[index].name;
+    nameOfMaterial.innerHTML = MATERIALS_DATA[index].name+ ":" + MATERIALS_DATA[index].amount;
     nameOfMaterial.className = 'material-label';    
     createdMaterialDiv.appendChild(nameOfMaterial);
 
     index++
 }
+
+
+
 
 {/* <div id="craft-container">
 <div class="craft-element craft-available">
