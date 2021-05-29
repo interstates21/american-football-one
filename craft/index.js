@@ -1,15 +1,27 @@
-const MATERIALS_DATA = [
-    {
-        name: 'Wood',
+// We want to have this notation MATERIALS_DATA.Wood.amount, but it's impossible for arrays
+// const MATERIALS_DATA = [
+//     {
+//         name: 'Wood',
+//         amount: 20,
+//         iconPath: './pics/wood.svg'
+//     },
+//     {
+//         name: 'Iron',
+//         amount: 10,
+//         iconPath: './pics/iron.svg'
+//     },
+// ]
+
+const MATERIALS_DATA = {
+    'Wood': {
         amount: 20,
         iconPath: './pics/wood.svg'
     },
-    {
-        name: 'Iron',
+    'Iron': {
         amount: 10,
         iconPath: './pics/iron.svg'
-    },
-]
+    }
+}
 
 const RECIPES = [
     {
@@ -31,14 +43,21 @@ const allMaterials = document.querySelector('#all-materials');
 
 let index = 0;
 
-while (index < MATERIALS_DATA.length){
+console.log('MATERIALS_DATA: ', MATERIALS_DATA)
+const translateObjectIntoArray = Object.keys(MATERIALS_DATA);
+
+console.log('translateObjectIntoArray: ', translateObjectIntoArray)
+
+while (index < translateObjectIntoArray.length){
+    const nameOfMaterial = translateObjectIntoArray[index]; // Wood
+
     const createdMaterialDiv = document.createElement('div');
     createdMaterialDiv.className = 'material';
 
     allMaterials.appendChild(createdMaterialDiv);
 
     const image = document.createElement('img');
-    image.src =MATERIALS_DATA[index].iconPath;
+    image.src = MATERIALS_DATA[nameOfMaterial].iconPath;
     createdMaterialDiv.appendChild(image);
 
     // String literal allows to pass a JS string variable into a string
@@ -50,11 +69,10 @@ while (index < MATERIALS_DATA.length){
 
     // Manually add elements to a created element 
     const labelElement = document.createElement('p');
-    const nameFromData = MATERIALS_DATA[index].name;
-    const amountFromData = MATERIALS_DATA[index].amount;
+    const amountFromData = MATERIALS_DATA[nameOfMaterial].amount;
 
     // labelElement.innerHTML = nameFromData + ":" + amountFromData; // Add three string
-    labelElement.innerHTML = `${nameFromData}:${amountFromData}` // Inject variable into a string
+    labelElement.innerHTML = `${nameOfMaterial}:${amountFromData}` // Inject variable into a string
     labelElement.className = 'material-label';    
     createdMaterialDiv.appendChild(labelElement);
 
@@ -81,7 +99,6 @@ else
 {
     craftElement.className='craft-element craft-available' 
 }
-q++
 
 craftContainer.appendChild(craftElement)
 i++
