@@ -1,6 +1,6 @@
 
 
-const materials = [
+const CRAFT_DATA = [
     {
         name: 'Wood',
         amount: 2,
@@ -12,9 +12,54 @@ const materials = [
         iconPath: './pics/iron.svg'
     },
 ]
+const allMaterials = document.querySelector('#all-materials');
+let index = 0;
+
+while (index<CRAFT_DATA.length){
+    const newMaterial2 = document.createElement('div');
+    newMaterial2.className = 'material';
+
+    allMaterials.appendChild(newMaterial2);
+
+    const image = document.createElement('img');
+    image.src =CRAFT_DATA[0].iconPath;
+    newMaterial2.appendChild(image);
+
+    const nameOfMaterial = document.createElement('p');
+    nameOfMaterial.innerHTML =CRAFT_DATA[index].name;
+    nameOfMaterial.className = 'material-label';    
+    allMaterials.appendChild(nameOfMaterial);
+
+    index++
+}
 
 
-const materialsElement = document.querySelector('#materials')
+
+
+
+
+
+
+
+
+
+
+
+
+// while(index<materials.length){
+
+//     const newMaterial2 = document.createElement('div')
+//     newMaterial2.className = 'material'
+
+
+//     materialsElement.appendChild(newMaterial2);
+//     newMaterial2.innerHTML =materials[index].name
+
+//     index++
+// }
+
+
+
 
 
 // let i = 0;
@@ -58,16 +103,3 @@ const materialsElement = document.querySelector('#materials')
 
 // newMaterial.innerHTML =materials[0].name
 
-let index = 0;
-
-while(index<materials.length){
-
-    const newMaterial2 = document.createElement('div')
-    newMaterial2.className = 'material'
-
-
-    materialsElement.appendChild(newMaterial2);
-    newMaterial2.innerHTML =materials[index].name
-
-    index++
-}
