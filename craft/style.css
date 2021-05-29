@@ -54,7 +54,7 @@
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 .craft-available {
-    background-color: #eef;
+    background-color: rgb(239, 208, 253);
 }
 
 
@@ -62,8 +62,19 @@
     margin-top: 6px;
     position: absolute;
     bottom: -50px;
+    width: 120%;
+    left: 0;
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+}
+.craft-cost {
+    margin-top: 6px;
+    position: absolute;
+    bottom: -65px;
     width: 75%;
     left: 0;
     text-align: left;
-    font-size: 10px;
+    font-size: 9px;
 }

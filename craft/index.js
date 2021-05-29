@@ -71,7 +71,7 @@ while (index < translateObjectIntoArray.length){
 
     // Manually add elements to a created element 
     const labelElement = document.createElement('p');
-    const amountFromData = MATERIALS_DATA[nameOfMaterial].amount;
+    let amountFromData = MATERIALS_DATA[nameOfMaterial].amount;
 
     // labelElement.innerHTML = nameFromData + ":" + amountFromData; // Add three string
     labelElement.innerHTML = `${nameOfMaterial}:${amountFromData}` // Inject variable into a string
@@ -86,11 +86,14 @@ while (index < translateObjectIntoArray.length){
 let i=0;
 
 while (i < RECIPES.length){
-    const craftContainer = document.getElementById('craft-container')
+const craftContainer = document.getElementById('craft-container')
 const craftElement = document.createElement('div')
 craftElement.className='craft-element'
+
+let n=0
 craftElement.innerHTML= `<img src="${RECIPES[i].iconPath}" />
-<p class="craft-label"> ${RECIPES[i].material} ${RECIPES[i].amount}</p>`
+<p class="craft-label">${RECIPES[i].name} (${n})</p>
+<p class="craft-cost"> ${RECIPES[i].material} : ${RECIPES[i].amount}</p>`
 
 const materialWichWeNeed = RECIPES[i].material; 
 
@@ -113,6 +116,26 @@ else {
 
 craftContainer.appendChild(craftElement)
 i++
-}
- 
 
+craftElement.addEventListener('click', () => {
+    if (craftElement.className==='craft-element craft-available')
+    {craftElement.className='craft-element craft-available craft-selected'}
+})
+}
+const submitButton = document.getElementById('button');
+
+submitButton.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        console.log('clicked submit button')
+
+
+        const substractMaterial = translateObjectIntoArray[0]
+
+        MATERIALS_DATA.Wood.amount=MATERIALS_DATA.Wood.amount-RECIPES.Wood
+
+       
+})
+
+
+
+ 
