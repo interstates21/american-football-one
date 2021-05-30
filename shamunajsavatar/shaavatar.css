@@ -1,0 +1,23 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+ }
+ #materials {
+    background-color: lightblue;
+    width:250px;
+    height:400px;
+    text-align: center;
+    padding-top: 50px;
+ }
+ #imgclickandchange{
+     position: absolute;
+    top:128px;
+    left:538px;
+ }
+ #imgHeadChange{
+    position: relative;
+    z-index: 1;
+  
+ }
+ 
