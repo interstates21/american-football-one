@@ -1,140 +1,129 @@
-// We want to have this notation MATERIALS_DATA.Wood.amount, but it's impossible for arrays
-// const MATERIALS_DATA = [
-//     {
-//         name: 'Wood',
-//         amount: 20,
-//         iconPath: './pics/wood.svg'
-//     },
-//     {
-//         name: 'Iron',
-//         amount: 10,
-//         iconPath: './pics/iron.svg'
-//     },
-// ]
-
 const MATERIALS_DATA = {
-    'Wood': {
+    Wood: {
         amount: 20,
-        iconPath: './pics/wood.svg'
+        iconPath: './pics/wood.svg',
     },
-    'Iron': {
+    Iron: {
         amount: 10,
         iconPath: './pics/iron.svg'
     }
 }
+
 
 const RECIPES = [
     {
         name: 'Sabre',
         iconPath: './pics/sparkling-sabre.svg',
         material: 'Iron',
-        amount: 1
+        materialAmountRequired: 1,
+        createdGoods: 0,
     },
     {
         name: 'Cosmic Egg',
         iconPath: './pics/cosmic-egg.svg',
         material: 'Wood',
-        amount: 200
-
+        materialAmountRequired: 2,
+        createdGoods: 0,
     },
 ]
 
 
+const displayMaterials = () => {
+    const allMaterials = document.querySelector('#all-materials');
 
-const allMaterials = document.querySelector('#all-materials');
+    let i = 0;
+    const translateObjectIntoArray = Object.keys(MATERIALS_DATA);
+    // Output array: ['Wood', 'Iron']
 
-let index = 0;
+    while (i < translateObjectIntoArray.length) {
+        // translateObjectIntoArray[i] // outputs: Wood
 
-console.log('MATERIALS_DATA: ', MATERIALS_DATA)
-const translateObjectIntoArray = Object.keys(MATERIALS_DATA);
+        const nameOfMaterial = translateObjectIntoArray[i]; // Wood
 
-console.log('translateObjectIntoArray: ', translateObjectIntoArray)
+        const createdMaterialDiv = document.createElement('div');
+        createdMaterialDiv.className = 'material';
 
-while (index < translateObjectIntoArray.length){
-    const nameOfMaterial = translateObjectIntoArray[index]; // Wood
+        const image = document.createElement('img');
+        image.src = MATERIALS_DATA[nameOfMaterial].iconPath;
+        createdMaterialDiv.appendChild(image);
 
-    const createdMaterialDiv = document.createElement('div');
-    createdMaterialDiv.className = 'material';
+        const labelElement = document.createElement('p');
+        const amountFromData = MATERIALS_DATA[nameOfMaterial].amount;
+        labelElement.innerHTML = `${nameOfMaterial}:${amountFromData}` // Inject variable into a string
+        labelElement.className = 'material-label';    
+        createdMaterialDiv.appendChild(labelElement);
 
-    allMaterials.appendChild(createdMaterialDiv);
+        allMaterials.appendChild(createdMaterialDiv);
+        i++
+    }
 
-    const image = document.createElement('img');
-    image.src = MATERIALS_DATA[nameOfMaterial].iconPath;
-    createdMaterialDiv.appendChild(image);
-
-    // String literal allows to pass a JS string variable into a string
-    // Injecting html into a created element
-    // createdMaterialDiv.innerHTML = `
-    // <img src="${MATERIALS_DATA[index].iconPath}"> </img>
-    // <p class="material-label">${MATERIALS_DATA[index].name}</p>
-    // `
-
-    // Manually add elements to a created element 
-    const labelElement = document.createElement('p');
-    let amountFromData = MATERIALS_DATA[nameOfMaterial].amount;
-
-    // labelElement.innerHTML = nameFromData + ":" + amountFromData; // Add three string
-    labelElement.innerHTML = `${nameOfMaterial}:${amountFromData}` // Inject variable into a string
-    labelElement.className = 'material-label';    
-    createdMaterialDiv.appendChild(labelElement);
-
-    index++
 }
 
+const displayGoods = () => {
+    let i = 0;
+    const craftContainer = document.getElementById('craft-container')
+    
+    while (i < RECIPES.length){
+        const craftElement = document.createElement('div')
 
+        // DISPLAYING
+        craftElement.innerHTML= `<img src="${RECIPES[i].iconPath}" />
+        <p class="craft-label">${RECIPES[i].name} (${RECIPES[i].createdGoods})</p>
+        <p class="craft-cost"> ${RECIPES[i].material} : ${RECIPES[i].materialAmountRequired}</p>`
+        
+        const requiredMaterialType = RECIPES[i].material; 
+        craftContainer.appendChild(craftElement)
+        
+        // COUNT AVAILABILITY
 
-let i=0;
+        const canBeCrafted = MATERIALS_DATA[requiredMaterialType].amount >= RECIPES[i].materialAmountRequired;
+        if (canBeCrafted)
+        {
+            craftElement.className='craft-element craft-available'   
+        }
+        else {
+            craftElement.className='craft-element'
+        }
 
-while (i < RECIPES.length){
-const craftContainer = document.getElementById('craft-container')
-const craftElement = document.createElement('div')
-craftElement.className='craft-element'
+        // FOCUS
 
-let n=0
-craftElement.innerHTML= `<img src="${RECIPES[i].iconPath}" />
-<p class="craft-label">${RECIPES[i].name} (${n})</p>
-<p class="craft-cost"> ${RECIPES[i].material} : ${RECIPES[i].amount}</p>`
-
-const materialWichWeNeed = RECIPES[i].material; 
-
-if ( MATERIALS_DATA[materialWichWeNeed].amount >= RECIPES[i].amount  )
-{
-    craftElement.className='craft-element craft-available'   
+        craftElement.addEventListener('click', () => {
+            if (canBeCrafted) {
+                // TODO: unselect all the rest
+                craftElement.className= craftElement.className + ' craft-selected'
+            }
+        })
+        
+        
+        i++;
+    }
 }
-else {
-    craftElement.className='craft-element'
-}
+
+displayMaterials();
+displayGoods();
 
 
-//  (RECIPES.material === "wood" < ){
-//     craftElement.className='craft-element'
-// }
-// else 
-// {
-//     craftElement.className='craft-element craft-available' 
-// }
-
-craftContainer.appendChild(craftElement)
-i++
-
-craftElement.addEventListener('click', () => {
-    if (craftElement.className==='craft-element craft-available')
-    {craftElement.className='craft-element craft-available craft-selected'}
-})
-}
-const submitButton = document.getElementById('button');
-
-submitButton.addEventListener('click', (event) => {
-        event.preventDefault(); 
-        console.log('clicked submit button')
 
 
-        const substractMaterial = translateObjectIntoArray[0]
 
-        MATERIALS_DATA.Wood.amount=MATERIALS_DATA.Wood.amount-RECIPES.Wood
+// craftElement.addEventListener('click', () => {
+//     if (craftElement.className==='craft-element craft-available')
+//     {craftElement.className='craft-element craft-available craft-selected'}
+// })
+
+// const submitButton = document.getElementById('button');
+
+// submitButton.addEventListener('click', (event) => {
+//         event.preventDefault(); 
+//         console.log('clicked submit button')
+
+
+//         const substractMaterial = translateObjectIntoArray[0]
+
+//         MATERIALS_DATA.Wood.amount=MATERIALS_DATA.Wood.amount-RECIPES.Wood
 
        
-})
+// })
 
 
 
