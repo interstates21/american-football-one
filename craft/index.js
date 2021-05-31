@@ -59,10 +59,14 @@ const displayMaterials = () => {
 
 }
 
+let focusedRecipe = null;
+
 const displayGoods = () => {
     let i = 0;
     const craftContainer = document.getElementById('craft-container')
     
+    
+
     while (i < RECIPES.length){
         const craftElement = document.createElement('div')
 
@@ -76,28 +80,46 @@ const displayGoods = () => {
         
         // COUNT AVAILABILITY
 
+        
         const canBeCrafted = MATERIALS_DATA[requiredMaterialType].amount >= RECIPES[i].materialAmountRequired;
         if (canBeCrafted)
         {
-            craftElement.className='craft-element craft-available'   
+            craftElement.className='craft-element craft-available' 
+             
         }
         else {
             craftElement.className='craft-element'
         }
 
         // FOCUS
+      
 
-        craftElement.addEventListener('click', () => {
-            if (canBeCrafted) {
-                // TODO: unselect all the rest
+            craftElement.addEventListener('click', () => {
+                
+                
+                if (canBeCrafted) {
+                unselector()
                 craftElement.className= craftElement.className + ' craft-selected'
             }
+        
         })
         
+       
         
         i++;
     }
 }
+
+const unselector =() => {
+                let j=0;
+                let unselectElement=document.querySelectorAll(".craft-element")  
+                while(j<unselectElement.length)
+                {
+                    unselectElement[j].classList.remove("craft-selected");
+                    j++
+                }
+            }
+
 
 const craft = () => {
     const submitButton = document.getElementById('button');
@@ -107,6 +129,7 @@ const craft = () => {
         console.log('clicked submit button')
 
         // Select a focused craftElement
+
 
         // Identify RECIPY element connected to the craftElement
 
