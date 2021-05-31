@@ -99,31 +99,32 @@ const displayGoods = () => {
     }
 }
 
+const craft = () => {
+    const submitButton = document.getElementById('button');
+
+    submitButton.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        console.log('clicked submit button')
+
+        // Select a focused craftElement
+
+        // Identify RECIPY element connected to the craftElement
+
+        // Update createdGoods
+
+        // Get materialAmountRequired, materialType and createdGoods from the RECIPY
+
+        // Sustract corresponding materialType of materialAmountRequired from MATERIAL_DATA
+
+       })
+
+}
+
 displayMaterials();
 displayGoods();
 
+craft();
 
-
-
-
-// craftElement.addEventListener('click', () => {
-//     if (craftElement.className==='craft-element craft-available')
-//     {craftElement.className='craft-element craft-available craft-selected'}
-// })
-
-// const submitButton = document.getElementById('button');
-
-// submitButton.addEventListener('click', (event) => {
-//         event.preventDefault(); 
-//         console.log('clicked submit button')
-
-
-//         const substractMaterial = translateObjectIntoArray[0]
-
-//         MATERIALS_DATA.Wood.amount=MATERIALS_DATA.Wood.amount-RECIPES.Wood
-
-       
-// })
 
 
 
