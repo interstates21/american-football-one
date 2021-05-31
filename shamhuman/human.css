@@ -1,0 +1,136 @@
+*{
+    border-radius: 23px;
+}
+.man{
+    width:600px;
+    height:600px;
+    background-color: lightblue;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+.head{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    background-color: lightcoral;
+    top:50%;
+    left:50%;}
+    
+.body{
+    width:50px;
+    height:150px;
+    background-color: lightgreen;
+}
+   
+    
+    .left{
+    width:10px;
+    height:50px;
+    background-color: lime;
+    animation-name: leftarm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    transform-origin: center;
+    
+}
+.leftarm{
+    width: 10px;
+    height: 50px;
+    background-color: lime;
+    transform: rotate(45deg);
+    margin-top: 11px;
+    margin-left: 18px;
+}
+
+
+.right{
+    width:10px;
+    height:50px;
+    background-color: lime;
+    margin-left: 30px;
+    animation-name: rightarm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+}
+.rightarm{width: 10px;
+    height: 50px;
+    background-color: lime;
+    transform: rotate(45deg);
+    margin-top: 11px;
+    margin-left: 18px;}
+
+    .arm{display:flex;}
+    
+    .leftleg{
+        width: 10px;
+        height: 50px;
+        background-color: lime;
+        margin-top: 30px;
+        position: absolute;
+        top: 356px;
+        right: 312px;
+        animation-name: rightarm;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-delay: 3s;
+        animation-timing-function: ease-in-out;
+        
+    }
+    
+        .leftbottom {
+            width: 10px;
+            height: 50px;
+            background-color: lime;
+            transform: rotate(-250deg);
+            margin-top: 74px;
+            margin-left: -20px;
+            position: absolute;
+            top: -57px;
+            right: 20px;
+        }
+        .rightleg{
+            width: 10px;
+        height: 50px;
+        background-color: lime;
+        margin-top: 30px;
+        position: absolute;
+        top: 356px;
+        right:273px;
+        animation-name: leftarm;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+        }
+        .rightbottom {
+            width: 10px;
+            height: 50px;
+            background-color: lime;
+            transform: rotate(-250deg);
+            margin-top: 74px;
+            margin-left: -20px;
+            position: absolute;
+            top: -57px;
+            right: 20px;
+            
+        }
+        @keyframes leftarm{
+            0%{transform: rotate(45deg);}
+            50%{transform: rotate(0);}
+            100%{transform: rotate(-17deg);}
+        }
+
+        @keyframes rightarm{
+            0%{transform: rotate(-45deg);}
+            100%{transform: rotate(0);}
+            
+        }
+

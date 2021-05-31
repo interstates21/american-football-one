@@ -4,7 +4,7 @@ body{
     align-items: center;
  }
  #materials {
-    background-color: lightblue;
+   
     width:250px;
     height:400px;
     text-align: center;
@@ -13,7 +13,7 @@ body{
  #imgclickandchange{
      position: absolute;
     top:128px;
-    left:538px;
+    left:525px;
  }
  #imgHeadChange{
     position: relative;
