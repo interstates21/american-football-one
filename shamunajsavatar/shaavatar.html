@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+    
+    <link href="shaavatar.css" rel="stylesheet"/>
+    
+</head>
+<body>
+    <div id="materials">
+        <img id="imgHeadChange" src ="head1.jpg" width="100" height="100" > 
+        <img id="imgclickandchange"src="body1.jpg" alt="" width="200" height="200">
+       
+    </div>
+    <button  onclick="changeImage()" >generate avatar</button>
+   <script> 
+  
+// document.getElementById("imgclickandchange").src="avatarimages/body 1.jpg";
+// document.getElementById("imgHeadChange").src="avatarimages/head2.jpg";
+
+var counter=1;
+function changeImage(){
+    if(counter<=6){
+    counter++
+     
+    // document.getElementById("imgclickandchange").src='body'+counter+'.jpg';
+    document.getElementById("imgHeadChange").src='head'+counter+'.jpg';}
+    else{
+ counter=0;
+
+
+    }
+}
+
+
+ 
+ 
+   </script>
+</body>
+</html>
