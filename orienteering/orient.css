@@ -37,11 +37,11 @@ body {
     background-color: bisque;
     margin-left: 20px;
     border-radius: 4px;
-    background-image: url(/AdobeStock_102683437_Preview.jpg);
+    background-image: url(./AdobeStock_102683437_Preview.jpg);
     background-size: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-#sign-up {
+#log-in {
     width: 100px;
     height: 45px;
     background-color: #ECF9F2;
@@ -182,3 +182,86 @@ body {
 #map {
     background-image: url(./map.jpg);
 }
+
+
+
+/* Log in page */
+
+#log-in-page-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(90deg, #effeff 0%, #dafeff  100%);
+}
+
+#log-in-container {
+    
+    margin-top: 40px;
+    width: 400px;
+    /* background: linear-gradient(90deg,#95a592  0%, #748571  100%); */
+    background-color: #95a592 ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: white;
+
+}
+#log-in-container h2 {
+    margin-bottom: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+#log-in-container .text-input {
+    margin-top: 5px;
+    margin-bottom: 1.3rem;
+    width: 100%;
+    border-radius: 5px;
+    background: #748571;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    line-height: 1.3rem;
+
+}
+
+#log-in-container .primary-btn {
+    align-self: center;
+    width: 150px;
+    height: 30px;
+    color: #748571;
+    border: solid #748571 2px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+
+
+#log-in-container a, #log-in-container div {
+    
+    margin-bottom: 2px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+   /* background-color: thistle; */
+    text-align: center;
+    font-size: 0.9rem;
+    
+}
+#log-in-container a {
+    text-decoration: underline;
+
+}
+
+
+
+
