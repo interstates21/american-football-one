@@ -130,7 +130,6 @@ const craft = () => {
 
         // Select a focused craftElement
 
-
         // Identify RECIPY element connected to the craftElement
 
         // Update createdGoods
