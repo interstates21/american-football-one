@@ -25,7 +25,7 @@ body {
 #head {
    
     background: linear-gradient(90deg, #CFEDEE 0%, #89BE63 100%);
-    width: 100vw;
+    /* width: 100vw; */
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -262,6 +262,44 @@ form {
 
 }
 
+#symbols-page {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
 
+
+}
+
+#map-symbols img, #description-symbols img  {
+    align-self: center;
+    justify-self: center;
+    width: 90vw;
+    margin-top: 20px;
+}
+#links-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #effeff 0%, #dafeff  100%);
+    color: #30362f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#links-page ul, #links-page h2 {
+    width: 90%;
+    
+    margin-top: 10px;
+}
+#links-page a:hover {
+    color: #89BE63;
+}
+#home:hover, #symbols:hover, #links:hover {
+    background-color: #95a791;
+}
+#log-in:hover{
+    background-color: #e9feff;
+}
 
 
