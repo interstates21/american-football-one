@@ -2,7 +2,7 @@
 
 const card = document.getElementById('card-1');
 
-// const arrayOfCards = document.querySelectorAll('.card');
+const arrayOfCards = document.querySelectorAll('.card');
 
 
 

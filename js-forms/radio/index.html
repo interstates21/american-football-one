@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet" />
+    <title>Forms</title>
+</head>
+
+<body>
+    <div class="container" style="width: 50%;" id="main-container">
+        <h1>    
+            Which color do you like
+        </h1>
+        <h1 id="result-target" style="color: plum;">
+
+        </h1>
+        <div class="form-check">
+            <input class="radio-button form-check-input" type="radio" name="colors" value="red">
+            <label class="form-check-label" for="red-check">
+              Red
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="radio-button form-check-input" type="radio" name="colors"  value="blue">
+            <label class="form-check-label" for="blue-check">
+              Blue
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="radio-button form-check-input" type="radio" name="colors" value="yellow">
+            <label class="form-check-label" for="yellow-check">
+              Yellow
+            </label>
+          </div>
+        <button id="final-button" class="btn btn-primary">Guess</button>
+    </div>
+    <script src="./index.js"> </script>
+</body>
+
+</html>

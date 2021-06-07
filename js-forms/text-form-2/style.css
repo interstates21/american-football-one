@@ -1,0 +1,17 @@
+body {
+    padding: 5%;
+}
+
+.success { 
+    position: absolute;
+    background-color: yellow;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    color: #222;
+    left: calc(50vw - 100px);
+    top: calc(50vh - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

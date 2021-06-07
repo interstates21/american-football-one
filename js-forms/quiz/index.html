@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link href="./style.css" rel="stylesheet" />
+  <title>Forms</title>
+</head>
+
+<body>
+  <div class="container" style="width: 50%;" id="main-container">
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">What is the largest dinosaur?</h5>
+
+        <div class="form-check">
+          <input class="step-one form-check-input" type="radio" name="dyno" value="tyranosaur">
+          <label class="form-check-label" for="red-check">
+            Tyranosaur
+          </label>
+        </div>
+        <div class="form-check">
+            <input class="step-one form-check-input" type="radio" name="dyno" value="triceratops">
+            <label class="form-check-label" for="red-check">
+              Triceratops
+            </label>
+          </div>
+  
+        </div>
+      </div>
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">What is the most ancient human species in the world?</h5>
+
+        <div class="form-check">
+          <input class="step-two form-check-input" type="radio" name="humans" value="erectus">
+          <label class="form-check-label" for="red-check">
+            Homo Erectus
+          </label>
+        </div>
+        <div class="form-check">
+            <input class="step-two form-check-input" type="radio" name="humans" value="hamilis">
+            <label class="form-check-label" for="red-check">
+              Homo Hamilis
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button id="final-button" class="btn btn-primary" style="margin-top: 40px">Guess</button>
+    </div>
+    <script src="./index.js"> </script>
+</body>
+
+</html>
