@@ -65,6 +65,117 @@ header {
     margin-right: 20px;
 }
 
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#show-login{
+    font-family:'Montserrat', sans-serif; 
+    padding: 15px 25px 15px 25px;
+   background-color: rgb(17, 12, 12);
+   border: 0;
+   color: white;
+   transform: all 0,3s ease-out;
+   
+   }
+.popup {
+    position: absolute;
+    top: -150%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+    width:380px;
+    padding: 30px 50px 50px 30px;
+    background-color: rosybrown;
+    box-shadow: 2px 1px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms;
+
+}
+
+.popup.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+   transition:    top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 200ms ease-in-out 0ms; 
+}
+
+.popup .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: rgb(255, 255, 255);
+    line-height: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.popup .form h2{
+    font-family: 'Dancing Script';
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin:  10px 0px 20px;
+    font-size: 35px;
+}
+
+.popup .form .form-element{
+    margin: 20px 20px;
+}
+
+.popup .form .form-element label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+.popup .form .form-element input[type="text"], .popup .form .form-element input[type="password"] {
+margin-top: 5px;
+display: block;
+width: 100%;
+padding: 10px;
+outline: 0;
+border: 1px solid #f1f1f1;
+border-radius: 5px;
+
+}
+.popup .form .form-element input[type="checkbox"] {
+    margin-right: 5px ;
+}
+.popup .form .form-element button{
+    width: 108%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: rgb(235, 198, 198);
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 1px 5px 5px rgba(0, 0, 0, 0.15);
+
+}
+
+.popup .form .form-element a{
+
+display: block;
+text-align: right;
+font-size: 12px;
+color: cornsilk;
+text-decoration: none;
+font-weight: 300;
+margin-right: -25px;
+
+}
 .cart-myaccount{
     margin-top: -90px;
     float: right;
@@ -83,24 +194,14 @@ header {
     letter-spacing: 5px;
     transition: all 0.5s ease-out;
     margin-left: 15px;
+    float: right;
 }
 
 .cart-button:hover{
     background-color: white;
     color:#746149;
 }
-.my-acc{
- font-family:'Montserrat', sans-serif; 
- padding: 15px 25px 15px 25px;
-background-color: transparent;
-border: 0;
-color: white;
-transform: all 0,3s ease-out;
 
-}
-.my-acc:hover{
-text-decoration: underline 1px #746149;
-opacity: 75%;}
 
 #search-form {
     font-family:  'Montserrat', sans-serif;
@@ -209,9 +310,6 @@ padding-left: 30px !important;
     width: 33%;
     height: 500px;
     object-fit: cover;
-  
-
-
 }
 
 .banner-wrapper .btn1 {
@@ -308,9 +406,7 @@ padding-left: 30px !important;
     border: 2px burlywood solid;
     color: white;
     font-family:  'Montserrat', sans-serif;
-    color: white;
-    font-family:  'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     letter-spacing: 5px;
     transition: ease 1s;
    
@@ -325,7 +421,7 @@ padding-left: 30px !important;
     border: 2px rgb(178, 192, 141) solid;
     background: transparent;
     letter-spacing: 15px;
-
+opacity: 10%;
 }
 
 
@@ -443,4 +539,3 @@ footer{
         .flex-container {
           flex-direction: column;
         }
-      }
