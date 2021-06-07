@@ -1,6 +1,6 @@
 let i=0;
      
-     const  dreamArray=["To Travel around the World","To Read as Much as Possible","To Be in Control of My Time"];
+     const  dreamArray=[];
      const bigContainer=document.getElementById("big");
      
      

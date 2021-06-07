@@ -25,3 +25,14 @@ body{
     width:80%;
     height:40px;
 }
+p{
+    animation-name: frombottom;
+    animation-delay: 1s;
+    animation-duration: 5s;
+}
+@keyframes frombottom{
+    from {margin-bottom: 0px;
+    font-size: small;}
+  to {margin-bottom: 50px;
+    font-size: x-large;}
+}
