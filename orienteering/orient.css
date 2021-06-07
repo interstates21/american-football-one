@@ -25,7 +25,7 @@ body {
 #head {
    
     background: linear-gradient(90deg, #CFEDEE 0%, #89BE63 100%);
-    width: 100vw;
+    /* width: 100vw; */
     height: 70px;
     display: flex;
     justify-content: space-between;
@@ -64,7 +64,7 @@ body {
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-#home, #symbols, #links {
+#home, #symbols, #links, #exercises {
     height: 100%;
     width: 200px;
     /* background-color: #3f4d3d;; */
@@ -262,6 +262,167 @@ form {
 
 }
 
+#symbols-page {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
 
 
+}
+
+#map-symbols img, #description-symbols img  {
+    align-self: center;
+    justify-self: center;
+    width: 90vw;
+    margin-top: 20px;
+}
+#links-page {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #effeff 0%, #dafeff  100%);
+    color: #30362f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+#links-page ul, #links-page h2 {
+    width: 90%;
+    
+    margin-top: 10px;
+}
+#links-page li {
+    margin-bottom: 10px;
+}
+#links-page a:hover {
+    color: #89BE63;
+}
+#home:hover, #symbols:hover, #links:hover, #exercises:hover {
+    background-color: #95a791;
+}
+#log-in:hover{
+    background-color: #e9feff;
+}
+input:focus {
+    outline: none;
+    border: none;
+}
+
+#test-1-conteiner{
+    background: linear-gradient(90deg, #effeff 0%, #dafeff  100%);
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    padding: 40px 50px;
+
+}
+#test-1-conteiner .cards {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#test-1-conteiner .cards img {
+    width: 380px;
+
+}
+#answers-conteiner {
+    display: flex;
+    flex-direction: row;
+    background-color: #ECF9F2 ;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    justify-items: center;
+    padding-left: 30px;
+    border-radius: 10px;
+
+}
+#answers-conteiner label{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right: 10px;
+    /* margin-left: 45px; */
+    /* background-color: blueviolet; */
+}
+
+.cards h2 {
+    margin-bottom: 10px;
+}
+
+
+input[type="checkbox"]:checked, 
+input[type="checkbox"]:not(:checked) {
+    
+        position: absolute;
+        left: -9999px;
+    }
+
+    input[type="checkbox"]:checked + label, 
+    input[type="checkbox"]:not(:checked) + label {
+        display: inline-block;
+        position: relative;
+        padding-left: 28px;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked + label:before, 
+input[type="checkbox"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+
+input[type="checkbox"]:checked + label:before, 
+input[type="checkbox"]:not(:checked) + label:before {
+    border-radius: 2px;
+}
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after, 
+input[type="radio"]:checked + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after {
+    left: 3px;
+    top: 4px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 4px solid #226441;
+    border-bottom: 4px solid #226441;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+input[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
 
