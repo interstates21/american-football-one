@@ -2,6 +2,7 @@
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
 
 }
 
@@ -350,21 +351,21 @@ padding-left: 30px !important;
     border-radius: 5px;
     }
 
-    .midsummer-video{
+.midsummer-video{
         display: flex;
 width: 300px;  
 padding-right: 20px; 
 flex: 1;
  }
 
-    .midsummer-picture{
-        display: flex;
-        background-image: url(./img/07077ed4a22bb3ac632e5027732b3de1.jpg);
+.midsummer-picture{
+    display: flex;
+    background-image: url(./img/07077ed4a22bb3ac632e5027732b3de1.jpg);
     width: 300px;
-flex: 1;
+    flex: 1;
 }
 
-.flex-container {
+.footer-container {
     margin-left: 15%;
     margin-right: 15%;
     display: flex;
@@ -381,10 +382,10 @@ footer{
     height: 300px;
     width: 100vw;
   
+  
 }
-.flex-container ul{
-    
-}
+ 
+
 
 @media only screen and (max-width:720px) {
 	nav ul {
