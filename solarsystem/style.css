@@ -1,0 +1,299 @@
+body {
+    margin: auto;
+    background-image:url(./image/space.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+
+#solarsystem{
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    width: 900px;
+    height:900px;
+    padding:50px
+
+}
+
+  #neptune{
+position: absolute;
+width: 900px;
+height: 900px;
+background-color: rgba(0, 0, 0, 0);
+border: 2px dotted #929090;
+border-radius: 100%;
+left: -40px;
+top: -40px;
+animation: solar 120s linear infinite;
+}
+
+#neptune::after{
+position: absolute;
+width: 45px;
+height: 45px;
+border-color: #00009d;
+border-radius: 100%;
+background-image:url(./image/neptune.jpg);
+background-position: center;
+box-shadow:  rgb(15, 15, 13) 0px 0px 5px 1px inset ;
+content:'';
+left: 300px;
+top: -13px;
+} 
+
+#uranus{
+    position: absolute;
+    width: 820px;
+    height: 820px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+    border-radius: 100%;
+    left: 0px;
+    top: 0px;
+    animation: solar 160s linear infinite;
+}
+    
+#uranus::after{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-image:url(./image/uranus.jpeg);
+    background-position: center;
+    box-shadow:  rgb(15, 15, 13) 0px 0px 5px 1px inset ;
+    content:'';
+    left: 295px;
+    top: -10px; 
+}
+
+ 
+#saturn{
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+    border-radius: 100%;
+    left: 30px;
+    top: 30px;
+    animation: solar 70s linear infinite;
+}
+#saturn::before{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-image:url(./image/saturn.jpg);
+    background-position: center;
+    box-shadow:  rgb(15, 15, 13) 0px 0px 5px 1px inset ;
+    content: '';
+    left: 230px;
+    top: -11px;   
+}
+
+#saturn::after{
+    position: absolute;
+    width: 65px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgb(231, 215, 197);
+    border-style: solid;
+    border-width: 0px 4px 8px 4px;
+    content: '';
+    left: 224px;
+    top: 3px;
+   
+}
+
+#jupiter{
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+    border-radius: 100%;
+    left: 75px;
+    top: 75px;
+    animation: solar 150s linear infinite;
+}
+
+#jupiter::after{
+    position: absolute;
+    width:65px;
+    height: 65px;
+    border-radius: 100%;
+    background-image:url(./image/jupiter.jpg);
+    background-position: center;
+    box-shadow:  rgb(15, 15, 13) 0px 0px 5px 1px inset ;
+    content: '';
+    left: 180px;
+    top: -20px;  
+}
+
+#mars{
+    position: absolute;
+    width: 560px;
+    height: 560px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+    border-radius: 100%;
+    left: 120px;
+    top: 120px;
+    animation: solar 90s linear infinite;
+}
+
+#mars::after{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-image:url(./image/mars.jpg);
+    background-position: center;
+    box-shadow:  rgb(199, 206, 105) 0px 0px 5px 1px inset ;
+    content: '';
+    left: 175px;
+    top: -2px;  
+}
+
+.earth{
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+    border-radius: 100%;
+    left: 160px;
+    top: 160px;
+    animation: solar 150s linear infinite;
+}
+
+.earth::after{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-image:url(./image/eart.flat.jpg);
+    background-size:110px;    
+    background-position: center;
+    box-shadow:  rgb(196, 186, 186) 0px 0px 5px 2px inset ;
+    content: '';
+    left: 105px;
+    top: -2px;  
+    animation: rotate 150s linear infinite;
+}
+
+/* .moon{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+        border-radius: 100%;
+    left: 160px;
+    top: 160px;
+} */
+
+.moon::after{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: wheat;
+    background-position: center;
+    box-shadow:  rgb(196, 186, 186) 0px 0px 5px 2px inset ;
+    content: '';
+    left: 105px;
+    top: -2px;     animation: solar 15s infinite;
+ 
+}
+
+ #venus{
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+    border-radius: 100%;
+    left: 190px;
+    top: 190px;
+    animation: solar 70s linear infinite;
+}
+
+#venus::after{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-image:url(./image/venud.png);
+    background-position: center;
+    box-shadow:  rgb(31, 29, 29) 0px 0px 5px 1px inset ;
+    content: '';
+    left: 125px;
+    top: -2px;  
+} 
+
+#mercury{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px dotted #929090;
+    border-radius: 100%;
+    left: 225px;
+    top: 225px;
+    animation: solar 60s linear infinite;
+}
+
+#mercury::after{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-image:url(./image/mercury.JPG);
+    background-position: center;
+    box-shadow:  rgb(31, 29, 29) 0px 0px 5px 2px inset ;
+    content: '';
+    left: 180px;
+    top: -8px;  
+}
+
+#sun{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-image:url(./image/sun1.jpg);
+    background-repeat: repeat;
+    border: 2px solid #f1e2c6;
+    box-shadow:  rgb(247, 231, 181) 0px 0px 15px 10px inset ;
+    border-radius: 50%;
+    left: 250px;
+    top: 250px;
+    animation: rotate 50s ease-out infinite;
+}
+
+#sun::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border-radius: 50%;
+    box-shadow:  rgb(31, 29, 29) 0px 0px 35px 25px inset ;
+    box-shadow:  rgb(228, 210, 150) 0px 0px 150px 5px ;
+  }
+
+
+ 
+
+@keyframes solar
+{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+    0% {background-position: 0 0;}
+    100% {background-position: 630px 0;}
+  }
