@@ -6,12 +6,6 @@
 
 }
 
-a{
-    text-decoration: none;
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    padding-left: 25px;
-         } 
 
 h1{ 
     font-family: 'Dancing Script';
@@ -79,8 +73,15 @@ header {
    border: 0;
    color: white;
    transform: all 0,3s ease-out;
+   border-radius: 5px;
    
    }
+
+   #show-login:hover{
+    background-color: white;
+    color:#746149;
+   }
+
 .popup {
     position: absolute;
     top: -150%;
@@ -411,18 +412,15 @@ padding-left: 30px !important;
     transition: ease 1s;
    
 }
-
-
 .banner-button:hover{
-    color: white;
-    font-family:  'Montserrat', sans-serif;
-    font-size: 20px;
-    opacity: 100%;
-    border: 2px rgb(178, 192, 141) solid;
-    background: transparent;
-    letter-spacing: 15px;
-opacity: 10%;
-}
+    color:whitesmoke;
+     font-family:  'Montserrat', sans-serif;
+     font-size: 30px;
+     opacity: 10%;
+     border: 2px rgb(178, 192, 141) solid;
+     background: transparent;
+     letter-spacing: 15px;
+ }
 
 
 .page-container {
@@ -443,23 +441,23 @@ opacity: 10%;
     margin-bottom: 10px;
     padding-left: 20px;
     margin-top: 2px;
-    width: 98%;
+    width: 100%;
     border-radius: 5px;
     }
 
 .midsummer-video{
         display: flex;
-width: 300px;  
+height:  500px;  
 padding-right: 20px; 
 flex: 1;
  }
 
-.midsummer-picture{
+/* .midsummer-picture{
     display: flex;
     background-image: url(./img/07077ed4a22bb3ac632e5027732b3de1.jpg);
-    width: 300px;
+    height: 50px;
     flex: 1;
-}
+} */
 
 .footer-container {
     margin-left: 15%;
@@ -480,7 +478,31 @@ footer{
   
   
 }
+
+.colum-links a {
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    opacity: 80%;
+    transform: translate(5s) ease-in-out;
+}
  
+.colum-links a:hover {
+opacity: 50%;
+text-decoration: underline;
+}
+
+.footer-container a, h4, h5, p {
+    font-family: 'Montserrat', sans-serif;
+
+}
+.footer-container h1 {
+    font-size: 30px;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
 
 
 @media only screen and (max-width:720px) {
