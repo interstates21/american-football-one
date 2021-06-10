@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shaquiz</title>
+    <link rel="stylesheet" href="shaquiz.css">
+</head>
+<body>
+    <div id="container">
+        <form action="#">
+        <div class=one>
+            <p>1.How many hours do we have in a day?</p>
+            <input type="radio"class="step-one"name= "hours"value="tenhours">
+            <label for="tenhours">Ten Hours</label><br>
+            <input type="radio"class="step-one"name= "hours"value="twentyfourhours">
+            <label for="twentyfourhours">Twenty Four Hours</label><br>
+            <input type="radio" class="step-one"name= "hours"value="fourteenhours">
+            <label for="fourteenhours">Fourteen Hours</label>
+        </div>
+        <div class=two>
+            <p>2.Which animal is called the king of the jungle?</p>
+            <input type="radio"class="step-two"name= "animal"value="bear">
+            <label for="Bear">Bear</label><br>
+            <input type="radio"class="step-two"name= "animal"value="lion">
+            <label for="lion">Lion</label><br>
+            <input type="radio" class="step-two"name= "animal"value="monkey">
+            <label for="monkey">Monkey</label>
+        </div>
+       
+        <div class=three>
+            <p>3.Which is the largest planet in our Solar system? </p>
+            <input type="radio"class="step-three"name= "planet"value="mars">
+            <label for="mars">Mars</label><br>
+            <input type="radio"class="step-three"name= "planet"value="jupiter">
+            <label for="jupiter">Jupiter</label><br>
+            <input type="radio" class="step-three"name= "planet"value="neptune">
+            <label for="neptune">Neptune</label>
+        </div>
+        <div class=four>
+            <p>4.Which month of the year has the least number of days? </p>
+            <input type="radio"class="step-four"name= "month"value="february">
+            <label for="february">February</label><br>
+            <input type="radio"class="step-four"name= "month"value="march">
+            <label for="march">march</label><br>
+            <input type="radio" class="step-four"name= "month"value="november">
+            <label for="november">November</label>
+        </div>
+        <div class=five>
+            <p>5.Which colour symbolizes peace?</p>
+            <input type="radio"class="step-five"name= "color"value="green">
+            <label for="green">Green</label><br>
+            <input type="radio"class="step-five"name= "color"value="white">
+            <label for="white">white</label><br>
+            <input type="radio" class="step-five"name= "red"value="red">
+            <label for="red">red</label>
+        </div>
+        <button type="button" id ="btn" onclick="quiz()">Get Points</button>
+        <div>
+            <p id ="result"></p>
+        </div>
+    </form>
+    </div>
+    <script src="shaquiz.js"></script>
+</body>
+</html>
