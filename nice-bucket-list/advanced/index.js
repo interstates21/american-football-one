@@ -18,26 +18,36 @@
 // Add a new value (dream) to the array
 // Update the displayed list (rerender)
 
+
 const DREAMS = [
-    'Climb a 40m Pine tree', 
-    'Jump from the highest tower in a swimming pool'
+        'Climb a 40m Pine tree', 
+        'Jump from the highest tower in a swimming pool', 
 ]
 const container = document.getElementById('dreams-list');
 
-const createDreamItem = (currentDreamText) => {
+const createDreamItem = (dreamText) => {
     // We want to create this for each dream <li class="list-group-item">An item</li>
     const newListItem = document.createElement('li');
     newListItem.className = 'list-group-item';
 
-    newListItem.innerText = currentDreamText;
-    container.appendChild(newListItem);        
+    newListItem.innerText = dreamText;
+    container.appendChild(newListItem);  
+    
+    // Define a behaviour on click for this item
+    newListItem.addEventListener('click', () => {
+        const isActive = newListItem.classList.contains('list-item-active');
+        if (!isActive) {
+            newListItem.classList.add('list-item-active')
+        } else {
+            newListItem.classList.remove('list-item-active')
+        }
+    })
 }
 
 const renderList = () => {
     let i = 0;
     while (i < DREAMS.length) {
-        const currentDreamText = DREAMS[i];
-        createDreamItem(currentDreamText);
+        createDreamItem(DREAMS[i]);
         i++;
     }
 } 
@@ -50,11 +60,9 @@ const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', () => {
 
     const inputElement = document.getElementById('dream-input');
-    const newDreamValue = inputElement.value;
 
-    // Submit
-    DREAMS.push(newDreamValue);
-    createDreamItem(newDreamValue);
+    createDreamItem(inputElement.value);
+    DREAMS.push(inputElement.value);
 
     inputElement.value = '' // Clear the input text after sumbitting
 })
