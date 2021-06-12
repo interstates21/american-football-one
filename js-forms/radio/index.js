@@ -28,6 +28,8 @@ finalButton.addEventListener('click', (event) => {
         i++;
     }
 
-
+    console.log(radioButtons)
     displayResult(checkedRadio === correctAnswer)
 })
+
+

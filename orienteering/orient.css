@@ -466,6 +466,9 @@ input[type="radio"]:checked + label:after {
     /* background-color: #b421b4; */
     /* height: 100px;
     width: 100px; */
+    display: flex;
+    justify-content: center;
+
 
 
   }
@@ -555,3 +558,16 @@ input[type="radio"]:checked + label:after {
   }
   
 
+  .number-of-answers
+
+  {
+      /* background-color: blueviolet; */
+      width: 100px;
+      height: 70px;
+      margin-left: 40px;
+      display: flex;
+      align-items: center;
+      font-size: larger;
+      
+      
+  }
