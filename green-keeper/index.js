@@ -10,28 +10,55 @@
 
 
 const AVAILABLE_TYPES = {
-    Apple: {
+    apple: {
+        name: 'Apple',
         imageURL: './trees/pic-2.jpg'
     },
-    Cherry: {
-     imageURL: './trees/pic-1.jpg'
+    cherry: {
+        name: 'Cherry',
+        imageURL: './trees/pic-1.jpg'
     },
-    Pine: {
-     imageURL: './trees/pic-3.jpg'
+    pine: {
+        name: 'Pine',
+        imageURL: './trees/pic-3.jpg'
     }
 }
 
 const TREES = [
     {
         treeName: "Sunny Bug",
-        type: AVAILABLE_TYPES.Cherry,
+        treeType: AVAILABLE_TYPES.cherry,
         location: 'Sweden',
         keeper: 'Samuel',
-    }
+    },
+    {
+        treeName: "Dark Bug",
+        treeType: AVAILABLE_TYPES.apple,
+        location: 'New Zeland',
+        keeper: 'Jackson',
+    },
 ]
 
-const renderTreeGallery = () => {
-    const treeGaleryElement = document.getElementById('tree-gallery');
+const treeGaleryContainer = document.getElementById('tree-gallery');
 
-    
-} 
+const renderTree = (treeObject) => {
+    const newTreeCard = document.createElement('div');
+    newTreeCard.className = 'tree-card';
+    newTreeCard.innerHTML = `
+        <div class="tree-header">
+                <h5>
+                    ${treeObject.treeName} (${treeObject.treeType.name})
+                </h5>
+                <p>
+                    ${treeObject.keeper}
+                </p>
+            </div>
+            <img src="${treeObject.treeType.imageURL}" alt="Tree Image"/>
+            <p class="tree-location">
+                ${treeObject.location}
+            </p>`
+
+    treeGaleryContainer.appendChild(newTreeCard)
+}
+
+renderTree(TREES[0])
