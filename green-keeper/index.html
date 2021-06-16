@@ -12,6 +12,7 @@
 
 <body>
     <div id="tree-gallery">
+    
         <!-- Add trees dynamically from js -->
 
         <!--
@@ -30,6 +31,33 @@
                 Sweden
             </p>
         </div> -->
+
+
+ 
+    </div>
+    <div id="create-tree" class="btn-primary btn">
+        Create a tree 
+    </div>
+
+    <div id="create-tree-conteiner">
+        <div class="your-name">
+            <label for="your-name-input" class="form-label">Your name:</label>
+            <input type="text" class="form-control" id="your-name-input">
+        </div>
+        <div class="your-choice">
+        <label for="choice" class="form-label">Your choice:</label>
+        <select id="choise" class="form-control"> 
+            <option>Apple</option>
+            <option>Cherry</option>
+            <option>Pine</option>
+          </select>
+        </div>
+          <div class="your-location">
+            <label for="location-input" class="form-label">Location:</label>
+            <input type="text" class="form-control" id="location-input">
+        </div>
+        <div id="create-tree-now" class="btn-primary btn">Create tree</div>
+
     </div>
     <script src="./index.js"> </script>
 </body>

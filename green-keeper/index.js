@@ -74,3 +74,23 @@ const renderAllTrees = () => {
 }
 
 renderAllTrees()
+
+
+const buttonToCreateTree = document.getElementById('create-tree')
+const createTreeConteiner = document.getElementById('create-tree-conteiner')
+
+buttonToCreateTree.addEventListener('click', () => {
+    createTreeConteiner.style.display = 'block'
+
+
+})
+
+
+const submitButton = document.getElementById('create-tree-now')
+submitButton.addEventListener('click', () => { 
+        
+
+
+
+
+})
