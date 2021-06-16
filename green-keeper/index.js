@@ -61,4 +61,15 @@ const renderTree = (treeObject) => {
     treeGaleryContainer.appendChild(newTreeCard)
 }
 
-renderTree(TREES[0])
+const renderAllTrees = () => {
+    let i = 0;
+
+    while (i < TREES.length) {
+        const currentTree = TREES[i];
+        renderTree(currentTree)
+
+        i++;
+    }
+}
+
+renderAllTrees()
