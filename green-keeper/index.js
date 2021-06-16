@@ -44,6 +44,7 @@ const treeGaleryContainer = document.getElementById('tree-gallery');
 const renderTree = (treeObject) => {
     const newTreeCard = document.createElement('div');
     newTreeCard.className = 'tree-card';
+
     newTreeCard.innerHTML = `
         <div class="tree-header">
                 <h5>
