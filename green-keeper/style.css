@@ -32,7 +32,7 @@ body {
 
 #create-tree-conteiner {
     width: 600px;
-    height: 300px;
+    height: 400px;
     background-color: rgb(195, 255, 236);
     position: absolute;
     top: calc(50vh - 150px);

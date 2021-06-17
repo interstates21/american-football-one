@@ -36,44 +36,70 @@ const TREES = [
         treeType: AVAILABLE_TYPES.apple,
         location: 'New Zeland',
         keeper: 'Jackson',
-    },
-]
+    },]
 
-const treeGaleryContainer = document.getElementById('tree-gallery');
+    
+  
+    
+    
+
+
+ const treeGaleryContainer = document.getElementById('tree-gallery');
 
 const renderTree = (treeObject) => {
     const newTreeCard = document.createElement('div');
     newTreeCard.className = 'tree-card';
 
     newTreeCard.innerHTML = `
-        <div class="tree-header">
-                <h5>
+        <div class="tree-header">  
+                       <h5>
                     ${treeObject.treeName} (${treeObject.treeType.name})
                 </h5>
-                <p>
-                    ${treeObject.keeper}
+                 <p>
+                     ${treeObject.keeper}
                 </p>
-            </div>
-            <img src="${treeObject.treeType.imageURL}" alt="Tree Image"/>
-            <p class="tree-location">
-                ${treeObject.location}
-            </p>`
+             </div>
+             <img src="${treeObject.treeType.imageURL}" alt="Tree Image"/>
+             <p class="tree-location">
+                 ${treeObject.location}
+             </p>`
 
-    treeGaleryContainer.appendChild(newTreeCard)
-}
+     treeGaleryContainer.appendChild(newTreeCard)
+ }
 
-const renderAllTrees = () => {
-    let i = 0;
-
+ const renderAllTrees = () => {
+     let i = 0;
     while (i < TREES.length) {
         const currentTree = TREES[i];
-        renderTree(currentTree)
+         renderTree(currentTree)
 
         i++;
-    }
-}
+     }
+ }
+ const submitButton = document.getElementById('create-tree-now')
+ submitButton.addEventListener('click', () => { 
+        
+ const nameInput=document.getElementById('your-name-input').value
 
-renderAllTrees()
+const selectedType=document.getElementById('choise').value
+ const locationInput=document.getElementById('location-input').value
+ const treeNameInput=document.getElementById('treename-input').value
+ const enteredType=AVAILABLE_TYPES[selectedType.toLowerCase()]
+ const newTree={  
+         treeName: treeNameInput,
+         treeType:enteredType,
+       
+         location: locationInput,
+        keeper: nameInput,
+     }
+     console.log(newTree.treeType)
+      TREES.push(newTree)
+       createTreeConteiner.style.display = 'none'
+       renderTree(newTree) 
+    
+ })
+ renderAllTrees()
+
 
 
 const buttonToCreateTree = document.getElementById('create-tree')
@@ -86,11 +112,4 @@ buttonToCreateTree.addEventListener('click', () => {
 })
 
 
-const submitButton = document.getElementById('create-tree-now')
-submitButton.addEventListener('click', () => { 
-        
-
-
-
-
-})
+ 
