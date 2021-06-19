@@ -43,11 +43,6 @@ const TREES = [
         keeper: 'Jackson',
     },]
 
-    
-  
-    
-    
-
 
  const treeGaleryContainer = document.getElementById('tree-gallery');
 
@@ -81,40 +76,46 @@ const renderTree = (treeObject) => {
         i++;
      }
  }
- const submitButton = document.getElementById('create-tree-now')
- submitButton.addEventListener('click', () => { 
-        
- const nameInput=document.getElementById('your-name-input').value
 
-const selectedType=document.getElementById('choise').value
- const locationInput=document.getElementById('location-input').value
- const treeNameInput=document.getElementById('treename-input').value
- const enteredType=AVAILABLE_TYPES[selectedType.toLowerCase()]
- const newTree={  
-         treeName: treeNameInput,
-         treeType:enteredType,
-       
-         location: locationInput,
-        keeper: nameInput,
-     }
-     console.log(newTree.treeType)
-      TREES.push(newTree)
-       createTreeConteiner.style.display = 'none'
-       renderTree(newTree) 
-    
- })
+ const toggleCreateWindow = (isOpen) => {
+    const createTreeConteiner = document.getElementById('create-tree-conteiner')
+
+    createTreeConteiner.style.display = isOpen ? 'block' : 'none'
+ }
+
+
+ const createTree = () => {
+     const submitButton = document.getElementById('create-tree-now')
+
+     submitButton.addEventListener('click', () => {      
+        const nameInput = document.getElementById('your-name-input').value
+        let selectedType=document.getElementById('choise').value
+        selectedType = AVAILABLE_TYPES[selectedType.toLowerCase()]
+        const locationInput=document.getElementById('location-input').value
+        const treeNameInput=document.getElementById('treename-input').value
+
+        const newTree={  
+                treeName: treeNameInput,
+                treeType: selectedType,
+                location: locationInput,
+                keeper: nameInput,
+            }
+            TREES.push(newTree)
+            renderTree(newTree) 
+            toggleCreateWindow(false)
+           
+        })
+ }
+
  renderAllTrees()
 
-
-
-const buttonToCreateTree = document.getElementById('create-tree')
-const createTreeConteiner = document.getElementById('create-tree-conteiner')
-
-buttonToCreateTree.addEventListener('click', () => {
-    createTreeConteiner.style.display = 'block'
-
-
+ const buttonToCreateTree = document.getElementById('create-tree')
+ buttonToCreateTree.addEventListener('click', () => {
+    toggleCreateWindow(true)
 })
+
+ createTree()
+
 
 
  const questButton = document.getElementById("get-quest")
