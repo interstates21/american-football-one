@@ -9,6 +9,11 @@
 // Feature: User Login
 
 
+const getRandomInt = (max) => {
+    // Got from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    return Math.floor(Math.random() * max);
+}
+
 const AVAILABLE_TYPES = {
     apple: {
         name: 'Apple',
@@ -112,4 +117,50 @@ buttonToCreateTree.addEventListener('click', () => {
 })
 
 
+ const questButton = document.getElementById("get-quest")
+
  
+const LOCATION_ARRAY = [
+    'Sweden',
+    'Ukraine',
+    'USA',
+    'Germany',
+    'Madagaskar',
+    'Russia'
+
+]
+
+
+ questButton.addEventListener('click', () => { 
+
+    
+
+    const AVAILABLE_TYPES_ARRAY = Object.keys(AVAILABLE_TYPES);
+    const randomNumberOfTree = getRandomInt(AVAILABLE_TYPES_ARRAY.length);
+    const nameOfQuestTree = AVAILABLE_TYPES_ARRAY[randomNumberOfTree]
+    console.log(nameOfQuestTree)
+    
+    const randomNumberOfLocation = getRandomInt(LOCATION_ARRAY.length)
+    const randomLocation = LOCATION_ARRAY[randomNumberOfLocation]
+    console.log(randomLocation)
+
+    const questWindow = document.getElementById('quest')
+    questWindow.style.display = "block"
+    const questText = document.getElementById('quest-text')
+    questText.innerHTML = `Ok, you have 13 days to plant the ${nameOfQuestTree} in ${randomLocation}`
+  
+    
+
+
+    // Ok, you have 13 days to plant the ${} in ${}
+
+
+
+    // const headUrl = headParts[randomIndex];
+
+    // headElement.style.background = `url("${headUrl}") center/cover`;
+
+    
+   
+
+ })
