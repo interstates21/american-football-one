@@ -77,10 +77,15 @@ const renderTree = (treeObject) => {
      }
  }
 
- const toggleCreateWindow = (isOpen) => {
-    const createTreeConteiner = document.getElementById('create-tree-conteiner')
+ const toggleWindow = (isOpen, targetModel) => {
+   
 
-    createTreeConteiner.style.display = isOpen ? 'block' : 'none'
+    const TargetConteiner = document.getElementById(targetModel)
+
+
+
+    TargetConteiner.style.display = isOpen ? 'block' : 'none'
+
  }
 
 
@@ -102,16 +107,21 @@ const renderTree = (treeObject) => {
             }
             TREES.push(newTree)
             renderTree(newTree) 
-            toggleCreateWindow(false)
+            toggleWindow(false, "create-tree-conteiner")
+
+   
            
         })
+        
  }
+
+
 
  renderAllTrees()
 
  const buttonToCreateTree = document.getElementById('create-tree')
  buttonToCreateTree.addEventListener('click', () => {
-    toggleCreateWindow(true)
+    toggleWindow(true, "create-tree-conteiner")
 })
 
  createTree()
@@ -150,7 +160,15 @@ const LOCATION_ARRAY = [
     const questText = document.getElementById('quest-text')
     questText.innerHTML = `Ok, you have 13 days to plant the ${nameOfQuestTree} in ${randomLocation}`
   
+    const targetModel = "quest"
     
+    const questAcceptedButton = document.getElementById("accept-quest")
+
+    questAcceptedButton.addEventListener('click', () => {
+        toggleWindow(false, "quest")
+    })
+
+
 
 
     // Ok, you have 13 days to plant the ${} in ${}
