@@ -1,8 +1,10 @@
 // Feature: Tree Gallery
 
 // Feature: Planting and Growing Instructions
-// Feature: Rating of keepers (who planted the most trees)
 // Feature: Get a T-shirt for 10 trees
+// Feature: Rating of keepers (who planted the most trees)
+
+
 // Feature: Some tree type has some points (Pine tree is the most valuable tree)
 // Feature: Map of the planted trees
 // Feature: Quest: plant a tree
@@ -24,18 +26,41 @@ const AVAILABLE_TYPES = {
     }
 }
 
+const USERS = [
+    {
+        name: 'Samuel',
+        plantedTrees: 0,
+    },
+    {
+        name: 'Jackson',
+        plantedTrees: 0,
+    },
+    {
+        name: 'Shamuna',
+        plantedTrees: 0,
+    },
+    {
+        name: 'Alex',
+        plantedTrees: 0,
+    },
+    {
+        name: 'Maria',
+        plantedTrees: 0,
+    },
+]
+
 const TREES = [
     {
         treeName: "Sunny Bug",
         treeType: AVAILABLE_TYPES.cherry,
         location: 'Sweden',
-        keeper: 'Samuel',
+        keeper: USERS[0]
     },
     {
         treeName: "Dark Bug",
         treeType: AVAILABLE_TYPES.apple,
         location: 'New Zeland',
-        keeper: 'Jackson',
+        keeper: USERS[1],
     },]
 
 
