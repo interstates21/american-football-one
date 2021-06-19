@@ -81,7 +81,7 @@ const renderTree = (treeObject) => {
                     ${treeObject.treeName} (${treeObject.treeType.name})
                 </h5>
                  <p>
-                     ${treeObject.keeper}
+                     ${treeObject.keeper.name}
                 </p>
              </div>
              <img src="${treeObject.treeType.imageURL}" alt="Tree Image"/>
@@ -118,7 +118,8 @@ const renderTree = (treeObject) => {
      const submitButton = document.getElementById('create-tree-now')
 
      submitButton.addEventListener('click', () => {      
-        const nameInput = document.getElementById('your-name-input').value
+        const selectednameInput = document.getElementById('select-name').value
+        const selectedUserObject=USERS.find(currentUser => currentUser.name === selectednameInput)
         let selectedType=document.getElementById('choise').value
         selectedType = AVAILABLE_TYPES[selectedType.toLowerCase()]
         const locationInput=document.getElementById('location-input').value
@@ -128,7 +129,7 @@ const renderTree = (treeObject) => {
                 treeName: treeNameInput,
                 treeType: selectedType,
                 location: locationInput,
-                keeper: nameInput,
+                keeper: selectedUserObject,
             }
             TREES.push(newTree)
             renderTree(newTree) 
@@ -208,3 +209,12 @@ const LOCATION_ARRAY = [
    
 
  })
+ const selectName=document.getElementById('select-name')
+ let i=0;
+ while(i<USERS.length){
+     const nameOption=document.createElement('option')
+     nameOption.innerHTML=USERS[i].name
+     selectName.appendChild(nameOption)
+     
+     i++
+ }
