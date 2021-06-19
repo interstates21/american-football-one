@@ -40,7 +40,7 @@ const USERS = [
         plantedTrees: 0,
     },
     {
-        name: 'Alex',
+        name: 'Alex', 
         plantedTrees: 0,
     },
     {
