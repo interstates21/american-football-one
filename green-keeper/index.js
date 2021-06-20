@@ -119,7 +119,23 @@ const renderTree = (treeObject) => {
 
      submitButton.addEventListener('click', () => {      
         const selectednameInput = document.getElementById('select-name').value
-        const selectedUserObject=USERS.find(currentUser => currentUser.name === selectednameInput)
+        const selectName= document.getElementById('select-name')
+ 
+
+ 
+        const selectedUserObject=USERS.find(currentUser => currentUser.name === selectednameInput) 
+       
+          
+       
+       
+           
+         
+         
+         
+        
+       
+       
+       
         let selectedType=document.getElementById('choise').value
         selectedType = AVAILABLE_TYPES[selectedType.toLowerCase()]
         const locationInput=document.getElementById('location-input').value
@@ -140,6 +156,7 @@ const renderTree = (treeObject) => {
         })
         
  }
+ 
 
 
 
@@ -148,6 +165,10 @@ const renderTree = (treeObject) => {
  const buttonToCreateTree = document.getElementById('create-tree')
  buttonToCreateTree.addEventListener('click', () => {
     toggleWindow(true, "create-tree-conteiner")
+  
+ 
+
+ 
 })
 
  createTree()
@@ -213,8 +234,11 @@ const LOCATION_ARRAY = [
  let i=0;
  while(i<USERS.length){
      const nameOption=document.createElement('option')
-     nameOption.innerHTML=USERS[i].name
+     const currentUser=USERS[i]
+     nameOption.innerHTML=currentUser.name
      selectName.appendChild(nameOption)
      
      i++
  }
+ 
+ 

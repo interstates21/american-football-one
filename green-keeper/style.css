@@ -56,4 +56,15 @@ body {
     padding: 30px;
     font-weight: 700;
 } 
+#tshirt{
+    width:400px;
+    height:250px;
+    background-color: red;
+    color:white;
+    text-align: center;
+    position: absolute;
+    top: calc(50vh - 125px);
+    left: calc(50vw - 200px);
+    display:none;
+}
 
