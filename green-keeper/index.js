@@ -10,12 +10,6 @@
 // Feature: Quest: plant a tree
 // Feature: User Login
 
-
-const getRandomInt = (max) => {
-    // Got from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-    return Math.floor(Math.random() * max);
-}
-
 const AVAILABLE_TYPES = {
     apple: {
         name: 'Apple',
@@ -54,6 +48,16 @@ const USERS = [
     },
 ]
 
+const LOCATION_ARRAY = [
+    'Sweden',
+    'Ukraine',
+    'USA',
+    'Germany',
+    'Madagaskar',
+    'Russia'
+]
+
+
 const TREES = [
     {
         treeName: "Sunny Bug",
@@ -69,7 +73,14 @@ const TREES = [
     },]
 
 
+
+// Function Declarations
  const treeGaleryContainer = document.getElementById('tree-gallery');
+
+ const getRandomInt = (max) => {
+    // Got from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    return Math.floor(Math.random() * max);
+}
 
 const renderTree = (treeObject) => {
     const newTreeCard = document.createElement('div');
@@ -103,43 +114,22 @@ const renderTree = (treeObject) => {
  }
 
  const toggleWindow = (isOpen, targetModel) => {
-   
-
-    const TargetConteiner = document.getElementById(targetModel)
-
-
-
-    TargetConteiner.style.display = isOpen ? 'block' : 'none'
-
+    const targetConteiner = document.getElementById(targetModel)
+    targetConteiner.style.display = isOpen ? 'block' : 'none'
  }
-
 
  const createTree = () => {
      const submitButton = document.getElementById('create-tree-now')
 
-     submitButton.addEventListener('click', () => {      
-        const selectednameInput = document.getElementById('select-name').value
-        const selectName= document.getElementById('select-name')
- 
-
- 
-        const selectedUserObject=USERS.find(currentUser => currentUser.name === selectednameInput) 
-       
-          
-       
-       
-           
-         
-         
-         
-        
-       
-       
-       
-        let selectedType=document.getElementById('choise').value
-        selectedType = AVAILABLE_TYPES[selectedType.toLowerCase()]
+     submitButton.addEventListener('click', () => {
         const locationInput=document.getElementById('location-input').value
         const treeNameInput=document.getElementById('treename-input').value
+
+        const userNameFromSelect = document.getElementById('select-name').value
+        const selectedUserObject = USERS.find(currentUser => currentUser.name === userNameFromSelect) 
+        
+        let selectedType=document.getElementById('choise').value
+        selectedType = AVAILABLE_TYPES[selectedType.toLowerCase()]
 
         const newTree={  
                 treeName: treeNameInput,
@@ -147,98 +137,71 @@ const renderTree = (treeObject) => {
                 location: locationInput,
                 keeper: selectedUserObject,
             }
+
             TREES.push(newTree)
             renderTree(newTree) 
             toggleWindow(false, "create-tree-conteiner")
-
-   
-           
-        })
-        
+        })      
  }
+
+ const createQuest = () => {
+    const questButton = document.getElementById("get-quest");
+
+    questButton.addEventListener('click', () => { 
+        const AVAILABLE_TYPES_ARRAY = Object.keys(AVAILABLE_TYPES);
+        const randomNumberOfTree = getRandomInt(AVAILABLE_TYPES_ARRAY.length);
+        const nameOfQuestTree = AVAILABLE_TYPES_ARRAY[randomNumberOfTree]
+        console.log(nameOfQuestTree)
+        
+        const randomNumberOfLocation = getRandomInt(LOCATION_ARRAY.length)
+        const randomLocation = LOCATION_ARRAY[randomNumberOfLocation]
+        console.log(randomLocation)
+    
+        const questWindow = document.getElementById('quest')
+        questWindow.style.display = "block"
+        const questText = document.getElementById('quest-text')
+        questText.innerHTML = `Ok, you have 13 days to plant the ${nameOfQuestTree} in ${randomLocation}`
+        
+        const questAcceptedButton = document.getElementById("accept-quest")
+    
+        questAcceptedButton.addEventListener('click', () => {
+            toggleWindow(false, "quest")
+        })
+     })
+}
  
+ const createSelectOptionsForUsersDropdown = () => {
+    const selectName=document.getElementById('select-name')
+    let i=0;
+    while(i<USERS.length){
+        const nameOption=document.createElement('option')
+        const currentUser=USERS[i]
+        nameOption.innerHTML=currentUser.name
+        selectName.appendChild(nameOption)
+        
+        i++
+    }
+ }
 
 
+
+//  Execution
 
  renderAllTrees()
+ createTree()
+ createSelectOptionsForUsersDropdown()
+ createQuest()
 
- const buttonToCreateTree = document.getElementById('create-tree')
- buttonToCreateTree.addEventListener('click', () => {
+
+ const openCreateModalButton = document.getElementById('create-tree')
+ openCreateModalButton.addEventListener('click', () => {
     toggleWindow(true, "create-tree-conteiner")
-  
- 
-
- 
 })
 
- createTree()
 
-
-
- const questButton = document.getElementById("get-quest")
 
  
-const LOCATION_ARRAY = [
-    'Sweden',
-    'Ukraine',
-    'USA',
-    'Germany',
-    'Madagaskar',
-    'Russia'
-
-]
 
 
- questButton.addEventListener('click', () => { 
-
-    
-
-    const AVAILABLE_TYPES_ARRAY = Object.keys(AVAILABLE_TYPES);
-    const randomNumberOfTree = getRandomInt(AVAILABLE_TYPES_ARRAY.length);
-    const nameOfQuestTree = AVAILABLE_TYPES_ARRAY[randomNumberOfTree]
-    console.log(nameOfQuestTree)
-    
-    const randomNumberOfLocation = getRandomInt(LOCATION_ARRAY.length)
-    const randomLocation = LOCATION_ARRAY[randomNumberOfLocation]
-    console.log(randomLocation)
-
-    const questWindow = document.getElementById('quest')
-    questWindow.style.display = "block"
-    const questText = document.getElementById('quest-text')
-    questText.innerHTML = `Ok, you have 13 days to plant the ${nameOfQuestTree} in ${randomLocation}`
-  
-    const targetModel = "quest"
-    
-    const questAcceptedButton = document.getElementById("accept-quest")
-
-    questAcceptedButton.addEventListener('click', () => {
-        toggleWindow(false, "quest")
-    })
-
-
-
-
-    // Ok, you have 13 days to plant the ${} in ${}
-
-
-
-    // const headUrl = headParts[randomIndex];
-
-    // headElement.style.background = `url("${headUrl}") center/cover`;
-
-    
-   
-
- })
- const selectName=document.getElementById('select-name')
- let i=0;
- while(i<USERS.length){
-     const nameOption=document.createElement('option')
-     const currentUser=USERS[i]
-     nameOption.innerHTML=currentUser.name
-     selectName.appendChild(nameOption)
-     
-     i++
- }
  
  
