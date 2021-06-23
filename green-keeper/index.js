@@ -126,7 +126,11 @@ const renderTree = (treeObject) => {
         const treeNameInput=document.getElementById('treename-input').value
 
         const userNameFromSelect = document.getElementById('select-name').value
-        const selectedUserObject = USERS.find(currentUser => currentUser.name === userNameFromSelect) 
+        const selectedUserIndex = USERS.findIndex(currentUser => currentUser.name === userNameFromSelect) 
+        USERS[selectedUserIndex].plantedTrees++
+        console.log(USERS)
+
+        displayRankFunction()
         
         let selectedType=document.getElementById('choise').value
         selectedType = AVAILABLE_TYPES[selectedType.toLowerCase()]
@@ -135,7 +139,7 @@ const renderTree = (treeObject) => {
                 treeName: treeNameInput,
                 treeType: selectedType,
                 location: locationInput,
-                keeper: selectedUserObject,
+                keeper: USERS[selectedUserIndex],
             }
 
             TREES.push(newTree)
@@ -183,6 +187,41 @@ const renderTree = (treeObject) => {
     }
  }
 
+// Display users rank
+
+const displayRankFunction = () => {
+    const rankList = document.getElementById("rank-list")
+    rankList.innerHTML = ""
+
+    USERS.sort(function(a, b) {
+        return b.plantedTrees - a.plantedTrees;
+      });
+      console.log(USERS); 
+
+      
+
+for (let i = 0; i < USERS.length; i++) {
+const listItem = document.createElement("li")
+listItem.className = "list-group-item d-flex justify-content-between align-items-center list-group-item-light"
+listItem.innerHTML = `${USERS[i].name}
+<span class="badge bg-info rounded-pill">${USERS[i].plantedTrees}</span>`
+// if (USERS[i].plantedTrees > 2){
+//     listItem.className += " winner"
+// }
+// listItem.className += " winner"
+rankList.appendChild(listItem)
+
+
+}
+
+
+}
+
+
+
+
+
+
 
 
 //  Execution
@@ -191,12 +230,15 @@ const renderTree = (treeObject) => {
  createTree()
  createSelectOptionsForUsersDropdown()
  createQuest()
+ displayRankFunction()
+ 
 
 
  const openCreateModalButton = document.getElementById('create-tree')
  openCreateModalButton.addEventListener('click', () => {
     toggleWindow(true, "create-tree-conteiner")
 })
+
 
 
 
