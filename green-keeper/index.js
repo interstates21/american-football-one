@@ -276,7 +276,9 @@ openLoginWindow.addEventListener('click', () => {
          const loginPassword = document.getElementById('password-input').value
          if  (loginPassword===foundUserobject.password){
             loggedInUser =foundUserobject  ;
-            alert(loggedInUser.name)
+            const headerName = document.createElement("h1")
+            headerName.innerHTML = loggedInUser.name
+            document.body.prepend(headerName)
          }
 
 
