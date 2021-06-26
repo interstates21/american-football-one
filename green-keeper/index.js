@@ -25,28 +25,36 @@ const AVAILABLE_TYPES = {
     }
 }
 
+
 const USERS = [
     {
         name: 'Samuel',
         plantedTrees: 0,
+        password: 'hello1'
     },
     {
         name: 'Jackson',
         plantedTrees: 0,
+        password: 'hello2'
     },
     {
         name: 'Shamuna',
         plantedTrees: 0,
+        password: 'hello3'
     },
     {
         name: 'Alex', 
         plantedTrees: 0,
+        password: 'hello4'
     },
     {
         name: 'Maria',
         plantedTrees: 0,
+        password: 'hello5'
     },
 ]
+
+let loggedInUser = null;
 
 const LOCATION_ARRAY = [
     'Sweden',
@@ -205,19 +213,26 @@ const listItem = document.createElement("li")
 listItem.className = "list-group-item d-flex justify-content-between align-items-center list-group-item-light"
 listItem.innerHTML = `${USERS[i].name}
 <span class="badge bg-info rounded-pill">${USERS[i].plantedTrees}</span>`
- if (USERS[i].plantedTrees > 2){
-     
+
+ if (USERS[i].plantedTrees >= 2){
     document.getElementById('tshirt')
-    document.getElementById('tshirt').style.display='block'
- 
+
+    // Display t-shirt popup
+    const tshirtWindow = document.getElementById('tshirt');
+    tshirtWindow.style.display='block'
+
+    tshirtWindow.addEventListener('click', () => {
+            // Hide t-shirt popup on click
+        tshirtWindow.style.display='none'
+    })
+
+    // Hide t-shirt popup in 2s
+    window.setTimeout(() => document.getElementById('tshirt').style.display='none', 10000)
 
  }
-// listItem.className += " winner"
 rankList.appendChild(listItem)
 
-
 }
-
 
 }
 
@@ -244,8 +259,23 @@ rankList.appendChild(listItem)
 })
 
 
+// Login
+const openLoginWindow = document.getElementById('open-login-window');
+openLoginWindow.addEventListener('click', () => {
+    const loginWindow = document.getElementById('login-window');
+    loginWindow.style.display = 'block';
 
+    const loginSubmit = document.getElementById('login-submit');
+    const loginCancel = document.getElementById('login-cancel');
 
+    loginSubmit.addEventListener('click', () => {
+        // Collect the user data from inputs, compare with all Users and login if there's a match
+    })
+
+    loginCancel.addEventListener('click', () => {
+        loginWindow.style.display = 'none';
+    })
+})
  
 
 
