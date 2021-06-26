@@ -1,13 +1,13 @@
-// Feature: Tree Gallery
+// Feature: Tree Gallery +++
 
 // Feature: Planting and Growing Instructions
 // Feature: Get a T-shirt for 10 trees
-// Feature: Rating of keepers (who planted the most trees)
+// Feature: Rating of keepers (who planted the most trees) +++
 
 
 // Feature: Some tree type has some points (Pine tree is the most valuable tree)
 // Feature: Map of the planted trees
-// Feature: Quest: plant a tree
+// Feature: Quest: plant a tree +++
 // Feature: User Login
 
 const AVAILABLE_TYPES = {
