@@ -13,15 +13,18 @@
 const AVAILABLE_TYPES = {
     apple: {
         name: 'Apple',
-        imageURL: './trees/pic-2.jpg'
+        imageURL: './trees/pic-2.jpg',
+        symbol: '🍎'
     },
     cherry: {
         name: 'Cherry',
-        imageURL: './trees/pic-1.jpg'
+        imageURL: './trees/pic-1.jpg',
+        symbol: '🍒'
     },
     pine: {
         name: 'Pine',
-        imageURL: './trees/pic-3.jpg'
+        imageURL: './trees/pic-3.jpg',
+        symbol: '🌲'
     }
 }
 
