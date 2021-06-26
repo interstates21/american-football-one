@@ -143,7 +143,7 @@ const renderTree = (treeObject) => {
 
         displayRankFunction()
         
-        let selectedType=document.getElementById('choise').value
+        let selectedType=document.getElementById('choice').value
         selectedType = AVAILABLE_TYPES[selectedType.toLowerCase()]
 
         const newTree={  
@@ -194,6 +194,21 @@ const renderTree = (treeObject) => {
         nameOption.innerHTML=currentUser.name
         selectName.appendChild(nameOption)
         
+        i++
+    }
+ }
+ const createSelectOptionsForTreeTypesDropdown = () => {
+    const treeTypeSelect = document.getElementById('choice')
+    let i=0;
+
+    const treeTypeArray = Object.values(AVAILABLE_TYPES);
+
+    while(i < treeTypeArray.length){
+        const treeTypeOption = document.createElement('option')
+    
+        treeTypeOption.innerHTML = treeTypeArray[i].name
+    
+        treeTypeSelect.appendChild(treeTypeOption)
         i++
     }
  }
@@ -248,11 +263,14 @@ rankList.appendChild(listItem)
 
 //  Execution
 
- renderAllTrees()
- createTree()
- createSelectOptionsForUsersDropdown()
- createQuest()
- displayRankFunction()
+createSelectOptionsForUsersDropdown()
+createSelectOptionsForTreeTypesDropdown()
+
+renderAllTrees()
+createTree()
+
+createQuest()
+displayRankFunction()
  
 
 
