@@ -276,9 +276,12 @@ openLoginWindow.addEventListener('click', () => {
          const loginPassword = document.getElementById('password-input').value
          if  (loginPassword===foundUserobject.password){
             loggedInUser =foundUserobject  ;
+
             const headerName = document.createElement("h1")
             headerName.innerHTML = loggedInUser.name
             document.body.prepend(headerName)
+
+            loginWindow.style.display = 'none';
          }
 
 
