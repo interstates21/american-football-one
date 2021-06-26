@@ -205,9 +205,13 @@ const listItem = document.createElement("li")
 listItem.className = "list-group-item d-flex justify-content-between align-items-center list-group-item-light"
 listItem.innerHTML = `${USERS[i].name}
 <span class="badge bg-info rounded-pill">${USERS[i].plantedTrees}</span>`
-// if (USERS[i].plantedTrees > 2){
-//     listItem.className += " winner"
-// }
+ if (USERS[i].plantedTrees > 2){
+     
+    document.getElementById('tshirt')
+    document.getElementById('tshirt').style.display='block'
+ 
+
+ }
 // listItem.className += " winner"
 rankList.appendChild(listItem)
 
