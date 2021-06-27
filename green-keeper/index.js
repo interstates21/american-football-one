@@ -128,7 +128,8 @@ const renderTree = (treeObject) => {
     const targetConteiner = document.getElementById(targetModel)
     targetConteiner.style.display = isOpen ? 'block' : 'none'
  }
-
+//   const userNameFromSelect = document.getElementById('name-input').value
+//         userNameFromSelect =  loggedInUser.name
  const createTree = () => {
      const submitButton = document.getElementById('create-tree-now')
 
@@ -136,10 +137,17 @@ const renderTree = (treeObject) => {
         const locationInput=document.getElementById('location-input').value
         const treeNameInput=document.getElementById('treename-input').value
 
-        const userNameFromSelect = document.getElementById('select-name').value
-        const selectedUserIndex = USERS.findIndex(currentUser => currentUser.name === userNameFromSelect) 
-        USERS[selectedUserIndex].plantedTrees++
-        console.log(USERS)
+        const userNameFromSelect =  loggedInUser.name
+       
+        
+        // userNameFromSelect =  loggedInUser.name
+        // const selectedUserIndex = USERS.findIndex(currentUser => currentUser.name === userNameFromSelect) 
+        loggedInUser.plantedTrees++
+        if (userNameFromSelect==='Alex' ){
+            if (loggedInUser.plantedTrees===2){const tshirtWindow = document.getElementById('tshirt');
+             tshirtWindow.style.display='block'}
+        }
+       
 
         displayRankFunction()
         
@@ -150,12 +158,13 @@ const renderTree = (treeObject) => {
                 treeName: treeNameInput,
                 treeType: selectedType,
                 location: locationInput,
-                keeper: USERS[selectedUserIndex],
+                keeper:loggedInUser ,
             }
 
             TREES.push(newTree)
             renderTree(newTree) 
             toggleWindow(false, "create-tree-conteiner")
+            creatTreeButton.style.display='none'
         })      
  }
 
@@ -186,13 +195,13 @@ const renderTree = (treeObject) => {
 }
  
  const createSelectOptionsForUsersDropdown = () => {
-    const selectName=document.getElementById('select-name')
+    // const selectName=document.getElementById('select-name')
     let i=0;
     while(i<USERS.length){
-        const nameOption=document.createElement('option')
+        // const nameOption=document.createElement('option')
         const currentUser=USERS[i]
-        nameOption.innerHTML=currentUser.name
-        selectName.appendChild(nameOption)
+        // nameOption.innerHTML=currentUser.name
+        // selectName.appendChild(nameOption)
         
         i++
     }
@@ -232,22 +241,22 @@ listItem.className = "list-group-item d-flex justify-content-between align-items
 listItem.innerHTML = `${USERS[i].name}
 <span class="badge bg-info rounded-pill">${USERS[i].plantedTrees}</span>`
 
- if (USERS[i].plantedTrees >= 2){
-    document.getElementById('tshirt')
+//  if (USERS[i].plantedTrees >= 2){
+//     document.getElementById('tshirt')
 
-    // Display t-shirt popup
-    const tshirtWindow = document.getElementById('tshirt');
-    tshirtWindow.style.display='block'
+//     // Display t-shirt popup
+//     const tshirtWindow = document.getElementById('tshirt');
+//     tshirtWindow.style.display='block'
 
-    tshirtWindow.addEventListener('click', () => {
-            // Hide t-shirt popup on click
-        tshirtWindow.style.display='none'
-    })
+//     tshirtWindow.addEventListener('click', () => {
+//             // Hide t-shirt popup on click
+//         tshirtWindow.style.display='none'
+    
 
     // Hide t-shirt popup in 2s
     window.setTimeout(() => document.getElementById('tshirt').style.display='none', 10000)
 
- }
+ 
 rankList.appendChild(listItem)
 
 }
@@ -277,32 +286,42 @@ displayRankFunction()
  const openCreateModalButton = document.getElementById('create-tree')
  openCreateModalButton.addEventListener('click', () => {
     toggleWindow(true, "create-tree-conteiner")
+    document.getElementById('name-input').value=loggedInUser.name
 })
 
-
+const creatTreeButton= document.getElementById("create-tree")
 // Login
 const openLoginWindow = document.getElementById('open-login-window');
+const headerName = document.createElement("h1")
+headerName.innerHTML = ""
 openLoginWindow.addEventListener('click', () => {
+   
     const loginWindow = document.getElementById('login-window');
     loginWindow.style.display = 'block';
 
     const loginSubmit = document.getElementById('login-submit');
     const loginCancel = document.getElementById('login-cancel');
-
+   
     loginSubmit.addEventListener('click', () => {
+       
         // Collect the user data from inputs, compare with all Users and login if there's a match
         const loginName = document.getElementById('login-name-input').value
         const foundUserobject = USERS.find(currentUser => currentUser.name === loginName)
         
-         const loginPassword = document.getElementById('password-input').value
-         if  (loginPassword===foundUserobject.password){
+         const loginPassword = document.getElementById('password-input').value .toLowerCase()
+         if  (loginPassword===foundUserobject.password){ 
             loggedInUser =foundUserobject  ;
 
-            const headerName = document.createElement("h1")
+           
             headerName.innerHTML = loggedInUser.name
             document.body.prepend(headerName)
-
+            
+            creatTreeButton.style.display='block'
+           
+           
             loginWindow.style.display = 'none';
+
+
          }
 
 

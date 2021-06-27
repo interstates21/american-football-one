@@ -103,3 +103,6 @@ body {
     background-color: chartreuse;
 
 }
+#create-tree{
+    display:none;
+}
