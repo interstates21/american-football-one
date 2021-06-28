@@ -306,7 +306,9 @@ openLoginWindow.addEventListener('click', () => {
        
         // Collect the user data from inputs, compare with all Users and login if there's a match
         const loginName = document.getElementById('login-name-input').value
-        const foundUserobject = USERS.find(currentUser => currentUser.name === loginName)
+
+        // Find a user with the name we've entered to the login input
+        const foundUserobject = USERS.find(currentUser => currentUser.name.toLowerCase() === loginName.toLowerCase())
         
          const loginPassword = document.getElementById('password-input').value .toLowerCase()
          if  (loginPassword===foundUserobject.password){ 

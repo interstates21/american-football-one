@@ -103,6 +103,15 @@ body {
     background-color: chartreuse;
 
 }
+
+.button-container {
+    display: flex;
+}
+
+.btn {
+    height: 40px;
+    margin: 6px;
+}
 #create-tree{
     display:none;
 }
