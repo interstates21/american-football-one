@@ -140,3 +140,18 @@ let numberOfAnswersConteiner = document.createElement('div')
 numberOfAnswersConteiner.className = "number-of-answers"
 
 button.appendChild(numberOfAnswersConteiner)
+
+
+let m=1
+let s=0
+let n=0
+while (m<100){
+n=1/m
+ s=s+n
+ m++
+ console.log("time", s)
+}
+
+let x=1
+f(x)=
+Math.lim(f(x),100)
