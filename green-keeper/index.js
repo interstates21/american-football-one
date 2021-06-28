@@ -10,6 +10,19 @@
 // Feature: Quest: plant a tree
 // Feature: User Login
 
+
+// Retrieve User Object from the memory, and translate an object string back to an object
+let storedUser = localStorage.getItem('logged-in-user');
+
+if (storedUser !== null) {
+    storedUser = JSON.parse(storedUser);
+}
+
+console.log('storedUser =', storedUser)
+
+let loggedInUser = storedUser;
+
+
 const AVAILABLE_TYPES = {
     apple: {
         name: 'Apple',
@@ -57,7 +70,6 @@ const USERS = [
     },
 ]
 
-let loggedInUser = null;
 
 const LOCATION_ARRAY = [
     'Sweden',
@@ -128,8 +140,6 @@ const renderTree = (treeObject) => {
     const targetConteiner = document.getElementById(targetModel)
     targetConteiner.style.display = isOpen ? 'block' : 'none'
  }
-//   const userNameFromSelect = document.getElementById('name-input').value
-//         userNameFromSelect =  loggedInUser.name
  const createTree = () => {
      const submitButton = document.getElementById('create-tree-now')
 
@@ -140,8 +150,6 @@ const renderTree = (treeObject) => {
         const userNameFromSelect =  loggedInUser.name
        
         
-        // userNameFromSelect =  loggedInUser.name
-        // const selectedUserIndex = USERS.findIndex(currentUser => currentUser.name === userNameFromSelect) 
         loggedInUser.plantedTrees++
         if (userNameFromSelect==='Alex' ){
             if (loggedInUser.plantedTrees===2){const tshirtWindow = document.getElementById('tshirt');
@@ -158,7 +166,7 @@ const renderTree = (treeObject) => {
                 treeName: treeNameInput,
                 treeType: selectedType,
                 location: locationInput,
-                keeper:loggedInUser ,
+                keeper:loggedInUser,
             }
 
             TREES.push(newTree)
@@ -311,8 +319,15 @@ openLoginWindow.addEventListener('click', () => {
         const foundUserobject = USERS.find(currentUser => currentUser.name.toLowerCase() === loginName.toLowerCase())
         
          const loginPassword = document.getElementById('password-input').value .toLowerCase()
-         if  (loginPassword===foundUserobject.password){ 
-            loggedInUser =foundUserobject  ;
+
+         // Check if the entered password matches the password in found
+         if  (loginPassword === foundUserobject.password){ 
+            loggedInUser = foundUserobject  ;
+            
+
+            // Store a found user object to the browser memory. Translate an object to a string,
+            // cause localStorage only saves strings
+            localStorage.setItem('logged-in-user', JSON.stringify(foundUserobject));
 
            
             headerName.innerHTML = loggedInUser.name
@@ -335,6 +350,3 @@ openLoginWindow.addEventListener('click', () => {
 })
  
 
-
- 
- 
