@@ -11,6 +11,8 @@
 </head>
 
 <body>
+  <ul class="list-group" id="list">
+  </ul>
   <div class="container" style="width: 50%;" id="main-container">
 
     <h1 id="value-message"></h1>
@@ -21,13 +23,17 @@
         <div class="form-check">
           <form id="guess-form">
             <div class="mb-3">
-                <input type="text" class="form-control" id="my-input">
+                <input type="text" class="form-control" id="user-input" placeholder="sam...">
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="dinosaur-input" placeholder="tyranosaur...">
             </div>
             <button id="my-button" class="btn btn-primary">Send Data</button>
-        </form>
+          </form>
         </div>
-
-    </div>
+        
+      </div>
+      <button id="get-info" class="btn btn-primary">Get Data From Spreadsheets</button>
     <script src="./index.js"> </script>
 </body>
 
