@@ -6,12 +6,23 @@ const staticBlocks = [
         x: 1,
         y: 9,
     },
+    {
+        x: 7,
+        y: 9,
+    },
+    {
+        x: 4,
+        y: 9,
+    },
+    {
+        x: 5,
+        y: 9,
+    },
 ]
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
 
+
+  
 const someBlocksIntersected = (x, y) => {
     let i = 0;
     while (i < staticBlocks.length) {
@@ -34,6 +45,7 @@ const inRange = (x, y) => {
     }
 
     return false;
+
 }
 
 
@@ -69,10 +81,9 @@ const renderGrid = (activeCellCoord) => {
 
 const main = () => {
     const activeCellCoord = {
-        x: getRandomInt(9),
+        x: 5,
         y: 0
     }
-
 
     renderGrid(activeCellCoord);
 
@@ -81,14 +92,8 @@ const main = () => {
     const intervalReference = window.setInterval(() => {
         if (inRange(activeCellCoord.x, activeCellCoord.y + 1)) {
             activeCellCoord.y++;
+            renderGrid(activeCellCoord);
         }
-        else {
-            staticBlocks.push({x: activeCellCoord.x, y: activeCellCoord.y});
-            activeCellCoord.x = getRandomInt(9);
-            activeCellCoord.y = 0;
-        }
-
-        renderGrid(activeCellCoord);
     }, 300);
 
     // Listen to the arrow keys
