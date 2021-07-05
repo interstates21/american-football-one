@@ -64,7 +64,18 @@ window.addEventListener('click', (event) => {
     createBlock(x, y);
 })
 
+let isDrawing = false
+
+window.addEventListener('mousedown', (event) => {
+    isDrawing = true
+})
+
+window.addEventListener('mouseup', (event) => {
+    isDrawing = false
+})
 
 window.addEventListener('mousemove', (event) => {
-    createBlock(event.clientX, event.clientY);
+    if (isDrawing) {
+    createBlock(event.clientX, event.clientY);}
+
 })
