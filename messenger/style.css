@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw
+   
+
+}
+#messages-area {
+    height: 80vh;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.input-area {
+    height: 20vh;
+    background-color: bisque;
+    padding: 30px;
+}
+.text-area {
+    height: 10vh;
+   
+}
+.button-to-send {
+    height: 10vh;
+}
+.one-message {
+    background-color: white;
+    margin: 40px;
+    padding: 7px;
+    border-radius: 4px;
+    border: solid 2px wheat;
+
+}
