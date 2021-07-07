@@ -4,13 +4,11 @@ const main = () => {
     let nextMessageId = 0;
     const MESSAGES = []
 
-    const sendMessage = (text) => {
-        MESSAGES.push({
-            id: nextMessageId,
-            text: text,
-        })
-        nextMessageId++;
-    }
+
+
+
+
+
 
     const deleteMessage = (messageId) => {
         const foundTargetIndex = MESSAGES.findIndex(currentElement => {
@@ -30,14 +28,38 @@ const main = () => {
         }
     }
 
+    const sendButton = document.getElementById("send-button")
+    window.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            handleSendButtonClick()
+    }
+})
 
-    const displayMessages = () => {
-        for (let i = 0; i < MESSAGES.length; i++) {
-            createMessage(MESSAGES[i]);
-        }
+    sendButton.addEventListener("click", () => {
+        handleSendButtonClick()
+    }) 
+
+
+    const handleSendButtonClick = () => {
+        const inputDiv = document.getElementById("input-text")
+        const inputData = inputDiv.value
+        inputDiv.value = ""
+
+        pushMessage(inputData)
+        console.log(MESSAGES)
+        
+        displayOneMessage(MESSAGES[MESSAGES.length-1]);
     }
 
-    const createMessage = (message) => {
+    const pushMessage = (text) => {
+        MESSAGES.push({
+      id: nextMessageId,
+      text: text,
+    })
+    nextMessageId++;
+    }
+
+    const displayOneMessage = (message) => {
         const messageArea = document.getElementById('messages-area');
     
         const newMessage = document.createElement('div');
@@ -52,18 +74,24 @@ const main = () => {
         messageArea.appendChild(newMessage);
     }
 
+    const displayMessagesForAllArray = () => {
+        for (let i = 0; i < MESSAGES.length; i++) {
+            displayOneMessage(MESSAGES[i]);
+        }
+    }
+
 
     const editMessage = (messageId, newText) => {
         console.log(`Edited ${messageId}: ${newText}`)
     }
     
-    
-    sendMessage('Hello');
-    sendMessage('Hello1');
-    sendMessage('Hello2');
-    sendMessage('Hello3');
 
-    displayMessages();
+    // pushMessage('Hello');
+    // pushMessage('Hello1');
+    // pushMessage('Hello2');
+    // pushMessage('Hello3');
+
+   
 
 
 
