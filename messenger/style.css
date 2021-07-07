@@ -39,3 +39,31 @@ body {
     border: solid 2px wheat;
 
 }
+
+.message-selected {
+    background-color: yellow;
+}
+
+.toolbar {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    display: flex;
+}
+
+.toolbar-button {
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.1s ease-out, transform 0.1s ease-out;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+
+
+}
+
+.toolbar-button:hover {
+    background-color: #eee;
+    transform: scale(1.3);
+}
