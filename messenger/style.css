@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw
+   
+
+}
+#messages-area {
+    height: 80vh;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.input-area {
+    height: 20vh;
+    background-color: bisque;
+    padding: 30px;
+}
+.text-area {
+    height: 10vh;
+   
+}
+.button-to-send {
+    height: 10vh;
+}
+.one-message {
+    background-color: white;
+    margin: 40px;
+    padding: 7px;
+    border-radius: 4px;
+    border: solid 2px wheat;
+
+}
+
+.message-selected {
+    background-color: yellow;
+}
+
+.toolbar {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    display: flex;
+}
+
+.toolbar-button {
+    margin: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.1s ease-out, transform 0.1s ease-out;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+
+
+}
+
+.toolbar-button:hover {
+    background-color: #eee;
+    transform: scale(1.3);
+}

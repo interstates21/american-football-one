@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    cursor: crosshair;
+}
+#colors-box {
+    height: 20vh;
+    background-color: azure;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 200px;
+}
+.color {
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    -webkit-box-shadow: -1px 1px 33px 5px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: -1px 1px 33px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: -1px 1px 33px 5px rgba(34, 60, 80, 0.2);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#red, .red {
+    background-color: rgb(248, 45, 45);
+}
+#orange, .orange {
+    background-color: rgb(255, 157, 28);
+}
+#yellow, .yellow {
+    background-color: rgb(255, 217, 0);
+}
+#green, .green {
+    background-color: rgb(0, 139, 42);
+}
+#light-blue, .light-blue {
+    background-color: rgb(0, 195, 255);
+}
+#blue, .blue {
+    background-color: rgb(0, 83, 192);
+}
+#violet, .violet {
+    background-color: rgb(80, 0, 155);
+}
+
+
+
