@@ -15,7 +15,7 @@ const randomFacts = [
         id: "qwe",
         fact: "A shrimp’s heart is located in its head",
         liked: false,
-        score: 10
+        score: 90
     },
     {
         id: "rty",
@@ -75,7 +75,7 @@ const likeFact = (id) => {
         }
         i++  
     }
-    console.log(i) 
+    // console.log(i) 
               
     if (randomFacts[i]){
     if (randomFacts[i].liked === false) {
@@ -115,8 +115,10 @@ console.log('likedFacts =', likedFacts)
 
 
 // Return high score facts
+
+
 const isHighScore = (fact) => {
-    if (fact.score > 80) {
+        if (fact.score > 80) {
         return true;
     }
 
@@ -124,9 +126,16 @@ const isHighScore = (fact) => {
 }
 
 const getHighScoreFacts = () => {
-
-
-    return ;
+    const hightScoreFactsArray = []
+    let i=0
+    while (i<randomFacts.length){
+        if (isHighScore(randomFacts[i])) {
+            hightScoreFactsArray.push(randomFacts[i])
+        }
+        i++
+    }
+   
+    return hightScoreFactsArray;
 }
 
 
@@ -142,10 +151,10 @@ const getRandomInt = (max) => {
 
 
 const getRandomFactString =() => {
-    
-
-    return  ;
+    return randomFacts[getRandomInt(randomFacts.length-1)].fact
 }
+
+console.log(getRandomFactString())
 
 // Print Liked Fact String
 
@@ -166,4 +175,4 @@ const sortByScore = () => {
 
 }
 
-// Translate facts array into an object with keys like facts
+// Translate facts array into an object with keys like id
