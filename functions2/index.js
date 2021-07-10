@@ -1,42 +1,42 @@
 const randomFacts = [
     {
-        id: 0,
+        id: "dfg",
         fact: "Polar bear fur is actually clear, and their skin is black",
         liked: false,
         score: 54
     },
     {
-        id: 1,
+        id: "abc",
         fact: "A woodpecker’s tongue actually wraps all the way around its brain, protecting it from damage when it’s hammering into a tree.",
         liked: false,
         score: 38
     },
     {
-        id: 2,
+        id: "qwe",
         fact: "A shrimp’s heart is located in its head",
         liked: false,
         score: 10
     },
     {
-        id: 3,
+        id: "rty",
         fact: "Nine-banded armadillos always have quadruplets, and they’re always identical",
-        liked: false,
+        liked: true,
         score: 76
     },
     {
-        id: 4,
-        fact: "Nine-banded armadillos always have quadruplets, and they’re always identical",
+        id: "uio",
+        fact: "Cat is black",
         liked: false,
         score: 10
     },
     {
-        id: 5,
+        id: "asd",
         fact: "All clownfish are born male",
         liked: true,
         score: 132,
     },
     {
-        id: 6,
+        id: "fgh",
         fact: "Hippos and horses are actually distant relatives",
         liked: false,
         score: 11
@@ -64,24 +64,54 @@ const getFactStrings = () => {
 const factString = getFactStrings();
 
 
+// Like fact by id
+
+
+const likeFact = (id) => {
+    let i=0
+    while (i<randomFacts.length ){
+        if (randomFacts[i].id === id)  {
+            break
+        }
+        i++  
+    }
+    console.log(i) 
+              
+    if (randomFacts[i]){
+    if (randomFacts[i].liked === false) {
+        randomFacts[i].liked = true
+    }
+    else{ randomFacts[i].liked = false}
+    }
+
+
+}
+
+
+likeFact("uio");
+
 // Get all liked facts
 
+
 const getLikedFacts = () => {
+
+    const likedFactAray = []
+
+    let i=0
+    while (i < randomFacts.length){
+    if (randomFacts[i].liked === true) {
+        likedFactAray.push(randomFacts[i])
+    }
+    i++
+    }
+    return likedFactAray
+
 }
 
 const likedFacts = getLikedFacts();
 console.log('likedFacts =', likedFacts)
 
 
-// Like fact by id
-
-
-const likeFact = (id) => {
-
-}
-
-
-likeFact(4);
 
 
 // Return high score facts
