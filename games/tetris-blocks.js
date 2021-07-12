@@ -19,9 +19,9 @@ const createBlock = (isActive) => {
 
 const renderGrid = () => {
     let y = 0;
-
+    
     while (y < 10) {
-        let x = 0;
+     let x = 0;
         while (x < 10) {
             createBlock(x === activeCellCoord.x && y === activeCellCoord.y);
             x++;

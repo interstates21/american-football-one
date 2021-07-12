@@ -1,0 +1,23 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+ }
+ #materials {
+   
+    width:250px;
+    height:400px;
+    text-align: center;
+    padding-top: 49px;
+ }
+ #imgclickandchange{
+     position: absolute;
+    top:127px;
+    left:525px;
+ }
+ #imgHeadChange{
+    position: relative;
+    z-index: 1;
+  
+ }
+ 
