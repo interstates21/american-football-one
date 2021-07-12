@@ -64,6 +64,8 @@ const getFactStrings = () => {
 const factString = getFactStrings();
 
 
+
+
 // Like fact by id
 
 
@@ -177,15 +179,34 @@ const sortByScore = () => {
 
 // Translate facts array into an object with keys like id
 
+const factObject = {  }
 const transformArrayToObject = () => {
-    const factObject = { 
-      
-    }
     let i=0;
     while (i<randomFacts.length) {
         factObject[randomFacts[i].id]  = randomFacts[i] 
         i++ 
-    }
-    console.log(factObject)
+    }   
 }
 transformArrayToObject()
+console.log(factObject)
+
+
+const createListItem = (id) => {
+    const list = document.getElementById("list")
+    const divForFact = document.createElement("div")
+    divForFact.classList.add("fact")
+
+    let i=0
+    while (i<randomFacts.length ){
+        if (randomFacts[i].id === id)  {
+            break
+        }
+        i++  
+    }
+    divForFact.innerHTML = `<p>${randomFacts[i].fact}</p> <label>❤</label>`
+    list.appendChild(divForFact)
+} 
+
+createListItem ("qwe")
+createListItem ("rty")
+createListItem ("uio")
