@@ -178,5 +178,14 @@ const sortByScore = () => {
 // Translate facts array into an object with keys like id
 
 const transformArrayToObject = () => {
-    
+    const factObject = { 
+      
+    }
+    let i=0;
+    while (i<randomFacts.length) {
+        factObject[randomFacts[i].id]  = randomFacts[i] 
+        i++ 
+    }
+    console.log(factObject)
 }
+transformArrayToObject()
