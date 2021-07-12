@@ -176,3 +176,7 @@ const sortByScore = () => {
 }
 
 // Translate facts array into an object with keys like id
+
+const transformArrayToObject = () => {
+    
+}
