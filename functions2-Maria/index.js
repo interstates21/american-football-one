@@ -2,7 +2,7 @@ const randomFacts = [
     {
         id: "dfg",
         fact: "Polar bear fur is actually clear, and their skin is black",
-        liked: false,
+        liked: true,
         score: 54
     },
     {
@@ -63,6 +63,18 @@ const getFactStrings = () => {
 
 const factString = getFactStrings();
 
+// Function: find index by ID
+let indexById = 0;
+const findInexByID = (id) => {
+    
+    while (indexById<randomFacts.length ){
+        if (randomFacts[indexById].id === id)  {
+            break
+        }
+        indexById++  
+    }
+}
+
 
 
 
@@ -70,27 +82,22 @@ const factString = getFactStrings();
 
 
 const likeFact = (id) => {
-    let i=0
-    while (i<randomFacts.length ){
-        if (randomFacts[i].id === id)  {
-            break
-        }
-        i++  
-    }
+    
+    findInexByID(id)
     // console.log(i) 
               
-    if (randomFacts[i]){
-    if (randomFacts[i].liked === false) {
-        randomFacts[i].liked = true
+    if (randomFacts[indexById]){
+    if (randomFacts[indexById].liked === false) {
+        randomFacts[indexById].liked = true
     }
-    else{ randomFacts[i].liked = false}
+    else{ randomFacts[indexById].liked = false}
     }
 
 
 }
 
 
-likeFact("uio");
+likeFact("qwe");
 
 // Get all liked facts
 
@@ -152,11 +159,11 @@ const getRandomInt = (max) => {
 }
 
 
-const getRandomFactString =() => {
-    return randomFacts[getRandomInt(randomFacts.length-1)].fact
+const getRandomFactId =() => {
+    return randomFacts[getRandomInt(randomFacts.length-1)].id
 }
 
-console.log(getRandomFactString())
+console.log("random", getRandomFactId())
 
 // Print Liked Fact String
 
@@ -190,23 +197,65 @@ const transformArrayToObject = () => {
 transformArrayToObject()
 console.log(factObject)
 
+let heart = "🤍"
+const createHeart = (indexById) => {
+if (randomFacts[indexById].liked === false) {
+    heart = "🤍"
+}
+else if(randomFacts[indexById].liked === true) {heart = "❤"}
+return heart
+}
 
-const createListItem = (id) => {
-    const list = document.getElementById("list")
+
+
+
+const list = document.getElementById("list")
+
+const createListItem = (indexById) => {
     const divForFact = document.createElement("div")
     divForFact.classList.add("fact")
-
-    let i=0
-    while (i<randomFacts.length ){
-        if (randomFacts[i].id === id)  {
-            break
-        }
-        i++  
-    }
-    divForFact.innerHTML = `<p>${randomFacts[i].fact}</p> <label>❤</label>`
+    const textOfFact = document.createElement("p")
+    const heartOfFact = document.createElement("label")
+    textOfFact.innerHTML = randomFacts[indexById].fact
+    heartOfFact.innerHTML = createHeart(indexById)
+    divForFact.appendChild(textOfFact)
+    divForFact.appendChild(heartOfFact)
     list.appendChild(divForFact)
+
+    // KAK LAIKAT' FAKTI ???
+
+    heartOfFact.addEventListener('click', (event) => {
+
+        likeFact(randomFacts[indexById].id)
+        console.log(randomFacts)
+    })
+    
 } 
 
-createListItem ("qwe")
-createListItem ("rty")
-createListItem ("uio")
+
+
+const buttonAllFacts = document.getElementById("all-facts")
+buttonAllFacts.addEventListener('click', (event) => { 
+    indexById = 0;
+    list.innerHTML = ""
+    while (indexById<randomFacts.length) {
+        createListItem(indexById)
+        indexById++
+    }
+})
+
+const buttonOneFact = document.getElementById("one-fact")
+buttonOneFact.addEventListener('click', (event) => {
+    list.innerHTML = ""
+    indexById = 0;
+    findInexByID(getRandomFactId())
+    createListItem(indexById)
+})
+
+
+
+
+
+
+
+
