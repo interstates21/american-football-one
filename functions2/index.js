@@ -88,7 +88,7 @@ const likeFact = (id) => {
 }
 
 
-likeFact("uio");
+
 
 // Get all liked facts
 

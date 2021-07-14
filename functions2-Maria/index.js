@@ -64,44 +64,36 @@ const getFactStrings = () => {
 const factString = getFactStrings();
 
 // Function: find index by ID
-let indexById = 0;
-const findInexByID = (id) => {
-    
-    while (indexById<randomFacts.length ){
-        if (randomFacts[indexById].id === id)  {
-            break
-        }
-        indexById++  
-    }
+const findIndexById = (id) => {
+    let i = 0;
+    while (i<randomFacts.length ){
+                if (randomFacts[i].id === id)  {
+                    return i
+                }
+                i++  
+            }
 }
-
-
 
 
 // Like fact by id
 
 
 const likeFact = (id) => {
-    
-    findInexByID(id)
+    const indexById = findIndexById(id)
     // console.log(i) 
               
+    const previousValue = randomFacts[indexById].liked;
     if (randomFacts[indexById]){
-    if (randomFacts[indexById].liked === false) {
-        randomFacts[indexById].liked = true
+        randomFacts[indexById].liked = !previousValue
     }
-    else{ randomFacts[indexById].liked = false}
-    }
+
+    // Return new value in case we need it
+    return !previousValue;
 }
 
 
-likeFact("qwe");
-
-// Get all liked facts
-
 
 const getLikedFacts = () => {
-
     const likedFactAray = []
 
     let i=0
@@ -115,11 +107,7 @@ const getLikedFacts = () => {
 
 }
 
-const likedFacts = getLikedFacts();
-console.log('likedFacts =', likedFacts)
-
-
-
+const likedFacts = getLikedFacts()
 
 // Return high score facts
 
@@ -147,7 +135,6 @@ const getHighScoreFacts = () => {
 
 
 const highScoreFacts = getHighScoreFacts();
-console.log('highScoreFacts =', highScoreFacts)
 
 
 // Get Random Fact
@@ -157,11 +144,9 @@ const getRandomInt = (max) => {
 }
 
 
-const getRandomFactId =() => {
-    return randomFacts[getRandomInt(randomFacts.length-1)].id
+const getRandomFact =() => {
+    return randomFacts[getRandomInt(randomFacts.length-1)]
 }
-
-console.log("random", getRandomFactId())
 
 // Print Liked Fact String
 
@@ -177,45 +162,43 @@ const printLikedFacts = () => {
 
 // Translate facts array into an object with keys like id
 
-const factObject = {  }
 const transformArrayToObject = () => {
+    const factObject = {}
     let i=0;
     while (i<randomFacts.length) {
         factObject[randomFacts[i].id]  = randomFacts[i] 
         i++ 
     }   
-}
-transformArrayToObject()
-console.log(factObject)
 
-let heart = "🤍"
-const createHeart = (indexById) => {
-if (randomFacts[indexById].liked === false) {
-    heart = "🤍"
-}
-else if(randomFacts[indexById].liked === true) {heart = "❤"}
-return heart
+    return factObject;
 }
 
 const list = document.getElementById("list")
 
-const createListItem = (indexById) => {
+const createListItem = (factObject) => {
     const divForFact = document.createElement("div")
     divForFact.classList.add("fact")
     const textOfFact = document.createElement("p")
     const heartOfFact = document.createElement("label")
-    textOfFact.innerHTML = `${randomFacts[indexById].fact} (score: ${randomFacts[indexById].score})` 
-    heartOfFact.innerHTML = createHeart(indexById)
+    textOfFact.innerHTML = `${factObject.fact} (score: ${factObject.score})` 
+    heartOfFact.innerHTML = factObject.liked ? '❤' : '🤍';
     divForFact.appendChild(textOfFact)
     divForFact.appendChild(heartOfFact)
     list.appendChild(divForFact)
 
-    // KAK LAIKAT' FAKTI ???
-
     heartOfFact.addEventListener('click', (event) => {
+        // Change the fact array liked boolean
+        const newValue = likeFact(factObject.id)
+        // Rerender the list for updated data
 
-        likeFact(randomFacts[indexById].id)
-        console.log(randomFacts)
+        // TODO: try reusing this code with renderFacts function
+        let i = 0;
+        list.innerHTML = ""
+        while (i<randomFacts.length) {
+            createListItem(randomFacts[i])
+            i++
+        }
+
     })
     
 } 
@@ -241,25 +224,23 @@ function shuffle(array) {
   
 // All facts
 
+
 const buttonAllFacts = document.getElementById("all-facts")
 buttonAllFacts.addEventListener('click', (event) => { 
     shuffle(randomFacts);
-    indexById = 0;
+    let i = 0;
     list.innerHTML = ""
-    while (indexById<randomFacts.length) {
-        createListItem(indexById)
-        indexById++
+    while (i<randomFacts.length) {
+        createListItem(randomFacts[i])
+        i++
     }
 })
 
 // Only one fact
-
 const buttonOneFact = document.getElementById("one-fact")
 buttonOneFact.addEventListener('click', (event) => {
     list.innerHTML = ""
-    indexById = 0;
-    findInexByID(getRandomFactId())
-    createListItem(indexById)
+    createListItem(getRandomFact())
 })
 
 // Only liked facts
@@ -270,7 +251,7 @@ buttonLikedFacts.addEventListener('click', (event) => {
     let i=0
     while (i < randomFacts.length){
     if (randomFacts[i].liked === true) {
-        createListItem(i)
+        createListItem(randomFacts[i])
     }
     i++
     }
@@ -284,7 +265,7 @@ buttonScoreMore80.addEventListener('click', (event) => {
     let i=0
     while (i<randomFacts.length){
         if (randomFacts[i].score > 80) {
-            createListItem(i)
+            createListItem(randomFacts[i])
         }
 
         i++
@@ -309,7 +290,7 @@ buttonSortByScore.addEventListener('click', (event) => {
       console.log(randomFacts)
       let i=0
       while (i<randomFacts.length){
-            createListItem(i)
+            createListItem(randomFacts[i])
             i++
       }
 })
