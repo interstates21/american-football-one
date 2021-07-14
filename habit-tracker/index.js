@@ -77,11 +77,10 @@ const HABITS = [
 
 const findIndexById = (id) => {
 
-
     return i;
 }
 
-const completeHabit = (habitId, dayName) => {
+const toggleHabit = (habitId, dayName) => {
 }
 
 
@@ -100,5 +99,5 @@ const displayStatsForHabit = () => {
 }
 
 const createNewHabit = () => {
-    
+
 }
