@@ -20,13 +20,13 @@ const randomFacts = [
     {
         id: "rty",
         fact: "Nine-banded armadillos always have quadruplets, and they’re always identical",
-        liked: true,
+        liked: false,
         score: 76
     },
     {
         id: "uio",
         fact: "Cat is black",
-        liked: false,
+        liked: true,
         score: 10
     },
     {
@@ -274,6 +274,31 @@ buttonScoreMore80.addEventListener('click', (event) => {
         i++
     }
 })
+
+const buttonSortByScore = document.getElementById("sort-by-score")
+buttonSortByScore.addEventListener('click', (event) => {
+    list.innerHTML = ""
+    randomFacts.sort(function(a,b){
+        if (a.score < b.score) {
+            return 1;
+          }
+          if (a.score > b.score) {
+            return -1;
+          }
+             return 0;
+    
+      })
+      console.log(randomFacts)
+      let i=0
+      while (i<randomFacts.length){
+            createListItem(i)
+            i++
+      }
+})
+
+
+
+
 
 
 
