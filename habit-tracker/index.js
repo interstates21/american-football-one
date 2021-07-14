@@ -9,7 +9,7 @@ const HABITS = [
             'Monday': false,
             'Tuesday': false,
             'Wednesday': false,
-            'Thursday': false,
+            'Thursday': true,
             'Friday': false,
             'Saturday': false,
             'Sunday': false,
@@ -76,11 +76,22 @@ const HABITS = [
 
 
 const findIndexById = (id) => {
-
-    return i;
+    let i=0;
+    while(i<HABITS.length){
+        if (id === HABITS[i].id){
+            return i;
+        }
+        i++
+    }
+return -1
+    
 }
 
 const toggleHabit = (habitId, dayName) => {
+    const currentIndex = findIndexById(habitId)
+const currentState =  HABITS[currentIndex].week[dayName]
+    HABITS[currentIndex].week[dayName] =  !currentState
+
 }
 
 
@@ -92,12 +103,26 @@ const renderHabits = () => {
     let i = 0;
 }
 
-const displayStatsForHabit = () => {
+const calculateStatsForHabit = (habitid) => {
     // Calculate how many days completed for habit
-
-    // Render it
+const currentIndex = findIndexById(habitid)
+let count = 0
+const week = HABITS[currentIndex].week
+// loop for object keys
+for (const dayName in week) {
+   if(week[dayName]){
+count++
+   }
+  }
+return count
 }
 
 const createNewHabit = () => {
 
 }
+
+toggleHabit('d7cbc56a-e4c8-11eb-ba80-0242ac130004', 'Tuesday')
+const totaldays = calculateStatsForHabit('d7cbc56a-e4c8-11eb-ba80-0242ac130004')
+
+console.log (HABITS)
+console.log(totaldays)
