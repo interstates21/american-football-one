@@ -175,13 +175,6 @@ const printLikedFacts = () => {
     }
 }
 
-
-// Sort by score;
-
-const sortByScore = () => {
-
-}
-
 // Translate facts array into an object with keys like id
 
 const factObject = {  }
@@ -203,9 +196,6 @@ if (randomFacts[indexById].liked === false) {
 else if(randomFacts[indexById].liked === true) {heart = "❤"}
 return heart
 }
-
-
-
 
 const list = document.getElementById("list")
 
@@ -230,10 +220,30 @@ const createListItem = (indexById) => {
     
 } 
 
+// Function to mix 
 
+function shuffle(array) {
+    var currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+      return array;
+  }
+  
+// All facts
 
 const buttonAllFacts = document.getElementById("all-facts")
 buttonAllFacts.addEventListener('click', (event) => { 
+    shuffle(randomFacts);
     indexById = 0;
     list.innerHTML = ""
     while (indexById<randomFacts.length) {
@@ -242,6 +252,8 @@ buttonAllFacts.addEventListener('click', (event) => {
     }
 })
 
+// Only one fact
+
 const buttonOneFact = document.getElementById("one-fact")
 buttonOneFact.addEventListener('click', (event) => {
     list.innerHTML = ""
@@ -249,6 +261,8 @@ buttonOneFact.addEventListener('click', (event) => {
     findInexByID(getRandomFactId())
     createListItem(indexById)
 })
+
+// Only liked facts
 
 const buttonLikedFacts = document.getElementById("liked-facts")
 buttonLikedFacts.addEventListener('click', (event) => {
@@ -262,6 +276,8 @@ buttonLikedFacts.addEventListener('click', (event) => {
     }
 })
 
+// Score more then 80
+
 const buttonScoreMore80 = document.getElementById("score-more-80")
 buttonScoreMore80.addEventListener('click', (event) => {
     list.innerHTML = ""
@@ -274,6 +290,8 @@ buttonScoreMore80.addEventListener('click', (event) => {
         i++
     }
 })
+
+// Sort by score;
 
 const buttonSortByScore = document.getElementById("sort-by-score")
 buttonSortByScore.addEventListener('click', (event) => {
