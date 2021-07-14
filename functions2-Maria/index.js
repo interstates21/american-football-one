@@ -92,8 +92,6 @@ const likeFact = (id) => {
     }
     else{ randomFacts[indexById].liked = false}
     }
-
-
 }
 
 
@@ -216,7 +214,7 @@ const createListItem = (indexById) => {
     divForFact.classList.add("fact")
     const textOfFact = document.createElement("p")
     const heartOfFact = document.createElement("label")
-    textOfFact.innerHTML = randomFacts[indexById].fact
+    textOfFact.innerHTML = `${randomFacts[indexById].fact} (score: ${randomFacts[indexById].score})` 
     heartOfFact.innerHTML = createHeart(indexById)
     divForFact.appendChild(textOfFact)
     divForFact.appendChild(heartOfFact)
@@ -251,6 +249,33 @@ buttonOneFact.addEventListener('click', (event) => {
     findInexByID(getRandomFactId())
     createListItem(indexById)
 })
+
+const buttonLikedFacts = document.getElementById("liked-facts")
+buttonLikedFacts.addEventListener('click', (event) => {
+    list.innerHTML = ""
+    let i=0
+    while (i < randomFacts.length){
+    if (randomFacts[i].liked === true) {
+        createListItem(i)
+    }
+    i++
+    }
+})
+
+const buttonScoreMore80 = document.getElementById("score-more-80")
+buttonScoreMore80.addEventListener('click', (event) => {
+    list.innerHTML = ""
+    let i=0
+    while (i<randomFacts.length){
+        if (randomFacts[i].score > 80) {
+            createListItem(i)
+        }
+
+        i++
+    }
+})
+
+
 
 
 
