@@ -1,5 +1,13 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
 body {
     padding: 20px;
+}
+#list {
+    overflow-y: auto;
 }
 .fact {
     height: auto;
@@ -15,4 +23,20 @@ body {
 }
 label {
     cursor: pointer;
+}
+.input-area {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-direction: row;
+}
+#input-area-for-text {
+    width: auto;
+}
+.form-control {
+    
+    margin-right: 5px;
+}
+#input-area-for-score {
+    width: 100px;
 }

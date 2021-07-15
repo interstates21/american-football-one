@@ -1,45 +1,45 @@
 const randomFacts = [
     {
         id: "dfg",
-        fact: "Polar bear fur is actually clear, and their skin is black",
+        fact: "Cruella",
         liked: true,
-        score: 54
+        score: 7.3
     },
     {
         id: "abc",
-        fact: "A woodpecker’s tongue actually wraps all the way around its brain, protecting it from damage when it’s hammering into a tree.",
+        fact: "The Trial of the Chicago 7",
         liked: false,
-        score: 38
+        score: 7.6
     },
     {
         id: "qwe",
-        fact: "A shrimp’s heart is located in its head",
+        fact: "Titanic",
         liked: false,
-        score: 90
+        score: 8.4
     },
     {
         id: "rty",
-        fact: "Nine-banded armadillos always have quadruplets, and they’re always identical",
+        fact: "Shutter Island",
         liked: false,
-        score: 76
+        score: 8.5
     },
     {
         id: "uio",
-        fact: "Cat is black",
+        fact: "The Hottie & the Nottie",
         liked: true,
-        score: 10
+        score: 2.8
     },
     {
         id: "asd",
-        fact: "All clownfish are born male",
+        fact: "A Quiet Place Part II",
         liked: true,
-        score: 132,
+        score: 6.8,
     },
     {
         id: "fgh",
-        fact: "Hippos and horses are actually distant relatives",
+        fact: "Sen to Chihiro no kamikakushi",
         liked: false,
-        score: 11
+        score: 8.4
     },
 ]
 
@@ -264,7 +264,7 @@ buttonScoreMore80.addEventListener('click', (event) => {
     list.innerHTML = ""
     let i=0
     while (i<randomFacts.length){
-        if (randomFacts[i].score > 80) {
+        if (randomFacts[i].score > 7.5) {
             createListItem(randomFacts[i])
         }
 
