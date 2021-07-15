@@ -80,8 +80,7 @@ const findIndexById = (id) => {
 
 const likeFact = (id) => {
     const indexById = findIndexById(id)
-    // console.log(i) 
-              
+         
     const previousValue = randomFacts[indexById].liked;
     if (randomFacts[indexById]){
         randomFacts[indexById].liked = !previousValue
@@ -287,8 +286,7 @@ buttonSortByScore.addEventListener('click', (event) => {
              return 0;
     
       })
-      console.log(randomFacts)
-      let i=0
+           let i=0
       while (i<randomFacts.length){
             createListItem(randomFacts[i])
             i++
@@ -296,6 +294,69 @@ buttonSortByScore.addEventListener('click', (event) => {
 })
 
 
+
+const saveButton = document.getElementById("save-button")
+window.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        handleSaveButtonClick()
+}
+})
+
+saveButton.addEventListener("click", () => {
+    handleSaveButtonClick()
+}) 
+
+
+const handleSaveButtonClick = () => {
+    const inputDivFilm = document.getElementById("input-area-for-text")
+    const inputDataFilm = inputDivFilm.value
+    inputDivFilm.value = ""
+
+    const inputDivScore = document.getElementById("input-area-for-score")
+    const inputDataScore = inputDivScore.value
+    inputDivScore.value = ""
+
+    if (inputDataFilm != ""  && inputDataScore != "") {
+
+    pushFilmToArray(inputDataFilm, inputDataScore)
+
+    let i = 0;
+    list.innerHTML = ""
+    while (i<randomFacts.length) {
+        createListItem(randomFacts[i])
+        i++
+    }
+    
+    }
+    
+    
+}
+
+
+
+const pushFilmToArray = (film, score) => {
+    // Generator of random letters
+
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+let randomIndex1 = Math.floor(Math.random() * alphabet.length);
+let randomIndex2 = Math.floor(Math.random() * alphabet.length)
+let randomIndex3 = Math.floor(Math.random() * alphabet.length)
+
+let randomLetter1 = alphabet[randomIndex1];
+let randomLetter2 = alphabet[randomIndex2];
+let randomLetter3 = alphabet[randomIndex3];
+
+
+let threeLetters = randomLetter1 + randomLetter2 + randomLetter3
+
+    randomFacts.push({
+        id: threeLetters,
+        fact: film,
+        liked: false,
+        score: score
+})
+
+}
 
 
 
