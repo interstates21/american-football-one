@@ -5,8 +5,7 @@ const main = () => {
     const MESSAGES = []
 
 
-
-
+    
 
 
 
@@ -58,8 +57,11 @@ const main = () => {
     })
     nextMessageId++;
     }
+    
+    let selectedText = null;
 
     const displayOneMessage = (message) => {
+        
         const messageArea = document.getElementById('messages-area');
     
         const newMessage = document.createElement('div');
@@ -70,12 +72,33 @@ const main = () => {
         }
     
         newMessage.innerText = message.text;
-    
         messageArea.appendChild(newMessage);
-    }
+       
+       
+         newMessage.addEventListener('click',()=>{
+          let selectedText = newMessage.innerText
+            const idIntex = MESSAGES.findIndex(currentElement => currentElement.id ===message.id )
+           
+         const deleteedit = document.getElementById('deled');
+
+            deleteedit.style.display='block';
+
+            
+            const deletebutton =document.getElementById('delete-button')
+            deletebutton .addEventListener('click',()=>{
+                deleteMessage (MESSAGES[idIntex].id)
+                newMessage.style.display="none"
+                deleteedit.style.display="none";
+
+            })
+         })
+        
+
+                 
+}
 
     const displayMessagesForAllArray = () => {
-        for (let i = 0; i < MESSAGES.length; i++) {
+      for (let i = 0; i < MESSAGES.length; i++) {
             displayOneMessage(MESSAGES[i]);
         }
     }
@@ -90,11 +113,9 @@ const main = () => {
     // pushMessage('Hello1');
     // pushMessage('Hello2');
     // pushMessage('Hello3');
-
    
-
-
-
 }
 
-main()
+main() 
+
+
