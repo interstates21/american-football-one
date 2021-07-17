@@ -76,7 +76,10 @@ const generateRandomName = () => {
 
 }
 
-const randomName = generateRandomName(
-);
+const buttonElement = document.getElementById('button')
+buttonElement.addEventListener("click", ()=>{
+    const sentanceElement = document.getElementById('sentance')
+    sentanceElement.innerText = generateRandomName();
+})
 
-console.log(randomName);
+
