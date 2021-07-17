@@ -101,3 +101,14 @@ addReview('r1','It is good',3);
 addRestaurant ('Raravis');
 console.log(RESTAURANTS)
 
+const button = document.getElementById("btn-rev-1")
+button.addEventListener("click",()=>{
+    const reviewContainer = document.getElementById("review-container-1")
+    if (reviewContainer.style.display==="block"){
+        reviewContainer.style.display="none"  
+    }
+    else {
+        reviewContainer.style.display="block";
+    }
+})
+
