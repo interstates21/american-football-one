@@ -252,3 +252,9 @@
     100% { left: 400px;}
     
 }
+
+
+@keyframes slideDown  {
+    0% {transform: scaleY(0); }
+    100% {transform: scaleY(0); }
+}
