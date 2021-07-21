@@ -41,16 +41,16 @@ const inputSearch = document.getElementById("search-input")
 
  
  const searchFunction=(dataFromInput) => {
-    const newARRAY = []
+    const filterArray = []
     let i=0
     while (i<ARRAY.length) {
-    if (dataFromInput === ARRAY[i]){
-        newARRAY.push(ARRAY[i])
+    if (dataFromInput.toLowerCase() === ARRAY[i].substring(0, dataFromInput.length).toLowerCase()){
+        filterArray.push(ARRAY[i])
     }
     i++
      }
      
-    renderFunction(newARRAY)
+    renderFunction(filterArray)
     }
 
     
