@@ -43,7 +43,7 @@ label {
 
 #head {
    
-    background: linear-gradient(90deg, #CFEDEE 0%, #8363be 100%);
+    background-color: #36EEE0;
     /* width: 100vw; */
     height: 100px;
     display: flex;
@@ -63,20 +63,23 @@ label {
 #log-in {
     width: 100px;
     height: 45px;
-    background-color: #ECF9F2;
+    background-color: #F652A0;
+    color: white;
     margin-right: 50px;
-    border-radius: 4px;
+    border-radius: 6px;
     text-align: center;
     line-height: 40px;
     /* border: green solid 2px; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    color: #000000;
+    
     cursor: pointer;
 }
 #head-text {
     font-family: 'Alfa Slab One', cursive;
     font-weight: 500;
     font-size: 30px;
+    color: #272e52;
+    cursor: pointer;
     
 }
 
@@ -89,7 +92,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background: linear-gradient(90deg, #effeff 0%, #dafeff  100%);
+    background-color: #ffffff;
 }
 
 #log-in-container {
@@ -97,17 +100,25 @@ label {
     margin-top: 40px;
     width: 400px;
     /* background: linear-gradient(90deg,#95a592  0%, #748571  100%); */
-    background-color: #95a592 ;
+    background-color: #BCECE0;
     padding: 20px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    color: white;
+    color: #4C5270;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
 
 }
 #log-in-container h2 {
     margin-bottom: 10px;
+    
 }
 form {
+   
+    width: 100%;
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,9 +128,9 @@ form {
 #log-in-container .text-input {
     margin-top: 5px;
     margin-bottom: 1.3rem;
-    width: 100%;
+    width: calc(100% - 2rem);
     border-radius: 5px;
-    background: #748571;
+    background: #4C5270;
     border: 1px solid white;
     color: white;
     padding: 0.5rem 1rem;
@@ -131,8 +142,8 @@ form {
     align-self: center;
     width: 150px;
     height: 30px;
-    color: #748571;
-    border: solid #748571 2px;
+    color: #4C5270;
+    border: solid #4C5270 2px;
     background-color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -146,7 +157,7 @@ form {
     
     margin-bottom: 2px;
     display: block;
-    color: #fff;
+    color: #4C5270;
     text-decoration: none;
    /* background-color: thistle; */
     text-align: center;
@@ -173,34 +184,36 @@ form {
     width: 90vw;
     margin-top: 20px;
 }
-#links-page {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(90deg, #effeff 0%, #dafeff  100%);
-    color: #30362f;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-}
-#links-page ul, #links-page h2 {
-    width: 90%;
-    
-    margin-top: 10px;
-}
-#links-page li {
-    margin-bottom: 10px;
-}
-#links-page a:hover {
-    color: #89BE63;
 }
 #home:hover, #symbols:hover, #links:hover, #exercises:hover {
     background-color: #95a791;
 }
 #log-in:hover{
-    background-color: #e9feff;
+    background-color: #ff6bb2;
+    border: 2px solid white;
 }
 input:focus {
     outline: none;
     border: none;
+}
+#log-in-container a:hover {
+    color: #F652A0;
+}
+#log-in-container .primary-btn:hover {
+    background-color: #ffdfee;
+    /* color: #F652A0; */
+}
+
+
+#search-container {
+    padding: 20px;
+}
+
+#films-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: thistle;films-list-container */
 }

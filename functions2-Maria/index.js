@@ -112,7 +112,7 @@ const likedFacts = getLikedFacts()
 
 
 const isHighScore = (fact) => {
-        if (fact.score > 80) {
+        if (fact.score > 7.5) {
         return true;
     }
 
@@ -133,7 +133,7 @@ const getHighScoreFacts = () => {
 }
 
 
-const highScoreFacts = getHighScoreFacts();
+
 
 
 // Get Random Fact
@@ -177,6 +177,7 @@ const list = document.getElementById("list")
 const createListItem = (factObject) => {
     const divForFact = document.createElement("div")
     divForFact.classList.add("fact")
+    divForFact.id = `movie-item-id-${factObject.id}`
     const textOfFact = document.createElement("p")
     const heartOfFact = document.createElement("label")
     textOfFact.innerHTML = `${factObject.fact} (score: ${factObject.score})` 
@@ -186,20 +187,11 @@ const createListItem = (factObject) => {
     list.appendChild(divForFact)
 
     heartOfFact.addEventListener('click', (event) => {
-        // Change the fact array liked boolean
+        
+        const likedFact = document.querySelector(`#movie-item-id-${factObject.id} label`)
         const newValue = likeFact(factObject.id)
-        // Rerender the list for updated data
-
-        // TODO: try reusing this code with renderFacts function
-        let i = 0;
-        list.innerHTML = ""
-        while (i<randomFacts.length) {
-            createListItem(randomFacts[i])
-            i++
-        }
-
+        likedFact.innerHTML = newValue ? '❤' : '🤍';
     })
-    
 } 
 
 // Function to mix 
@@ -261,14 +253,14 @@ buttonLikedFacts.addEventListener('click', (event) => {
 const buttonScoreMore80 = document.getElementById("score-more-80")
 buttonScoreMore80.addEventListener('click', (event) => {
     list.innerHTML = ""
+    const highScoreFacts = getHighScoreFacts();
     let i=0
-    while (i<randomFacts.length){
-        if (randomFacts[i].score > 7.5) {
-            createListItem(randomFacts[i])
-        }
-
+    while (i<highScoreFacts.length){
+    createListItem(highScoreFacts[i])
         i++
-    }
+       }
+    
+    
 })
 
 // Sort by score;
@@ -357,6 +349,7 @@ let threeLetters = randomLetter1 + randomLetter2 + randomLetter3
 })
 
 }
+
 
 
 

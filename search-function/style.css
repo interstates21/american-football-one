@@ -1,0 +1,19 @@
+
+.my-class-for-input-group {
+   display: flex;
+   width: 80vw;
+   justify-content: center;
+ 
+   padding: 30px;
+   
+}
+.form-control {
+    width: 400px;
+    /* height: 200px; */
+    background-color: blue;
+}
+
+#items-conteiner {
+    font-size: 30px;
+    padding-left: 30px;
+}
