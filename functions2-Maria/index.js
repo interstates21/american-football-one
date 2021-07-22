@@ -103,7 +103,6 @@ const getLikedFacts = () => {
     i++
     }
     return likedFactAray
-
 }
 
 const likedFacts = getLikedFacts()
@@ -115,7 +114,6 @@ const isHighScore = (fact) => {
         if (fact.score > 7.5) {
         return true;
     }
-
     return false
 }
 
@@ -131,11 +129,6 @@ const getHighScoreFacts = () => {
    
     return hightScoreFactsArray;
 }
-
-
-
-
-
 // Get Random Fact
 const getRandomInt = (max) => {
     // Got from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -187,7 +180,6 @@ const createListItem = (factObject) => {
     list.appendChild(divForFact)
 
     heartOfFact.addEventListener('click', (event) => {
-        
         const likedFact = document.querySelector(`#movie-item-id-${factObject.id} label`)
         const newValue = likeFact(factObject.id)
         likedFact.innerHTML = newValue ? '❤' : '🤍';
@@ -216,8 +208,7 @@ function shuffle(array) {
 // All facts
 
 
-const buttonAllFacts = document.getElementById("all-facts")
-buttonAllFacts.addEventListener('click', (event) => { 
+function createAllFacts() {
     shuffle(randomFacts);
     let i = 0;
     list.innerHTML = ""
@@ -225,6 +216,13 @@ buttonAllFacts.addEventListener('click', (event) => {
         createListItem(randomFacts[i])
         i++
     }
+}
+
+createAllFacts()
+
+const buttonAllFacts = document.getElementById("all-facts")
+buttonAllFacts.addEventListener('click', (event) => { 
+    createAllFacts()
 })
 
 // Only one fact
@@ -258,9 +256,7 @@ buttonScoreMore80.addEventListener('click', (event) => {
     while (i<highScoreFacts.length){
     createListItem(highScoreFacts[i])
         i++
-       }
-    
-    
+       }   
 })
 
 // Sort by score;
@@ -276,7 +272,6 @@ buttonSortByScore.addEventListener('click', (event) => {
             return -1;
           }
              return 0;
-    
       })
            let i=0
       while (i<randomFacts.length){
@@ -318,10 +313,7 @@ const handleSaveButtonClick = () => {
         createListItem(randomFacts[i])
         i++
     }
-    
-    }
-    
-    
+    }  
 }
 
 
@@ -351,14 +343,37 @@ let threeLetters = randomLetter1 + randomLetter2 + randomLetter3
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+// Search function
+ const inputSearch = document.getElementById("search-input")
+ const searchButton = document.getElementById("search-button")
+  searchButton.addEventListener("click", () =>
+ {  
+     console.log(inputSearch.value)
+     let dataFromInput = inputSearch.value
+     searchFunction(dataFromInput)
+     inputSearch.value = ""
+ })   
+ function searchFunction(dataFromInput) {
+    let i = 0;
+    list.innerHTML = ""
+    const filterArray = []
+    while (i<randomFacts.length) {
+    if (dataFromInput.toLowerCase() === randomFacts[i].fact.substring(0, dataFromInput.length).toLowerCase()){
+        filterArray.push(randomFacts[i])
+    }
+    i++
+     }
+     console.log(filterArray)
+     let n=0
+     while (n<filterArray.length){
+     createListItem(filterArray[n])
+         n++
+        }   
+}
+window.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        console.log(inputSearch.value)
+        let dataFromInput = inputSearch.value
+        searchFunction(dataFromInput)
+        inputSearch.value = "" }
+    })
