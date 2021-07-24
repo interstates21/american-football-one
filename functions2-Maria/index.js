@@ -316,8 +316,6 @@ const handleSaveButtonClick = () => {
     }  
 }
 
-
-
 const pushFilmToArray = (film, score) => {
     // Generator of random letters
 
@@ -339,9 +337,7 @@ let threeLetters = randomLetter1 + randomLetter2 + randomLetter3
         liked: false,
         score: score
 })
-
 }
-
 
 // Search function
  const inputSearch = document.getElementById("search-input")

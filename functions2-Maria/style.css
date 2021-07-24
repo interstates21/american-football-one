@@ -67,14 +67,24 @@ label {
     align-items: center;
 }
 #logo {
-    width: 55px;
-    height: 55px;
-    background-image: url(Group2.svg);
-    margin-left: 20px;
+    width: 70px;
+    height: 70px;
+    background-image: url(Component2.svg);
+    margin-left: 40px;
     border-radius: 4px;
-    background-image: url(./pics-for-pages/AdobeStock_102683437_Preview.jpg);
-    background-size: 100%;
+   
+    background-size: contain;
+    background-repeat: no-repeat;
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+#head-buttons {
+    /* background-color: rgb(128, 128, 128); */
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 50px;
 }
 #log-in {
     width: 100px;
@@ -83,13 +93,36 @@ label {
     border: 2px solid white;
     color: white;
     font-weight: 700;
-    margin-right: 50px;
+    
     border-radius: 6px;
     text-align: center;
     line-height: 40px;
     /* border: green solid 2px; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
+}
+#share {
+    width: 100px;
+    height: 45px;
+    background-color: #D773A2;
+    border: 2px solid white;
+    color: white;
+    font-weight: 700;
+    margin-right: 10px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 40px;
+    /* border: green solid 2px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+#user-face {
+    width: 60px;
+    height: 60px;
+    background-color: #BD97CB;
+    border-radius: 50%;
+    margin-left: 20px;
+    border: 3px dashed white;
 }
 #head-text {
     font-family: 'Alfa Slab One', cursive;
@@ -170,11 +203,6 @@ label {
 #left, #right {
     margin: 15px;
 }
-
-
-
-
-
 
 /* Log in page */
 
@@ -283,6 +311,9 @@ form {
 #log-in:hover{
     background-color: #FFD743;
    
+}
+#share:hover {
+    background-color: #FFD743;
 }
 input:focus {
     outline: none;
