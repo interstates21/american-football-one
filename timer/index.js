@@ -1,12 +1,15 @@
-let isFocusedInterval = false // if true, then we have rest
-let isTicking = false // if false, then it's paused
 
+
+let isTicking = false // if false, then it's paused
+let ourTimer = null
 const changePauseState = () => {
   if (isTicking) {
     button.innerHTML = 'Stop'
+    ourTimer = window.setInterval((onEverySecond), 1000)
   }
   else {
     button.innerHTML = 'Start'
+    clearInterval(ourTimer) 
   }
 } 
 
@@ -18,9 +21,29 @@ button.addEventListener("click", () => {
 
 let seconds = 59;
 
-window.setInterval(() => {
-  const timeElement = document.getElementById('time');
 
+let isFocusedInterval = false 
+const timerBody = document.getElementById("timer")
+
+
+
+const onEverySecond = () => {
+  let timer=0;
+  const stateElement = document.getElementById("state")
+  if(isFocusedInterval) {stateElement.innerHTML = "Focus!"
+  timerBody.style.backgroundColor = "#289e84"
+        timer=59}
+  else {stateElement.innerHTML = "Rest!"
+  timerBody.style.backgroundColor = "#fd7272"
+        timer=29}
+  const timeElement = document.getElementById('time');
+  
   timeElement.innerHTML = seconds;
-  seconds--;
-}, 500)
+  if (seconds>0){
+    seconds--}
+  else { 
+    seconds=timer
+    isFocusedInterval = !isFocusedInterval
+    }
+}
+
