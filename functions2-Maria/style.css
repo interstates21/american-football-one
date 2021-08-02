@@ -126,6 +126,7 @@ label {
 }
 #head-text {
     font-family: 'Alfa Slab One', cursive;
+    text-decoration: none;
     font-size: 30px;
     color: white;
     cursor: pointer;  
